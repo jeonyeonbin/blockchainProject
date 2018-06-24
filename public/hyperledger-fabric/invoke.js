@@ -7,13 +7,15 @@
 /*
  * Chaincode Invoke
  */
-
+// hyperledger fabric composer
 var Fabric_Client = require('fabric-client');
 var path = require('path');
 var util = require('util');
 var os = require('os');
 
-//
+//하이퍼렛져 페브릭은 개발자 입장에서는 데이터베이스라고 생각할수도있을 것 같다.
+//먼저 es6에대한 클래스에대한이해와 promise에 대해는 기본으로 알고있어야된다
+// 콜백지옥에서 빠져나올수 있는 유일한 기회이다
 var fabric_client = new Fabric_Client();
 
 var serverIP = '172.20.10.2';
