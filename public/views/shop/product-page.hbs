@@ -1,0 +1,110 @@
+<link rel="stylesheet" href="/static/css/product.css">
+<script src="/static/js/product.js"></script>
+  <!--Main layout-->
+  <main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <img src="../.././{{items.itemContentsPic}}" class="img-fluid" alt="" width="720px" height="600px">
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <!--Content-->
+          <div class="p-4">
+
+            <div class="mb-3">
+              <a href="">
+                <span class="badge purple mr-1 itemCategory" value="{{items.itemCategory}}">{{items.itemCategory}}</span>
+              </a>
+              <a href="">
+                <span class="badge blue mr-1">New</span>
+              </a>
+              <a href="">
+                <span class="badge red mr-1">Bestseller</span>
+              </a>
+            </div>
+
+            <p class="lead">
+              <span>{{items.itemPrice}} 원</span>
+            </p>
+            <p class="lead font-weight-bold">품명</p>
+            <p>{{items.itemName}}</p>
+            <p class="lead font-weight-bold">판매자</p>
+            <p>{{items.seller}}</p>          
+
+            <form class="d-flex justify-content-left">
+              <!-- Default input -->
+              <input type="hidden" name="key" id="key" value="{{items.key}}"> 
+              {{#if button}}
+                <button class="btn btn-primary btn-md my-0 p purchaseItem" type="button" onclick="return false;" style="margin-left:0px; margin">구매하기
+                  <i class="fa fa-shopping-cart ml-1"></i>
+                </button>
+              {{else}}
+                <button class="btn btn-danger btn-md my-0 p" type="button" onclick="return false;" style="margin-left:0px; margin" disabled>판매 완료
+                  <i class="fa fa-shopping-cart ml-1"></i>
+                </button>
+              {{/if}}
+
+            </form>
+
+          </div>
+          <!--Content-->
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+      <hr>
+
+      <!--Grid row-->
+
+        <!--Grid column-->
+          
+
+      <!--Grid row-->
+      <!--Grid row-->
+      <!-- Tab links -->
+      <div class="tab">
+          <button class="tablinks btn btn-default" onclick="openCity(event, 'itemInfo')" id="defaultOpen">상품 정보</button>
+          <button class="tablinks btn btn-default" onclick="openCity(event, 'itemReply')">상품 댓글</button>
+          <button class="tablinks btn btn-default" onclick="openCity(event, 'Tokyo')">상품 </button>  
+      </div>
+      <!-- Tab content -->
+      <div id="itemInfo" class="tabcontent">
+        <h4 class="my-4 h4">상품 정보</h4>
+        <p>{{items.itemInfo}}</p>
+      </div>
+
+      <div id="itemReply" class="tabcontent">
+        <h4 class="my-4 h4">상품 댓글</h4>
+        <input type="text">
+      </div>
+
+      <div id="Tokyo" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+      </div>
+      <script>
+        $(document).ready(function(){
+            $('#itemInfo > p').html($('#itemInfo > p').text());
+            $('#defaultOpen').click();
+          });
+      </script>
+    </div>
+  </div>
+  </main>
+  <script src="../../static/js/purchaseItem.js"></script>
+  <!--Main layout-->
+
+ 

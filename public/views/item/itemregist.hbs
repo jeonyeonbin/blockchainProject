@@ -1,0 +1,53 @@
+<!-- Breadcrumbs-->
+<link async href="http://fonts.googleapis.com/css?family=Antic" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="/adminTemplate/css/btn.css" type="text/css">
+<script src="/js/ckeditor/ckeditor.js" type="text/javascript"></script>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="#">ITEM</a>
+    </li>
+    <li class="breadcrumb-item active">상품 등록</li>
+</ol>
+<script type="text/javascript">
+    window.onload=function(){
+        CKEDITOR.replace('info');
+    }
+    $('.selectpicker').selectpicker({
+        style: 'btn-info',
+        size: 4
+    });
+</script>
+<nav>
+    <h1>등록할 상품들</h1>
+    <hr>
+    <form action="/myPage/item/regist" method="post" data-role="form" enctype="multipart/form-data">
+        <ul class="ul-style-none">
+            <li><label for="name" class="registItem"><h5>상품명</h5></label>
+                <input type="text" value="" class="myButton" id="name" name="itemName" placeholder="Enter Item Name..." style="color:#ffffff">
+            </li><br>
+            <li><label for="price" class="registItem" style="margin-right:25px"><h5>상품가격</h5></label>
+                <input type="text" value="" class="myButton" id="price" name="itemPrice" placeholder="Enter Item Price... " style="color:#ffffff">
+            </li><br>
+            
+            <li><label for="pic" class="registItem" style="margin-right:25px"><h5>상품사진</h5></label>
+                <input type="file" name="image" id="pic" value="사진 업로드">
+            </li><br>
+            <li><label for="category" class="registItem"><h5>카테고리</h5></label>
+                <select class="selectpicker" name="itemCategory">
+                    <option value="cloth">의류</option>
+                    <option value="sports">스포츠 및 레저</option>
+                    <option value="fashion">패션 잡화</option>
+                    <option value="mobile">핸드폰</option>
+                    <option value="car">차량 및 오토바이</option>
+                    <option value="others">다중 잡화</option>
+                </select>
+            </li><br>
+            <li><label for="info" class="registItem"><h5>상품 설명</h5></label><br><br>
+                <textarea name="itemInfo" id="info" class="ckeditor" cols="30" rows="10" placeholder="상품 설명을 해주세요."></textarea>
+            </li><br>
+            <input type="submit" value="전송" class="btn btn-default-primary">
+        </ul>
+    </form>
+    <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
+    <div style="height: 1000px;"></div>
+</nav>

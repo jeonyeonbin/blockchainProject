@@ -1,0 +1,66 @@
+    <link rel="stylesheet" href="/static/css/board.css">
+	
+	
+	<main class="mt-5 pt-4">
+		 <div class="container dark-grey-text mt-5">
+
+      <!--Grid row-->
+      		<div class="row wow fadeIn">
+				  <div class="form-group">
+					<select display="inline" class="form-control" id="type" style="width:100px">
+						<option value="all">전체</option>
+						<option value="writer">작성자</option>
+						<option value="title">제목</option>
+						<option value="contents">내용</option>
+					</select>
+					<input type="text" class="form-control" name="search">
+					<a class="btn btn-primary">검색</a>
+				  </div>
+
+				 <!-- Simple Select with arrow -->
+				<table>
+					<thead>
+						<tr>
+							<th>번호</th>
+							<th>제목</th>
+							<th>작성자</th>
+							<th>작성일</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<td colspan="4">
+								<ul>
+									<li>&lt;</li>
+									<li>1</li>
+									<li>2</li>
+									<li>3</li>
+									<li>4</li>
+									<li>&gt;</li>
+								</ul>
+							</td>
+						</tr>
+					</tfoot>
+
+					<tbody>
+						<tr>
+							<td class="no">NOTICE</td>
+							<td class="title ftbol"><a href="#" title="">[안내] 사이트 정식 오픈 안내</a></td>
+							<td class="name">[관리자]전연빈</td>
+							<td class="date">18.05.30</td>
+						</tr>
+						{{#each postDatas}}
+						<tr>
+							<td class="no">{{_id}}</td>
+							<td class="title"><a href="/board/{{_id}}" >{{title}}</a></td>
+							<td class="name">{{writer}}</td>
+							<td class="date">{{createdDate}}</td>
+						</tr>
+						{{/each}}
+
+					</tbody>
+				</table>
+				<a href="/board/regist" class="btn btn-primary registButton">게시글 등록</a>
+			</div>
+		</div>
+	</main>

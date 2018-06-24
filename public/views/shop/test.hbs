@@ -1,0 +1,17 @@
+ <main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+          {{#each data}}
+            <ul>
+                <li>{{ProductName}}</li>
+                <li>{{ProductPrice}}</li>
+                <li>{{SellStartDateTime}}</li>
+                <li>{{SellState}}</li>
+                <li>{{SellerId}}</li>
+            </ul>
+          {{/each}}
+      </div>
+    </div>
+</main>

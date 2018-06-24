@@ -1,0 +1,16 @@
+a{text-decoration: none;color: black;}
+a:hover{text-decoration: underline;}
+li{list-style: none; display: inline-block;}
+tfoot li{padding-left: 30px;}
+tfoot td{border:0px;}
+table{width: 100%; text-align: center;}
+.thead{background-color: #092d78;}
+th{height: 35px;vertical-align: middle; font-size: 13px;background-color: #092d78; color: #fff;}
+td{border-bottom: 1px solid; vertical-align: middle; height: 40px; }
+td a{color: #092d78;}
+.ftbol{font-weight: bold;}
+.no{width: 10%;font-size: 0.8em;}
+.title{width:60%; text-align: left; font-size: 0.9em;}
+.name{width: 20%; font-size: 0.75em;}
+.date{width: 10%; font-size: 0.7em;}
+.registButton{margin-left:86%}

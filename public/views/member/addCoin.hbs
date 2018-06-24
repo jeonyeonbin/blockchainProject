@@ -1,0 +1,49 @@
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="#">코인 정보</a>
+    </li>
+</ol>
+<ul class="breadcrumb">
+    <li>
+        <div class="form-group">
+            코인 정보
+            <ul class="breadcrumb">
+                <li class="btn btn-warning">
+                    보유 코인량 : {{coin}}
+                </li>
+            </ul>
+        </div>
+    </li>
+    <li>
+        <div>
+            <a href="#" class="btn btn-primary" style="margin-left:1450px; margin-top:32px;" data-toggle="modal" data-target="#myModal">코인 충전</a>
+        </div>
+    </li>
+
+</ul>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4>코인충전</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+            <label for="usr">코인</label>
+            <input type="text" class="form-control" id="coin" placeholder="충전할 코인양을 입력해주세요..">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary addCoin">충전</button>
+        <button type="button" class="btn btn-default close" data-dismiss="modal">닫기</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script src="../../static/js/addCoin.js"></script>

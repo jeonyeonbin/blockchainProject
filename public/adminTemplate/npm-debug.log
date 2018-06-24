@@ -1,0 +1,1207 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install', '-g' ]
+2 info using npm@3.5.2
+3 info using node@v4.2.6
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData .
+8 silly fetchDirectoryPackageData .
+9 silly install normalizeTree
+10 silly loadCurrentTree Finishing
+11 silly loadIdealTree Starting
+12 silly install loadIdealTree
+13 silly cloneCurrentTree Starting
+14 silly install cloneCurrentTreeToIdealTree
+15 silly cloneCurrentTree Finishing
+16 silly loadShrinkwrap Starting
+17 silly install loadShrinkwrap
+18 silly loadShrinkwrap Finishing
+19 silly loadAllDepsIntoIdealTree Starting
+20 silly install loadAllDepsIntoIdealTree
+21 silly resolveWithNewModule startbootstrap-sb-admin@4.0.0 checking installable status
+22 silly cache add args [ '.', null ]
+23 verbose cache add spec .
+24 silly cache add parsed spec Result {
+24 silly cache add   raw: '.',
+24 silly cache add   scope: null,
+24 silly cache add   name: null,
+24 silly cache add   rawSpec: '.',
+24 silly cache add   spec: '/home/jyb5858/bc2018project/public/adminTemplate',
+24 silly cache add   type: 'directory' }
+25 verbose addLocalDirectory /home/jyb5858/.npm/startbootstrap-sb-admin/4.0.0/package.tgz not in flight; packing
+26 info lifecycle startbootstrap-sb-admin@4.0.0~prepublish: startbootstrap-sb-admin@4.0.0
+27 silly lifecycle startbootstrap-sb-admin@4.0.0~prepublish: no script for prepublish, continuing
+28 verbose tar pack [ '/home/jyb5858/.npm/startbootstrap-sb-admin/4.0.0/package.tgz',
+28 verbose tar pack   '/home/jyb5858/bc2018project/public/adminTemplate' ]
+29 verbose tarball /home/jyb5858/.npm/startbootstrap-sb-admin/4.0.0/package.tgz
+30 verbose folder /home/jyb5858/bc2018project/public/adminTemplate
+31 verbose addLocalTarball adding from inside cache /home/jyb5858/.npm/startbootstrap-sb-admin/4.0.0/package.tgz
+32 silly cache afterAdd startbootstrap-sb-admin@4.0.0
+33 verbose afterAdd /home/jyb5858/.npm/startbootstrap-sb-admin/4.0.0/package/package.json not in flight; writing
+34 verbose afterAdd /home/jyb5858/.npm/startbootstrap-sb-admin/4.0.0/package/package.json written
+35 silly fetchNamedPackageData bootstrap
+36 silly mapToRegistry name bootstrap
+37 silly mapToRegistry using default registry
+38 silly mapToRegistry registry https://registry.npmjs.org/
+39 silly mapToRegistry uri https://registry.npmjs.org/bootstrap
+40 silly fetchNamedPackageData chart.js
+41 silly mapToRegistry name chart.js
+42 silly mapToRegistry using default registry
+43 silly mapToRegistry registry https://registry.npmjs.org/
+44 silly mapToRegistry uri https://registry.npmjs.org/chart.js
+45 silly fetchNamedPackageData datatables.net-bs4
+46 silly mapToRegistry name datatables.net-bs4
+47 silly mapToRegistry using default registry
+48 silly mapToRegistry registry https://registry.npmjs.org/
+49 silly mapToRegistry uri https://registry.npmjs.org/datatables.net-bs4
+50 silly fetchNamedPackageData font-awesome
+51 silly mapToRegistry name font-awesome
+52 silly mapToRegistry using default registry
+53 silly mapToRegistry registry https://registry.npmjs.org/
+54 silly mapToRegistry uri https://registry.npmjs.org/font-awesome
+55 silly fetchNamedPackageData jquery
+56 silly mapToRegistry name jquery
+57 silly mapToRegistry using default registry
+58 silly mapToRegistry registry https://registry.npmjs.org/
+59 silly mapToRegistry uri https://registry.npmjs.org/jquery
+60 silly fetchNamedPackageData jquery.easing
+61 silly mapToRegistry name jquery.easing
+62 silly mapToRegistry using default registry
+63 silly mapToRegistry registry https://registry.npmjs.org/
+64 silly mapToRegistry uri https://registry.npmjs.org/jquery.easing
+65 verbose request uri https://registry.npmjs.org/chart.js
+66 verbose request no auth needed
+67 info attempt registry request try #1 at 1:49:00 PM
+68 verbose request id fa0932223a95acd8
+69 http request GET https://registry.npmjs.org/chart.js
+70 verbose request uri https://registry.npmjs.org/datatables.net-bs4
+71 verbose request no auth needed
+72 info attempt registry request try #1 at 1:49:00 PM
+73 http request GET https://registry.npmjs.org/datatables.net-bs4
+74 verbose request uri https://registry.npmjs.org/font-awesome
+75 verbose request no auth needed
+76 info attempt registry request try #1 at 1:49:00 PM
+77 http request GET https://registry.npmjs.org/font-awesome
+78 verbose request uri https://registry.npmjs.org/jquery
+79 verbose request no auth needed
+80 info attempt registry request try #1 at 1:49:00 PM
+81 http request GET https://registry.npmjs.org/jquery
+82 verbose request uri https://registry.npmjs.org/jquery.easing
+83 verbose request no auth needed
+84 info attempt registry request try #1 at 1:49:00 PM
+85 http request GET https://registry.npmjs.org/jquery.easing
+86 verbose request uri https://registry.npmjs.org/bootstrap
+87 verbose request no auth needed
+88 info attempt registry request try #1 at 1:49:00 PM
+89 verbose etag "5accdf04-17616"
+90 verbose lastModified Tue, 10 Apr 2018 15:57:56 GMT
+91 http request GET https://registry.npmjs.org/bootstrap
+92 http 200 https://registry.npmjs.org/chart.js
+93 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+93 verbose headers   server: 'UploadServer',
+93 verbose headers   'cache-control': 'max-age=300',
+93 verbose headers   'last-modified': 'Wed, 21 Mar 2018 17:06:36 GMT',
+93 verbose headers   etag: '"5ab2911c-df53"',
+93 verbose headers   'x-npm-region': 'Asia',
+93 verbose headers   'content-encoding': 'gzip',
+93 verbose headers   'content-length': '7055',
+93 verbose headers   'accept-ranges': 'bytes',
+93 verbose headers   date: 'Sat, 05 May 2018 04:49:01 GMT',
+93 verbose headers   via: '1.1 varnish',
+93 verbose headers   age: '10237',
+93 verbose headers   connection: 'keep-alive',
+93 verbose headers   'x-served-by': 'cache-hnd18721-HND',
+93 verbose headers   'x-cache': 'HIT',
+93 verbose headers   'x-cache-hits': '1',
+93 verbose headers   'x-timer': 'S1525495741.070827,VS0,VE0',
+93 verbose headers   vary: 'Accept-Encoding, Accept' }
+94 silly get cb [ 200,
+94 silly get   { 'content-type': 'application/json; charset=UTF-8',
+94 silly get     server: 'UploadServer',
+94 silly get     'cache-control': 'max-age=300',
+94 silly get     'last-modified': 'Wed, 21 Mar 2018 17:06:36 GMT',
+94 silly get     etag: '"5ab2911c-df53"',
+94 silly get     'x-npm-region': 'Asia',
+94 silly get     'content-encoding': 'gzip',
+94 silly get     'content-length': '7055',
+94 silly get     'accept-ranges': 'bytes',
+94 silly get     date: 'Sat, 05 May 2018 04:49:01 GMT',
+94 silly get     via: '1.1 varnish',
+94 silly get     age: '10237',
+94 silly get     connection: 'keep-alive',
+94 silly get     'x-served-by': 'cache-hnd18721-HND',
+94 silly get     'x-cache': 'HIT',
+94 silly get     'x-cache-hits': '1',
+94 silly get     'x-timer': 'S1525495741.070827,VS0,VE0',
+94 silly get     vary: 'Accept-Encoding, Accept' } ]
+95 verbose get saving chart.js to /home/jyb5858/.npm/registry.npmjs.org/chart.js/.cache.json
+96 silly resolveWithNewModule chart.js@2.7.1 checking installable status
+97 silly cache add args [ 'chart.js@2.7.1', null ]
+98 verbose cache add spec chart.js@2.7.1
+99 silly cache add parsed spec Result {
+99 silly cache add   raw: 'chart.js@2.7.1',
+99 silly cache add   scope: null,
+99 silly cache add   name: 'chart.js',
+99 silly cache add   rawSpec: '2.7.1',
+99 silly cache add   spec: '2.7.1',
+99 silly cache add   type: 'version' }
+100 silly addNamed chart.js@2.7.1
+101 verbose addNamed "2.7.1" is a plain semver version for chart.js
+102 silly mapToRegistry name chart.js
+103 silly mapToRegistry using default registry
+104 silly mapToRegistry registry https://registry.npmjs.org/
+105 silly mapToRegistry uri https://registry.npmjs.org/chart.js
+106 verbose addNameVersion registry:https://registry.npmjs.org/chart.js not in flight; fetching
+107 verbose get https://registry.npmjs.org/chart.js not expired, no request
+108 silly mapToRegistry name chart.js
+109 silly mapToRegistry using default registry
+110 silly mapToRegistry registry https://registry.npmjs.org/
+111 silly mapToRegistry uri https://registry.npmjs.org/chart.js
+112 verbose addRemoteTarball https://registry.npmjs.org/chart.js/-/chart.js-2.7.1.tgz not in flight; adding
+113 verbose addRemoteTarball [ 'https://registry.npmjs.org/chart.js/-/chart.js-2.7.1.tgz',
+113 verbose addRemoteTarball   'ae90b4aa4ff1f02decd6b1a2a8dabfd73c9f9886' ]
+114 info retry fetch attempt 1 at 1:49:01 PM
+115 info attempt registry request try #1 at 1:49:01 PM
+116 http fetch GET https://registry.npmjs.org/chart.js/-/chart.js-2.7.1.tgz
+117 http 200 https://registry.npmjs.org/jquery.easing
+118 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+118 verbose headers   server: 'UploadServer',
+118 verbose headers   'cache-control': 'max-age=300',
+118 verbose headers   'last-modified': 'Wed, 21 Feb 2018 19:49:44 GMT',
+118 verbose headers   etag: '"5a8dcd58-204f"',
+118 verbose headers   'x-npm-region': 'Asia',
+118 verbose headers   'content-encoding': 'gzip',
+118 verbose headers   'content-length': '1904',
+118 verbose headers   'accept-ranges': 'bytes',
+118 verbose headers   date: 'Sat, 05 May 2018 04:49:01 GMT',
+118 verbose headers   via: '1.1 varnish',
+118 verbose headers   age: '4498',
+118 verbose headers   connection: 'keep-alive',
+118 verbose headers   'x-served-by': 'cache-hnd18722-HND',
+118 verbose headers   'x-cache': 'HIT',
+118 verbose headers   'x-cache-hits': '1',
+118 verbose headers   'x-timer': 'S1525495741.154471,VS0,VE1',
+118 verbose headers   vary: 'Accept-Encoding, Accept' }
+119 silly get cb [ 200,
+119 silly get   { 'content-type': 'application/json; charset=UTF-8',
+119 silly get     server: 'UploadServer',
+119 silly get     'cache-control': 'max-age=300',
+119 silly get     'last-modified': 'Wed, 21 Feb 2018 19:49:44 GMT',
+119 silly get     etag: '"5a8dcd58-204f"',
+119 silly get     'x-npm-region': 'Asia',
+119 silly get     'content-encoding': 'gzip',
+119 silly get     'content-length': '1904',
+119 silly get     'accept-ranges': 'bytes',
+119 silly get     date: 'Sat, 05 May 2018 04:49:01 GMT',
+119 silly get     via: '1.1 varnish',
+119 silly get     age: '4498',
+119 silly get     connection: 'keep-alive',
+119 silly get     'x-served-by': 'cache-hnd18722-HND',
+119 silly get     'x-cache': 'HIT',
+119 silly get     'x-cache-hits': '1',
+119 silly get     'x-timer': 'S1525495741.154471,VS0,VE1',
+119 silly get     vary: 'Accept-Encoding, Accept' } ]
+120 verbose get saving jquery.easing to /home/jyb5858/.npm/registry.npmjs.org/jquery.easing/.cache.json
+121 silly resolveWithNewModule jquery.easing@1.4.1 checking installable status
+122 silly cache add args [ 'jquery.easing@^1.4.1', null ]
+123 verbose cache add spec jquery.easing@^1.4.1
+124 silly cache add parsed spec Result {
+124 silly cache add   raw: 'jquery.easing@^1.4.1',
+124 silly cache add   scope: null,
+124 silly cache add   name: 'jquery.easing',
+124 silly cache add   rawSpec: '^1.4.1',
+124 silly cache add   spec: '>=1.4.1 <2.0.0',
+124 silly cache add   type: 'range' }
+125 silly addNamed jquery.easing@>=1.4.1 <2.0.0
+126 verbose addNamed ">=1.4.1 <2.0.0" is a valid semver range for jquery.easing
+127 silly addNameRange { name: 'jquery.easing',
+127 silly addNameRange   range: '>=1.4.1 <2.0.0',
+127 silly addNameRange   hasData: false }
+128 silly mapToRegistry name jquery.easing
+129 silly mapToRegistry using default registry
+130 silly mapToRegistry registry https://registry.npmjs.org/
+131 silly mapToRegistry uri https://registry.npmjs.org/jquery.easing
+132 verbose addNameRange registry:https://registry.npmjs.org/jquery.easing not in flight; fetching
+133 verbose get https://registry.npmjs.org/jquery.easing not expired, no request
+134 silly addNameRange number 2 { name: 'jquery.easing', range: '>=1.4.1 <2.0.0', hasData: true }
+135 silly addNameRange versions [ 'jquery.easing',
+135 silly addNameRange   [ '1.3.0', '1.3.1', '1.3.2', '1.4.0', '1.4.1' ] ]
+136 silly addNamed jquery.easing@1.4.1
+137 verbose addNamed "1.4.1" is a plain semver version for jquery.easing
+138 silly mapToRegistry name jquery.easing
+139 silly mapToRegistry using default registry
+140 silly mapToRegistry registry https://registry.npmjs.org/
+141 silly mapToRegistry uri https://registry.npmjs.org/jquery.easing
+142 verbose addRemoteTarball https://registry.npmjs.org/jquery.easing/-/jquery.easing-1.4.1.tgz not in flight; adding
+143 verbose addRemoteTarball [ 'https://registry.npmjs.org/jquery.easing/-/jquery.easing-1.4.1.tgz',
+143 verbose addRemoteTarball   '47982c5836bd758fd48494923c4a101ef6e93e3b' ]
+144 info retry fetch attempt 1 at 1:49:01 PM
+145 info attempt registry request try #1 at 1:49:01 PM
+146 http fetch GET https://registry.npmjs.org/jquery.easing/-/jquery.easing-1.4.1.tgz
+147 http 200 https://registry.npmjs.org/datatables.net-bs4
+148 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+148 verbose headers   server: 'UploadServer',
+148 verbose headers   'cache-control': 'max-age=300',
+148 verbose headers   'last-modified': 'Fri, 1 Sep 2017 10:04:04 GMT',
+148 verbose headers   etag: '"59a93094-30fa"',
+148 verbose headers   'x-npm-region': 'Asia',
+148 verbose headers   'content-encoding': 'gzip',
+148 verbose headers   'content-length': '2476',
+148 verbose headers   'accept-ranges': 'bytes',
+148 verbose headers   date: 'Sat, 05 May 2018 04:49:01 GMT',
+148 verbose headers   via: '1.1 varnish',
+148 verbose headers   age: '0',
+148 verbose headers   connection: 'keep-alive',
+148 verbose headers   'x-served-by': 'cache-hnd18749-HND',
+148 verbose headers   'x-cache': 'MISS',
+148 verbose headers   'x-cache-hits': '0',
+148 verbose headers   'x-timer': 'S1525495741.058264,VS0,VE243',
+148 verbose headers   vary: 'Accept-Encoding, Accept' }
+149 silly get cb [ 200,
+149 silly get   { 'content-type': 'application/json; charset=UTF-8',
+149 silly get     server: 'UploadServer',
+149 silly get     'cache-control': 'max-age=300',
+149 silly get     'last-modified': 'Fri, 1 Sep 2017 10:04:04 GMT',
+149 silly get     etag: '"59a93094-30fa"',
+149 silly get     'x-npm-region': 'Asia',
+149 silly get     'content-encoding': 'gzip',
+149 silly get     'content-length': '2476',
+149 silly get     'accept-ranges': 'bytes',
+149 silly get     date: 'Sat, 05 May 2018 04:49:01 GMT',
+149 silly get     via: '1.1 varnish',
+149 silly get     age: '0',
+149 silly get     connection: 'keep-alive',
+149 silly get     'x-served-by': 'cache-hnd18749-HND',
+149 silly get     'x-cache': 'MISS',
+149 silly get     'x-cache-hits': '0',
+149 silly get     'x-timer': 'S1525495741.058264,VS0,VE243',
+149 silly get     vary: 'Accept-Encoding, Accept' } ]
+150 verbose get saving datatables.net-bs4 to /home/jyb5858/.npm/registry.npmjs.org/datatables.net-bs4/.cache.json
+151 silly resolveWithNewModule datatables.net-bs4@1.10.16 checking installable status
+152 silly cache add args [ 'datatables.net-bs4@1.10.16', null ]
+153 verbose cache add spec datatables.net-bs4@1.10.16
+154 silly cache add parsed spec Result {
+154 silly cache add   raw: 'datatables.net-bs4@1.10.16',
+154 silly cache add   scope: null,
+154 silly cache add   name: 'datatables.net-bs4',
+154 silly cache add   rawSpec: '1.10.16',
+154 silly cache add   spec: '1.10.16',
+154 silly cache add   type: 'version' }
+155 silly addNamed datatables.net-bs4@1.10.16
+156 verbose addNamed "1.10.16" is a plain semver version for datatables.net-bs4
+157 silly mapToRegistry name datatables.net-bs4
+158 silly mapToRegistry using default registry
+159 silly mapToRegistry registry https://registry.npmjs.org/
+160 silly mapToRegistry uri https://registry.npmjs.org/datatables.net-bs4
+161 verbose addNameVersion registry:https://registry.npmjs.org/datatables.net-bs4 not in flight; fetching
+162 verbose get https://registry.npmjs.org/datatables.net-bs4 not expired, no request
+163 silly mapToRegistry name datatables.net-bs4
+164 silly mapToRegistry using default registry
+165 silly mapToRegistry registry https://registry.npmjs.org/
+166 silly mapToRegistry uri https://registry.npmjs.org/datatables.net-bs4
+167 verbose addRemoteTarball https://registry.npmjs.org/datatables.net-bs4/-/datatables.net-bs4-1.10.16.tgz not in flight; adding
+168 verbose addRemoteTarball [ 'https://registry.npmjs.org/datatables.net-bs4/-/datatables.net-bs4-1.10.16.tgz',
+168 verbose addRemoteTarball   '9eee67cfa8565bd3807a603a188305f7d0e20e32' ]
+169 info retry fetch attempt 1 at 1:49:01 PM
+170 info attempt registry request try #1 at 1:49:01 PM
+171 http fetch GET https://registry.npmjs.org/datatables.net-bs4/-/datatables.net-bs4-1.10.16.tgz
+172 http fetch 200 https://registry.npmjs.org/chart.js/-/chart.js-2.7.1.tgz
+173 http fetch 200 https://registry.npmjs.org/jquery.easing/-/jquery.easing-1.4.1.tgz
+174 http fetch 200 https://registry.npmjs.org/datatables.net-bs4/-/datatables.net-bs4-1.10.16.tgz
+175 silly fetchAndShaCheck shasum 9eee67cfa8565bd3807a603a188305f7d0e20e32
+176 verbose addTmpTarball /tmp/npm-9571-bf08ccfd/registry.npmjs.org/datatables.net-bs4/-/datatables.net-bs4-1.10.16.tgz not in flight; adding
+177 verbose addTmpTarball already have metadata; skipping unpack for datatables.net-bs4@1.10.16
+178 silly cache afterAdd datatables.net-bs4@1.10.16
+179 verbose afterAdd /home/jyb5858/.npm/datatables.net-bs4/1.10.16/package/package.json not in flight; writing
+180 verbose afterAdd /home/jyb5858/.npm/datatables.net-bs4/1.10.16/package/package.json written
+181 silly fetchAndShaCheck shasum 47982c5836bd758fd48494923c4a101ef6e93e3b
+182 verbose addTmpTarball /tmp/npm-9571-bf08ccfd/registry.npmjs.org/jquery.easing/-/jquery.easing-1.4.1.tgz not in flight; adding
+183 verbose addTmpTarball already have metadata; skipping unpack for jquery.easing@1.4.1
+184 silly cache afterAdd jquery.easing@1.4.1
+185 verbose afterAdd /home/jyb5858/.npm/jquery.easing/1.4.1/package/package.json not in flight; writing
+186 verbose afterAdd /home/jyb5858/.npm/jquery.easing/1.4.1/package/package.json written
+187 http 200 https://registry.npmjs.org/font-awesome
+188 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+188 verbose headers   server: 'UploadServer',
+188 verbose headers   'cache-control': 'max-age=300',
+188 verbose headers   'last-modified': 'Tue, 20 Mar 2018 19:32:27 GMT',
+188 verbose headers   etag: '"5ab161cb-5a77"',
+188 verbose headers   'x-npm-region': 'Asia',
+188 verbose headers   'content-encoding': 'gzip',
+188 verbose headers   'content-length': '5036',
+188 verbose headers   'accept-ranges': 'bytes',
+188 verbose headers   date: 'Sat, 05 May 2018 04:49:01 GMT',
+188 verbose headers   via: '1.1 varnish',
+188 verbose headers   age: '14178',
+188 verbose headers   connection: 'keep-alive',
+188 verbose headers   'x-served-by': 'cache-itm18832-ITM',
+188 verbose headers   'x-cache': 'HIT',
+188 verbose headers   'x-cache-hits': '2',
+188 verbose headers   'x-timer': 'S1525495742.975953,VS0,VE0',
+188 verbose headers   vary: 'Accept-Encoding, Accept' }
+189 silly get cb [ 200,
+189 silly get   { 'content-type': 'application/json; charset=UTF-8',
+189 silly get     server: 'UploadServer',
+189 silly get     'cache-control': 'max-age=300',
+189 silly get     'last-modified': 'Tue, 20 Mar 2018 19:32:27 GMT',
+189 silly get     etag: '"5ab161cb-5a77"',
+189 silly get     'x-npm-region': 'Asia',
+189 silly get     'content-encoding': 'gzip',
+189 silly get     'content-length': '5036',
+189 silly get     'accept-ranges': 'bytes',
+189 silly get     date: 'Sat, 05 May 2018 04:49:01 GMT',
+189 silly get     via: '1.1 varnish',
+189 silly get     age: '14178',
+189 silly get     connection: 'keep-alive',
+189 silly get     'x-served-by': 'cache-itm18832-ITM',
+189 silly get     'x-cache': 'HIT',
+189 silly get     'x-cache-hits': '2',
+189 silly get     'x-timer': 'S1525495742.975953,VS0,VE0',
+189 silly get     vary: 'Accept-Encoding, Accept' } ]
+190 verbose get saving font-awesome to /home/jyb5858/.npm/registry.npmjs.org/font-awesome/.cache.json
+191 silly resolveWithNewModule font-awesome@4.7.0 checking installable status
+192 silly cache add args [ 'font-awesome@4.7.0', null ]
+193 verbose cache add spec font-awesome@4.7.0
+194 silly cache add parsed spec Result {
+194 silly cache add   raw: 'font-awesome@4.7.0',
+194 silly cache add   scope: null,
+194 silly cache add   name: 'font-awesome',
+194 silly cache add   rawSpec: '4.7.0',
+194 silly cache add   spec: '4.7.0',
+194 silly cache add   type: 'version' }
+195 silly addNamed font-awesome@4.7.0
+196 verbose addNamed "4.7.0" is a plain semver version for font-awesome
+197 silly mapToRegistry name font-awesome
+198 silly mapToRegistry using default registry
+199 silly mapToRegistry registry https://registry.npmjs.org/
+200 silly mapToRegistry uri https://registry.npmjs.org/font-awesome
+201 verbose addNameVersion registry:https://registry.npmjs.org/font-awesome not in flight; fetching
+202 verbose get https://registry.npmjs.org/font-awesome not expired, no request
+203 silly mapToRegistry name font-awesome
+204 silly mapToRegistry using default registry
+205 silly mapToRegistry registry https://registry.npmjs.org/
+206 silly mapToRegistry uri https://registry.npmjs.org/font-awesome
+207 verbose addRemoteTarball https://registry.npmjs.org/font-awesome/-/font-awesome-4.7.0.tgz not in flight; adding
+208 verbose addRemoteTarball [ 'https://registry.npmjs.org/font-awesome/-/font-awesome-4.7.0.tgz',
+208 verbose addRemoteTarball   '8fa8cf0411a1a31afd07b06d2902bb9fc815a133' ]
+209 info retry fetch attempt 1 at 1:49:02 PM
+210 info attempt registry request try #1 at 1:49:02 PM
+211 http fetch GET https://registry.npmjs.org/font-awesome/-/font-awesome-4.7.0.tgz
+212 http 200 https://registry.npmjs.org/jquery
+213 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+213 verbose headers   server: 'UploadServer',
+213 verbose headers   'cache-control': 'max-age=300',
+213 verbose headers   'last-modified': 'Sat, 17 Mar 2018 4:05:56 GMT',
+213 verbose headers   etag: '"5aac9424-17db2"',
+213 verbose headers   'x-npm-region': 'Asia',
+213 verbose headers   'content-encoding': 'gzip',
+213 verbose headers   'content-length': '12029',
+213 verbose headers   'accept-ranges': 'bytes',
+213 verbose headers   date: 'Sat, 05 May 2018 04:49:02 GMT',
+213 verbose headers   via: '1.1 varnish',
+213 verbose headers   age: '10191',
+213 verbose headers   connection: 'keep-alive',
+213 verbose headers   'x-served-by': 'cache-itm18829-ITM',
+213 verbose headers   'x-cache': 'HIT',
+213 verbose headers   'x-cache-hits': '5',
+213 verbose headers   'x-timer': 'S1525495742.040426,VS0,VE0',
+213 verbose headers   vary: 'Accept-Encoding, Accept' }
+214 silly get cb [ 200,
+214 silly get   { 'content-type': 'application/json; charset=UTF-8',
+214 silly get     server: 'UploadServer',
+214 silly get     'cache-control': 'max-age=300',
+214 silly get     'last-modified': 'Sat, 17 Mar 2018 4:05:56 GMT',
+214 silly get     etag: '"5aac9424-17db2"',
+214 silly get     'x-npm-region': 'Asia',
+214 silly get     'content-encoding': 'gzip',
+214 silly get     'content-length': '12029',
+214 silly get     'accept-ranges': 'bytes',
+214 silly get     date: 'Sat, 05 May 2018 04:49:02 GMT',
+214 silly get     via: '1.1 varnish',
+214 silly get     age: '10191',
+214 silly get     connection: 'keep-alive',
+214 silly get     'x-served-by': 'cache-itm18829-ITM',
+214 silly get     'x-cache': 'HIT',
+214 silly get     'x-cache-hits': '5',
+214 silly get     'x-timer': 'S1525495742.040426,VS0,VE0',
+214 silly get     vary: 'Accept-Encoding, Accept' } ]
+215 verbose get saving jquery to /home/jyb5858/.npm/registry.npmjs.org/jquery/.cache.json
+216 silly resolveWithNewModule jquery@3.3.1 checking installable status
+217 silly cache add args [ 'jquery@3.3.1', null ]
+218 verbose cache add spec jquery@3.3.1
+219 silly cache add parsed spec Result {
+219 silly cache add   raw: 'jquery@3.3.1',
+219 silly cache add   scope: null,
+219 silly cache add   name: 'jquery',
+219 silly cache add   rawSpec: '3.3.1',
+219 silly cache add   spec: '3.3.1',
+219 silly cache add   type: 'version' }
+220 silly addNamed jquery@3.3.1
+221 verbose addNamed "3.3.1" is a plain semver version for jquery
+222 silly mapToRegistry name jquery
+223 silly mapToRegistry using default registry
+224 silly mapToRegistry registry https://registry.npmjs.org/
+225 silly mapToRegistry uri https://registry.npmjs.org/jquery
+226 verbose addNameVersion registry:https://registry.npmjs.org/jquery not in flight; fetching
+227 verbose get https://registry.npmjs.org/jquery not expired, no request
+228 silly mapToRegistry name jquery
+229 silly mapToRegistry using default registry
+230 silly mapToRegistry registry https://registry.npmjs.org/
+231 silly mapToRegistry uri https://registry.npmjs.org/jquery
+232 verbose addRemoteTarball https://registry.npmjs.org/jquery/-/jquery-3.3.1.tgz not in flight; adding
+233 verbose addRemoteTarball [ 'https://registry.npmjs.org/jquery/-/jquery-3.3.1.tgz',
+233 verbose addRemoteTarball   '958ce29e81c9790f31be7792df5d4d95fc57fbca' ]
+234 info retry fetch attempt 1 at 1:49:02 PM
+235 info attempt registry request try #1 at 1:49:02 PM
+236 http fetch GET https://registry.npmjs.org/jquery/-/jquery-3.3.1.tgz
+237 http 200 https://registry.npmjs.org/bootstrap
+238 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+238 verbose headers   server: 'UploadServer',
+238 verbose headers   'cache-control': 'max-age=300',
+238 verbose headers   'last-modified': 'Mon, 30 Apr 2018 16:07:24 GMT',
+238 verbose headers   etag: '"5ae73f3c-1c24a"',
+238 verbose headers   'x-npm-region': 'Asia',
+238 verbose headers   'content-encoding': 'gzip',
+238 verbose headers   'content-length': '16627',
+238 verbose headers   'accept-ranges': 'bytes',
+238 verbose headers   date: 'Sat, 05 May 2018 04:49:01 GMT',
+238 verbose headers   via: '1.1 varnish',
+238 verbose headers   age: '9877',
+238 verbose headers   connection: 'keep-alive',
+238 verbose headers   'x-served-by': 'cache-itm18826-ITM',
+238 verbose headers   'x-cache': 'HIT',
+238 verbose headers   'x-cache-hits': '1',
+238 verbose headers   'x-timer': 'S1525495742.994429,VS0,VE1',
+238 verbose headers   vary: 'Accept-Encoding, Accept' }
+239 silly get cb [ 200,
+239 silly get   { 'content-type': 'application/json; charset=UTF-8',
+239 silly get     server: 'UploadServer',
+239 silly get     'cache-control': 'max-age=300',
+239 silly get     'last-modified': 'Mon, 30 Apr 2018 16:07:24 GMT',
+239 silly get     etag: '"5ae73f3c-1c24a"',
+239 silly get     'x-npm-region': 'Asia',
+239 silly get     'content-encoding': 'gzip',
+239 silly get     'content-length': '16627',
+239 silly get     'accept-ranges': 'bytes',
+239 silly get     date: 'Sat, 05 May 2018 04:49:01 GMT',
+239 silly get     via: '1.1 varnish',
+239 silly get     age: '9877',
+239 silly get     connection: 'keep-alive',
+239 silly get     'x-served-by': 'cache-itm18826-ITM',
+239 silly get     'x-cache': 'HIT',
+239 silly get     'x-cache-hits': '1',
+239 silly get     'x-timer': 'S1525495742.994429,VS0,VE1',
+239 silly get     vary: 'Accept-Encoding, Accept' } ]
+240 verbose get saving bootstrap to /home/jyb5858/.npm/registry.npmjs.org/bootstrap/.cache.json
+241 silly resolveWithNewModule bootstrap@4.0.0 checking installable status
+242 silly cache add args [ 'bootstrap@4.0.0', null ]
+243 verbose cache add spec bootstrap@4.0.0
+244 silly cache add parsed spec Result {
+244 silly cache add   raw: 'bootstrap@4.0.0',
+244 silly cache add   scope: null,
+244 silly cache add   name: 'bootstrap',
+244 silly cache add   rawSpec: '4.0.0',
+244 silly cache add   spec: '4.0.0',
+244 silly cache add   type: 'version' }
+245 silly addNamed bootstrap@4.0.0
+246 verbose addNamed "4.0.0" is a plain semver version for bootstrap
+247 silly mapToRegistry name bootstrap
+248 silly mapToRegistry using default registry
+249 silly mapToRegistry registry https://registry.npmjs.org/
+250 silly mapToRegistry uri https://registry.npmjs.org/bootstrap
+251 verbose addNameVersion registry:https://registry.npmjs.org/bootstrap not in flight; fetching
+252 verbose get https://registry.npmjs.org/bootstrap not expired, no request
+253 silly mapToRegistry name bootstrap
+254 silly mapToRegistry using default registry
+255 silly mapToRegistry registry https://registry.npmjs.org/
+256 silly mapToRegistry uri https://registry.npmjs.org/bootstrap
+257 verbose addRemoteTarball https://registry.npmjs.org/bootstrap/-/bootstrap-4.0.0.tgz not in flight; adding
+258 verbose addRemoteTarball [ 'https://registry.npmjs.org/bootstrap/-/bootstrap-4.0.0.tgz',
+258 verbose addRemoteTarball   'ceb03842c145fcc1b9b4e15da2a05656ba68469a' ]
+259 info retry fetch attempt 1 at 1:49:02 PM
+260 info attempt registry request try #1 at 1:49:02 PM
+261 http fetch GET https://registry.npmjs.org/bootstrap/-/bootstrap-4.0.0.tgz
+262 http fetch 200 https://registry.npmjs.org/font-awesome/-/font-awesome-4.7.0.tgz
+263 http fetch 200 https://registry.npmjs.org/bootstrap/-/bootstrap-4.0.0.tgz
+264 silly fetchAndShaCheck shasum ae90b4aa4ff1f02decd6b1a2a8dabfd73c9f9886
+265 verbose addTmpTarball /tmp/npm-9571-bf08ccfd/registry.npmjs.org/chart.js/-/chart.js-2.7.1.tgz not in flight; adding
+266 verbose addTmpTarball already have metadata; skipping unpack for chart.js@2.7.1
+267 silly cache afterAdd chart.js@2.7.1
+268 verbose afterAdd /home/jyb5858/.npm/chart.js/2.7.1/package/package.json not in flight; writing
+269 verbose afterAdd /home/jyb5858/.npm/chart.js/2.7.1/package/package.json written
+270 http fetch 200 https://registry.npmjs.org/jquery/-/jquery-3.3.1.tgz
+271 silly fetchAndShaCheck shasum 8fa8cf0411a1a31afd07b06d2902bb9fc815a133
+272 verbose addTmpTarball /tmp/npm-9571-bf08ccfd/registry.npmjs.org/font-awesome/-/font-awesome-4.7.0.tgz not in flight; adding
+273 verbose addTmpTarball already have metadata; skipping unpack for font-awesome@4.7.0
+274 silly cache afterAdd font-awesome@4.7.0
+275 verbose afterAdd /home/jyb5858/.npm/font-awesome/4.7.0/package/package.json not in flight; writing
+276 verbose afterAdd /home/jyb5858/.npm/font-awesome/4.7.0/package/package.json written
+277 silly fetchAndShaCheck shasum ceb03842c145fcc1b9b4e15da2a05656ba68469a
+278 verbose addTmpTarball /tmp/npm-9571-bf08ccfd/registry.npmjs.org/bootstrap/-/bootstrap-4.0.0.tgz not in flight; adding
+279 verbose addTmpTarball already have metadata; skipping unpack for bootstrap@4.0.0
+280 silly cache afterAdd bootstrap@4.0.0
+281 verbose afterAdd /home/jyb5858/.npm/bootstrap/4.0.0/package/package.json not in flight; writing
+282 verbose afterAdd /home/jyb5858/.npm/bootstrap/4.0.0/package/package.json written
+283 silly fetchAndShaCheck shasum 958ce29e81c9790f31be7792df5d4d95fc57fbca
+284 verbose addTmpTarball /tmp/npm-9571-bf08ccfd/registry.npmjs.org/jquery/-/jquery-3.3.1.tgz not in flight; adding
+285 verbose addTmpTarball already have metadata; skipping unpack for jquery@3.3.1
+286 silly cache afterAdd jquery@3.3.1
+287 verbose afterAdd /home/jyb5858/.npm/jquery/3.3.1/package/package.json not in flight; writing
+288 verbose afterAdd /home/jyb5858/.npm/jquery/3.3.1/package/package.json written
+289 silly fetchNamedPackageData chartjs-color
+290 silly mapToRegistry name chartjs-color
+291 silly mapToRegistry using default registry
+292 silly mapToRegistry registry https://registry.npmjs.org/
+293 silly mapToRegistry uri https://registry.npmjs.org/chartjs-color
+294 silly fetchNamedPackageData moment
+295 silly mapToRegistry name moment
+296 silly mapToRegistry using default registry
+297 silly mapToRegistry registry https://registry.npmjs.org/
+298 silly mapToRegistry uri https://registry.npmjs.org/moment
+299 verbose request uri https://registry.npmjs.org/chartjs-color
+300 verbose request no auth needed
+301 info attempt registry request try #1 at 1:49:04 PM
+302 http request GET https://registry.npmjs.org/chartjs-color
+303 verbose request uri https://registry.npmjs.org/moment
+304 verbose request no auth needed
+305 info attempt registry request try #1 at 1:49:04 PM
+306 verbose etag "5ad2ebff-250ad"
+307 verbose lastModified Sun, 15 Apr 2018 6:06:55 GMT
+308 http request GET https://registry.npmjs.org/moment
+309 http 200 https://registry.npmjs.org/chartjs-color
+310 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+310 verbose headers   server: 'UploadServer',
+310 verbose headers   'cache-control': 'max-age=300',
+310 verbose headers   'last-modified': 'Sat, 9 Sep 2017 20:37:24 GMT',
+310 verbose headers   etag: '"59b45104-3c71"',
+310 verbose headers   'x-npm-region': 'Asia',
+310 verbose headers   'content-encoding': 'gzip',
+310 verbose headers   'content-length': '3413',
+310 verbose headers   'accept-ranges': 'bytes',
+310 verbose headers   date: 'Sat, 05 May 2018 04:49:04 GMT',
+310 verbose headers   via: '1.1 varnish',
+310 verbose headers   age: '10230',
+310 verbose headers   connection: 'keep-alive',
+310 verbose headers   'x-served-by': 'cache-hnd18740-HND',
+310 verbose headers   'x-cache': 'HIT',
+310 verbose headers   'x-cache-hits': '5',
+310 verbose headers   'x-timer': 'S1525495744.384680,VS0,VE0',
+310 verbose headers   vary: 'Accept-Encoding, Accept' }
+311 silly get cb [ 200,
+311 silly get   { 'content-type': 'application/json; charset=UTF-8',
+311 silly get     server: 'UploadServer',
+311 silly get     'cache-control': 'max-age=300',
+311 silly get     'last-modified': 'Sat, 9 Sep 2017 20:37:24 GMT',
+311 silly get     etag: '"59b45104-3c71"',
+311 silly get     'x-npm-region': 'Asia',
+311 silly get     'content-encoding': 'gzip',
+311 silly get     'content-length': '3413',
+311 silly get     'accept-ranges': 'bytes',
+311 silly get     date: 'Sat, 05 May 2018 04:49:04 GMT',
+311 silly get     via: '1.1 varnish',
+311 silly get     age: '10230',
+311 silly get     connection: 'keep-alive',
+311 silly get     'x-served-by': 'cache-hnd18740-HND',
+311 silly get     'x-cache': 'HIT',
+311 silly get     'x-cache-hits': '5',
+311 silly get     'x-timer': 'S1525495744.384680,VS0,VE0',
+311 silly get     vary: 'Accept-Encoding, Accept' } ]
+312 verbose get saving chartjs-color to /home/jyb5858/.npm/registry.npmjs.org/chartjs-color/.cache.json
+313 silly resolveWithNewModule chartjs-color@2.2.0 checking installable status
+314 silly cache add args [ 'chartjs-color@~2.2.0', null ]
+315 verbose cache add spec chartjs-color@~2.2.0
+316 silly cache add parsed spec Result {
+316 silly cache add   raw: 'chartjs-color@~2.2.0',
+316 silly cache add   scope: null,
+316 silly cache add   name: 'chartjs-color',
+316 silly cache add   rawSpec: '~2.2.0',
+316 silly cache add   spec: '>=2.2.0 <2.3.0',
+316 silly cache add   type: 'range' }
+317 silly addNamed chartjs-color@>=2.2.0 <2.3.0
+318 verbose addNamed ">=2.2.0 <2.3.0" is a valid semver range for chartjs-color
+319 silly addNameRange { name: 'chartjs-color',
+319 silly addNameRange   range: '>=2.2.0 <2.3.0',
+319 silly addNameRange   hasData: false }
+320 silly mapToRegistry name chartjs-color
+321 silly mapToRegistry using default registry
+322 silly mapToRegistry registry https://registry.npmjs.org/
+323 silly mapToRegistry uri https://registry.npmjs.org/chartjs-color
+324 verbose addNameRange registry:https://registry.npmjs.org/chartjs-color not in flight; fetching
+325 verbose get https://registry.npmjs.org/chartjs-color not expired, no request
+326 silly addNameRange number 2 { name: 'chartjs-color', range: '>=2.2.0 <2.3.0', hasData: true }
+327 silly addNameRange versions [ 'chartjs-color',
+327 silly addNameRange   [ '0.8.2', '1.0.2', '1.0.21', '1.0.22', '2.0.0', '2.1.0', '2.2.0' ] ]
+328 silly addNamed chartjs-color@2.2.0
+329 verbose addNamed "2.2.0" is a plain semver version for chartjs-color
+330 silly mapToRegistry name chartjs-color
+331 silly mapToRegistry using default registry
+332 silly mapToRegistry registry https://registry.npmjs.org/
+333 silly mapToRegistry uri https://registry.npmjs.org/chartjs-color
+334 verbose addRemoteTarball https://registry.npmjs.org/chartjs-color/-/chartjs-color-2.2.0.tgz not in flight; adding
+335 verbose addRemoteTarball [ 'https://registry.npmjs.org/chartjs-color/-/chartjs-color-2.2.0.tgz',
+335 verbose addRemoteTarball   '84a2fb755787ed85c39dd6dd8c7b1d88429baeae' ]
+336 info retry fetch attempt 1 at 1:49:04 PM
+337 info attempt registry request try #1 at 1:49:04 PM
+338 http fetch GET https://registry.npmjs.org/chartjs-color/-/chartjs-color-2.2.0.tgz
+339 http 200 https://registry.npmjs.org/moment
+340 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+340 verbose headers   server: 'UploadServer',
+340 verbose headers   'cache-control': 'max-age=300',
+340 verbose headers   'last-modified': 'Sat, 21 Apr 2018 22:45:07 GMT',
+340 verbose headers   etag: '"5adbbef3-250ad"',
+340 verbose headers   'x-npm-region': 'Asia',
+340 verbose headers   'content-encoding': 'gzip',
+340 verbose headers   'content-length': '17936',
+340 verbose headers   'accept-ranges': 'bytes',
+340 verbose headers   date: 'Sat, 05 May 2018 04:49:04 GMT',
+340 verbose headers   via: '1.1 varnish',
+340 verbose headers   age: '10537',
+340 verbose headers   connection: 'keep-alive',
+340 verbose headers   'x-served-by': 'cache-hnd18738-HND',
+340 verbose headers   'x-cache': 'HIT',
+340 verbose headers   'x-cache-hits': '10',
+340 verbose headers   'x-timer': 'S1525495744.403057,VS0,VE0',
+340 verbose headers   vary: 'Accept-Encoding, Accept' }
+341 silly get cb [ 200,
+341 silly get   { 'content-type': 'application/json; charset=UTF-8',
+341 silly get     server: 'UploadServer',
+341 silly get     'cache-control': 'max-age=300',
+341 silly get     'last-modified': 'Sat, 21 Apr 2018 22:45:07 GMT',
+341 silly get     etag: '"5adbbef3-250ad"',
+341 silly get     'x-npm-region': 'Asia',
+341 silly get     'content-encoding': 'gzip',
+341 silly get     'content-length': '17936',
+341 silly get     'accept-ranges': 'bytes',
+341 silly get     date: 'Sat, 05 May 2018 04:49:04 GMT',
+341 silly get     via: '1.1 varnish',
+341 silly get     age: '10537',
+341 silly get     connection: 'keep-alive',
+341 silly get     'x-served-by': 'cache-hnd18738-HND',
+341 silly get     'x-cache': 'HIT',
+341 silly get     'x-cache-hits': '10',
+341 silly get     'x-timer': 'S1525495744.403057,VS0,VE0',
+341 silly get     vary: 'Accept-Encoding, Accept' } ]
+342 verbose get saving moment to /home/jyb5858/.npm/registry.npmjs.org/moment/.cache.json
+343 silly resolveWithNewModule moment@2.18.1 checking installable status
+344 silly cache add args [ 'moment@~2.18.0', null ]
+345 verbose cache add spec moment@~2.18.0
+346 silly cache add parsed spec Result {
+346 silly cache add   raw: 'moment@~2.18.0',
+346 silly cache add   scope: null,
+346 silly cache add   name: 'moment',
+346 silly cache add   rawSpec: '~2.18.0',
+346 silly cache add   spec: '>=2.18.0 <2.19.0',
+346 silly cache add   type: 'range' }
+347 silly addNamed moment@>=2.18.0 <2.19.0
+348 verbose addNamed ">=2.18.0 <2.19.0" is a valid semver range for moment
+349 silly addNameRange { name: 'moment', range: '>=2.18.0 <2.19.0', hasData: false }
+350 silly mapToRegistry name moment
+351 silly mapToRegistry using default registry
+352 silly mapToRegistry registry https://registry.npmjs.org/
+353 silly mapToRegistry uri https://registry.npmjs.org/moment
+354 verbose addNameRange registry:https://registry.npmjs.org/moment not in flight; fetching
+355 verbose get https://registry.npmjs.org/moment not expired, no request
+356 silly addNameRange number 2 { name: 'moment', range: '>=2.18.0 <2.19.0', hasData: true }
+357 silly addNameRange versions [ 'moment',
+357 silly addNameRange   [ '1.0.0',
+357 silly addNameRange     '1.0.1',
+357 silly addNameRange     '1.1.0',
+357 silly addNameRange     '1.1.1',
+357 silly addNameRange     '1.2.0',
+357 silly addNameRange     '1.3.0',
+357 silly addNameRange     '1.4.0',
+357 silly addNameRange     '1.5.0',
+357 silly addNameRange     '1.5.1',
+357 silly addNameRange     '1.6.0',
+357 silly addNameRange     '1.6.1',
+357 silly addNameRange     '1.6.2',
+357 silly addNameRange     '1.7.0',
+357 silly addNameRange     '1.7.1',
+357 silly addNameRange     '1.7.2',
+357 silly addNameRange     '2.0.0',
+357 silly addNameRange     '2.1.0',
+357 silly addNameRange     '2.2.1',
+357 silly addNameRange     '2.3.0',
+357 silly addNameRange     '2.3.1',
+357 silly addNameRange     '2.4.0',
+357 silly addNameRange     '2.5.0',
+357 silly addNameRange     '2.5.1',
+357 silly addNameRange     '2.6.0',
+357 silly addNameRange     '2.7.0',
+357 silly addNameRange     '2.8.1',
+357 silly addNameRange     '2.8.2',
+357 silly addNameRange     '2.8.3',
+357 silly addNameRange     '2.8.4',
+357 silly addNameRange     '2.9.0',
+357 silly addNameRange     '2.10.2',
+357 silly addNameRange     '2.10.3',
+357 silly addNameRange     '2.10.5',
+357 silly addNameRange     '2.10.6',
+357 silly addNameRange     '2.11.0',
+357 silly addNameRange     '2.11.1',
+357 silly addNameRange     '2.11.2',
+357 silly addNameRange     '2.12.0',
+357 silly addNameRange     '2.13.0',
+357 silly addNameRange     '2.14.0',
+357 silly addNameRange     '2.14.1',
+357 silly addNameRange     '2.15.0',
+357 silly addNameRange     '2.15.1',
+357 silly addNameRange     '2.15.2',
+357 silly addNameRange     '2.16.0',
+357 silly addNameRange     '2.17.0',
+357 silly addNameRange     '2.17.1',
+357 silly addNameRange     '2.18.0',
+357 silly addNameRange     '2.18.1',
+357 silly addNameRange     '2.19.0',
+357 silly addNameRange     '2.19.1',
+357 silly addNameRange     '2.19.2',
+357 silly addNameRange     '2.19.3',
+357 silly addNameRange     '2.19.4',
+357 silly addNameRange     '2.20.0',
+357 silly addNameRange     '2.20.1',
+357 silly addNameRange     '2.21.0',
+357 silly addNameRange     '2.22.0',
+357 silly addNameRange     '2.22.1' ] ]
+358 silly addNamed moment@2.18.1
+359 verbose addNamed "2.18.1" is a plain semver version for moment
+360 silly mapToRegistry name moment
+361 silly mapToRegistry using default registry
+362 silly mapToRegistry registry https://registry.npmjs.org/
+363 silly mapToRegistry uri https://registry.npmjs.org/moment
+364 verbose addRemoteTarball https://registry.npmjs.org/moment/-/moment-2.18.1.tgz not in flight; adding
+365 verbose addRemoteTarball [ 'https://registry.npmjs.org/moment/-/moment-2.18.1.tgz',
+365 verbose addRemoteTarball   'c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f' ]
+366 info retry fetch attempt 1 at 1:49:04 PM
+367 info attempt registry request try #1 at 1:49:04 PM
+368 http fetch GET https://registry.npmjs.org/moment/-/moment-2.18.1.tgz
+369 http fetch 200 https://registry.npmjs.org/chartjs-color/-/chartjs-color-2.2.0.tgz
+370 silly fetchAndShaCheck shasum 84a2fb755787ed85c39dd6dd8c7b1d88429baeae
+371 verbose addTmpTarball /tmp/npm-9571-bf08ccfd/registry.npmjs.org/chartjs-color/-/chartjs-color-2.2.0.tgz not in flight; adding
+372 verbose addTmpTarball already have metadata; skipping unpack for chartjs-color@2.2.0
+373 silly cache afterAdd chartjs-color@2.2.0
+374 verbose afterAdd /home/jyb5858/.npm/chartjs-color/2.2.0/package/package.json not in flight; writing
+375 verbose afterAdd /home/jyb5858/.npm/chartjs-color/2.2.0/package/package.json written
+376 http fetch 200 https://registry.npmjs.org/moment/-/moment-2.18.1.tgz
+377 silly fetchAndShaCheck shasum c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f
+378 verbose addTmpTarball /tmp/npm-9571-bf08ccfd/registry.npmjs.org/moment/-/moment-2.18.1.tgz not in flight; adding
+379 verbose addTmpTarball already have metadata; skipping unpack for moment@2.18.1
+380 silly cache afterAdd moment@2.18.1
+381 verbose afterAdd /home/jyb5858/.npm/moment/2.18.1/package/package.json not in flight; writing
+382 verbose afterAdd /home/jyb5858/.npm/moment/2.18.1/package/package.json written
+383 silly fetchNamedPackageData color-convert
+384 silly mapToRegistry name color-convert
+385 silly mapToRegistry using default registry
+386 silly mapToRegistry registry https://registry.npmjs.org/
+387 silly mapToRegistry uri https://registry.npmjs.org/color-convert
+388 silly fetchNamedPackageData chartjs-color-string
+389 silly mapToRegistry name chartjs-color-string
+390 silly mapToRegistry using default registry
+391 silly mapToRegistry registry https://registry.npmjs.org/
+392 silly mapToRegistry uri https://registry.npmjs.org/chartjs-color-string
+393 verbose request uri https://registry.npmjs.org/chartjs-color-string
+394 verbose request no auth needed
+395 info attempt registry request try #1 at 1:49:05 PM
+396 http request GET https://registry.npmjs.org/chartjs-color-string
+397 verbose request uri https://registry.npmjs.org/color-convert
+398 verbose request no auth needed
+399 info attempt registry request try #1 at 1:49:05 PM
+400 verbose etag "5a87793b-a6bf"
+401 verbose lastModified Sat, 17 Feb 2018 0:37:15 GMT
+402 http request GET https://registry.npmjs.org/color-convert
+403 http 304 https://registry.npmjs.org/color-convert
+404 verbose headers { date: 'Sat, 05 May 2018 04:49:05 GMT',
+404 verbose headers   via: '1.1 varnish',
+404 verbose headers   'cache-control': 'max-age=300',
+404 verbose headers   etag: '"5a87793b-a6bf"',
+404 verbose headers   age: '13741',
+404 verbose headers   connection: 'keep-alive',
+404 verbose headers   'x-served-by': 'cache-nrt6129-NRT',
+404 verbose headers   'x-cache': 'HIT',
+404 verbose headers   'x-cache-hits': '18',
+404 verbose headers   'x-timer': 'S1525495746.605133,VS0,VE0',
+404 verbose headers   vary: 'Accept-Encoding, Accept' }
+405 silly get cb [ 304,
+405 silly get   { date: 'Sat, 05 May 2018 04:49:05 GMT',
+405 silly get     via: '1.1 varnish',
+405 silly get     'cache-control': 'max-age=300',
+405 silly get     etag: '"5a87793b-a6bf"',
+405 silly get     age: '13741',
+405 silly get     connection: 'keep-alive',
+405 silly get     'x-served-by': 'cache-nrt6129-NRT',
+405 silly get     'x-cache': 'HIT',
+405 silly get     'x-cache-hits': '18',
+405 silly get     'x-timer': 'S1525495746.605133,VS0,VE0',
+405 silly get     vary: 'Accept-Encoding, Accept' } ]
+406 verbose etag https://registry.npmjs.org/color-convert from cache
+407 verbose get saving color-convert to /home/jyb5858/.npm/registry.npmjs.org/color-convert/.cache.json
+408 silly resolveWithNewModule color-convert@0.5.3 checking installable status
+409 silly cache add args [ 'color-convert@^0.5.3', null ]
+410 verbose cache add spec color-convert@^0.5.3
+411 silly cache add parsed spec Result {
+411 silly cache add   raw: 'color-convert@^0.5.3',
+411 silly cache add   scope: null,
+411 silly cache add   name: 'color-convert',
+411 silly cache add   rawSpec: '^0.5.3',
+411 silly cache add   spec: '>=0.5.3 <0.6.0',
+411 silly cache add   type: 'range' }
+412 silly addNamed color-convert@>=0.5.3 <0.6.0
+413 verbose addNamed ">=0.5.3 <0.6.0" is a valid semver range for color-convert
+414 silly addNameRange { name: 'color-convert',
+414 silly addNameRange   range: '>=0.5.3 <0.6.0',
+414 silly addNameRange   hasData: false }
+415 silly mapToRegistry name color-convert
+416 silly mapToRegistry using default registry
+417 silly mapToRegistry registry https://registry.npmjs.org/
+418 silly mapToRegistry uri https://registry.npmjs.org/color-convert
+419 verbose addNameRange registry:https://registry.npmjs.org/color-convert not in flight; fetching
+420 http 200 https://registry.npmjs.org/chartjs-color-string
+421 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+421 verbose headers   server: 'UploadServer',
+421 verbose headers   'cache-control': 'max-age=300',
+421 verbose headers   'last-modified': 'Sat, 9 Sep 2017 20:09:29 GMT',
+421 verbose headers   etag: '"59b44a79-13aa"',
+421 verbose headers   'x-npm-region': 'Asia',
+421 verbose headers   'content-encoding': 'gzip',
+421 verbose headers   'content-length': '1567',
+421 verbose headers   'accept-ranges': 'bytes',
+421 verbose headers   date: 'Sat, 05 May 2018 04:49:05 GMT',
+421 verbose headers   via: '1.1 varnish',
+421 verbose headers   age: '10230',
+421 verbose headers   connection: 'keep-alive',
+421 verbose headers   'x-served-by': 'cache-hnd18742-HND',
+421 verbose headers   'x-cache': 'HIT',
+421 verbose headers   'x-cache-hits': '2',
+421 verbose headers   'x-timer': 'S1525495746.600113,VS0,VE0',
+421 verbose headers   vary: 'Accept-Encoding, Accept' }
+422 silly get cb [ 200,
+422 silly get   { 'content-type': 'application/json; charset=UTF-8',
+422 silly get     server: 'UploadServer',
+422 silly get     'cache-control': 'max-age=300',
+422 silly get     'last-modified': 'Sat, 9 Sep 2017 20:09:29 GMT',
+422 silly get     etag: '"59b44a79-13aa"',
+422 silly get     'x-npm-region': 'Asia',
+422 silly get     'content-encoding': 'gzip',
+422 silly get     'content-length': '1567',
+422 silly get     'accept-ranges': 'bytes',
+422 silly get     date: 'Sat, 05 May 2018 04:49:05 GMT',
+422 silly get     via: '1.1 varnish',
+422 silly get     age: '10230',
+422 silly get     connection: 'keep-alive',
+422 silly get     'x-served-by': 'cache-hnd18742-HND',
+422 silly get     'x-cache': 'HIT',
+422 silly get     'x-cache-hits': '2',
+422 silly get     'x-timer': 'S1525495746.600113,VS0,VE0',
+422 silly get     vary: 'Accept-Encoding, Accept' } ]
+423 verbose get saving chartjs-color-string to /home/jyb5858/.npm/registry.npmjs.org/chartjs-color-string/.cache.json
+424 verbose get https://registry.npmjs.org/color-convert not expired, no request
+425 silly addNameRange number 2 { name: 'color-convert', range: '>=0.5.3 <0.6.0', hasData: true }
+426 silly addNameRange versions [ 'color-convert',
+426 silly addNameRange   [ '0.1.0',
+426 silly addNameRange     '0.2.0',
+426 silly addNameRange     '0.2.1',
+426 silly addNameRange     '0.3.0',
+426 silly addNameRange     '0.3.1',
+426 silly addNameRange     '0.3.4',
+426 silly addNameRange     '0.4.0',
+426 silly addNameRange     '0.5.0',
+426 silly addNameRange     '0.5.1',
+426 silly addNameRange     '0.5.2',
+426 silly addNameRange     '0.5.3',
+426 silly addNameRange     '0.6.0',
+426 silly addNameRange     '0.7.0',
+426 silly addNameRange     '1.0.0',
+426 silly addNameRange     '1.1.0',
+426 silly addNameRange     '1.1.1',
+426 silly addNameRange     '1.1.2',
+426 silly addNameRange     '1.2.0',
+426 silly addNameRange     '1.2.1',
+426 silly addNameRange     '1.2.2',
+426 silly addNameRange     '1.3.0',
+426 silly addNameRange     '1.3.1',
+426 silly addNameRange     '1.4.0',
+426 silly addNameRange     '1.5.0',
+426 silly addNameRange     '1.6.0',
+426 silly addNameRange     '1.7.0',
+426 silly addNameRange     '1.8.0',
+426 silly addNameRange     '1.8.1',
+426 silly addNameRange     '1.8.2',
+426 silly addNameRange     '1.9.0',
+426 silly addNameRange     '1.9.1' ] ]
+427 silly addNamed color-convert@0.5.3
+428 verbose addNamed "0.5.3" is a plain semver version for color-convert
+429 silly mapToRegistry name color-convert
+430 silly mapToRegistry using default registry
+431 silly mapToRegistry registry https://registry.npmjs.org/
+432 silly mapToRegistry uri https://registry.npmjs.org/color-convert
+433 verbose addRemoteTarball https://registry.npmjs.org/color-convert/-/color-convert-0.5.3.tgz not in flight; adding
+434 verbose addRemoteTarball [ 'https://registry.npmjs.org/color-convert/-/color-convert-0.5.3.tgz',
+434 verbose addRemoteTarball   'bdb6c69ce660fadffe0b0007cc447e1b9f7282bd' ]
+435 silly resolveWithNewModule chartjs-color-string@0.5.0 checking installable status
+436 silly cache add args [ 'chartjs-color-string@^0.5.0', null ]
+437 verbose cache add spec chartjs-color-string@^0.5.0
+438 silly cache add parsed spec Result {
+438 silly cache add   raw: 'chartjs-color-string@^0.5.0',
+438 silly cache add   scope: null,
+438 silly cache add   name: 'chartjs-color-string',
+438 silly cache add   rawSpec: '^0.5.0',
+438 silly cache add   spec: '>=0.5.0 <0.6.0',
+438 silly cache add   type: 'range' }
+439 silly addNamed chartjs-color-string@>=0.5.0 <0.6.0
+440 verbose addNamed ">=0.5.0 <0.6.0" is a valid semver range for chartjs-color-string
+441 silly addNameRange { name: 'chartjs-color-string',
+441 silly addNameRange   range: '>=0.5.0 <0.6.0',
+441 silly addNameRange   hasData: false }
+442 silly mapToRegistry name chartjs-color-string
+443 silly mapToRegistry using default registry
+444 silly mapToRegistry registry https://registry.npmjs.org/
+445 silly mapToRegistry uri https://registry.npmjs.org/chartjs-color-string
+446 verbose addNameRange registry:https://registry.npmjs.org/chartjs-color-string not in flight; fetching
+447 info retry fetch attempt 1 at 1:49:05 PM
+448 info attempt registry request try #1 at 1:49:05 PM
+449 http fetch GET https://registry.npmjs.org/color-convert/-/color-convert-0.5.3.tgz
+450 verbose get https://registry.npmjs.org/chartjs-color-string not expired, no request
+451 silly addNameRange number 2 { name: 'chartjs-color-string',
+451 silly addNameRange   range: '>=0.5.0 <0.6.0',
+451 silly addNameRange   hasData: true }
+452 silly addNameRange versions [ 'chartjs-color-string', [ '0.4.0', '0.5.0' ] ]
+453 silly addNamed chartjs-color-string@0.5.0
+454 verbose addNamed "0.5.0" is a plain semver version for chartjs-color-string
+455 silly mapToRegistry name chartjs-color-string
+456 silly mapToRegistry using default registry
+457 silly mapToRegistry registry https://registry.npmjs.org/
+458 silly mapToRegistry uri https://registry.npmjs.org/chartjs-color-string
+459 verbose addRemoteTarball https://registry.npmjs.org/chartjs-color-string/-/chartjs-color-string-0.5.0.tgz not in flight; adding
+460 verbose addRemoteTarball [ 'https://registry.npmjs.org/chartjs-color-string/-/chartjs-color-string-0.5.0.tgz',
+460 verbose addRemoteTarball   '8d3752d8581d86687c35bfe2cb80ac5213ceb8c1' ]
+461 info retry fetch attempt 1 at 1:49:05 PM
+462 info attempt registry request try #1 at 1:49:05 PM
+463 http fetch GET https://registry.npmjs.org/chartjs-color-string/-/chartjs-color-string-0.5.0.tgz
+464 http fetch 200 https://registry.npmjs.org/color-convert/-/color-convert-0.5.3.tgz
+465 silly fetchAndShaCheck shasum bdb6c69ce660fadffe0b0007cc447e1b9f7282bd
+466 verbose addTmpTarball /tmp/npm-9571-bf08ccfd/registry.npmjs.org/color-convert/-/color-convert-0.5.3.tgz not in flight; adding
+467 verbose addTmpTarball already have metadata; skipping unpack for color-convert@0.5.3
+468 silly cache afterAdd color-convert@0.5.3
+469 verbose afterAdd /home/jyb5858/.npm/color-convert/0.5.3/package/package.json not in flight; writing
+470 verbose afterAdd /home/jyb5858/.npm/color-convert/0.5.3/package/package.json written
+471 http fetch 200 https://registry.npmjs.org/chartjs-color-string/-/chartjs-color-string-0.5.0.tgz
+472 silly fetchAndShaCheck shasum 8d3752d8581d86687c35bfe2cb80ac5213ceb8c1
+473 verbose addTmpTarball /tmp/npm-9571-bf08ccfd/registry.npmjs.org/chartjs-color-string/-/chartjs-color-string-0.5.0.tgz not in flight; adding
+474 verbose addTmpTarball already have metadata; skipping unpack for chartjs-color-string@0.5.0
+475 silly cache afterAdd chartjs-color-string@0.5.0
+476 verbose afterAdd /home/jyb5858/.npm/chartjs-color-string/0.5.0/package/package.json not in flight; writing
+477 verbose afterAdd /home/jyb5858/.npm/chartjs-color-string/0.5.0/package/package.json written
+478 silly fetchNamedPackageData color-name
+479 silly mapToRegistry name color-name
+480 silly mapToRegistry using default registry
+481 silly mapToRegistry registry https://registry.npmjs.org/
+482 silly mapToRegistry uri https://registry.npmjs.org/color-name
+483 verbose request uri https://registry.npmjs.org/color-name
+484 verbose request no auth needed
+485 info attempt registry request try #1 at 1:49:05 PM
+486 verbose etag "596a9464-2393"
+487 verbose lastModified Sat, 15 Jul 2017 22:17:08 GMT
+488 http request GET https://registry.npmjs.org/color-name
+489 http 304 https://registry.npmjs.org/color-name
+490 verbose headers { date: 'Sat, 05 May 2018 04:49:06 GMT',
+490 verbose headers   via: '1.1 varnish',
+490 verbose headers   'cache-control': 'max-age=300',
+490 verbose headers   etag: '"596a9464-2393"',
+490 verbose headers   age: '4413',
+490 verbose headers   connection: 'keep-alive',
+490 verbose headers   'x-served-by': 'cache-hnd18726-HND',
+490 verbose headers   'x-cache': 'HIT',
+490 verbose headers   'x-cache-hits': '5',
+490 verbose headers   'x-timer': 'S1525495746.251665,VS0,VE0',
+490 verbose headers   vary: 'Accept-Encoding, Accept' }
+491 silly get cb [ 304,
+491 silly get   { date: 'Sat, 05 May 2018 04:49:06 GMT',
+491 silly get     via: '1.1 varnish',
+491 silly get     'cache-control': 'max-age=300',
+491 silly get     etag: '"596a9464-2393"',
+491 silly get     age: '4413',
+491 silly get     connection: 'keep-alive',
+491 silly get     'x-served-by': 'cache-hnd18726-HND',
+491 silly get     'x-cache': 'HIT',
+491 silly get     'x-cache-hits': '5',
+491 silly get     'x-timer': 'S1525495746.251665,VS0,VE0',
+491 silly get     vary: 'Accept-Encoding, Accept' } ]
+492 verbose etag https://registry.npmjs.org/color-name from cache
+493 verbose get saving color-name to /home/jyb5858/.npm/registry.npmjs.org/color-name/.cache.json
+494 silly resolveWithNewModule color-name@1.1.3 checking installable status
+495 silly cache add args [ 'color-name@^1.0.0', null ]
+496 verbose cache add spec color-name@^1.0.0
+497 silly cache add parsed spec Result {
+497 silly cache add   raw: 'color-name@^1.0.0',
+497 silly cache add   scope: null,
+497 silly cache add   name: 'color-name',
+497 silly cache add   rawSpec: '^1.0.0',
+497 silly cache add   spec: '>=1.0.0 <2.0.0',
+497 silly cache add   type: 'range' }
+498 silly addNamed color-name@>=1.0.0 <2.0.0
+499 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for color-name
+500 silly addNameRange { name: 'color-name', range: '>=1.0.0 <2.0.0', hasData: false }
+501 silly mapToRegistry name color-name
+502 silly mapToRegistry using default registry
+503 silly mapToRegistry registry https://registry.npmjs.org/
+504 silly mapToRegistry uri https://registry.npmjs.org/color-name
+505 verbose addNameRange registry:https://registry.npmjs.org/color-name not in flight; fetching
+506 verbose get https://registry.npmjs.org/color-name not expired, no request
+507 silly addNameRange number 2 { name: 'color-name', range: '>=1.0.0 <2.0.0', hasData: true }
+508 silly addNameRange versions [ 'color-name',
+508 silly addNameRange   [ '0.0.1',
+508 silly addNameRange     '0.0.2',
+508 silly addNameRange     '1.0.0',
+508 silly addNameRange     '1.0.1',
+508 silly addNameRange     '1.1.0',
+508 silly addNameRange     '1.1.1',
+508 silly addNameRange     '1.1.2',
+508 silly addNameRange     '1.1.3' ] ]
+509 silly addNamed color-name@1.1.3
+510 verbose addNamed "1.1.3" is a plain semver version for color-name
+511 silly cache afterAdd color-name@1.1.3
+512 verbose afterAdd /home/jyb5858/.npm/color-name/1.1.3/package/package.json not in flight; writing
+513 verbose afterAdd /home/jyb5858/.npm/color-name/1.1.3/package/package.json written
+514 silly fetchNamedPackageData datatables.net
+515 silly mapToRegistry name datatables.net
+516 silly mapToRegistry using default registry
+517 silly mapToRegistry registry https://registry.npmjs.org/
+518 silly mapToRegistry uri https://registry.npmjs.org/datatables.net
+519 verbose request uri https://registry.npmjs.org/datatables.net
+520 verbose request no auth needed
+521 info attempt registry request try #1 at 1:49:06 PM
+522 http request GET https://registry.npmjs.org/datatables.net
+523 http 200 https://registry.npmjs.org/datatables.net
+524 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+524 verbose headers   server: 'UploadServer',
+524 verbose headers   'cache-control': 'max-age=300',
+524 verbose headers   'last-modified': 'Fri, 1 Sep 2017 10:01:10 GMT',
+524 verbose headers   etag: '"59a92fe6-3131"',
+524 verbose headers   'x-npm-region': 'Asia',
+524 verbose headers   'content-encoding': 'gzip',
+524 verbose headers   'content-length': '2677',
+524 verbose headers   'accept-ranges': 'bytes',
+524 verbose headers   date: 'Sat, 05 May 2018 04:49:06 GMT',
+524 verbose headers   via: '1.1 varnish',
+524 verbose headers   age: '0',
+524 verbose headers   connection: 'keep-alive',
+524 verbose headers   'x-served-by': 'cache-hnd18739-HND',
+524 verbose headers   'x-cache': 'MISS',
+524 verbose headers   'x-cache-hits': '0',
+524 verbose headers   'x-timer': 'S1525495746.498878,VS0,VE217',
+524 verbose headers   vary: 'Accept-Encoding, Accept' }
+525 silly get cb [ 200,
+525 silly get   { 'content-type': 'application/json; charset=UTF-8',
+525 silly get     server: 'UploadServer',
+525 silly get     'cache-control': 'max-age=300',
+525 silly get     'last-modified': 'Fri, 1 Sep 2017 10:01:10 GMT',
+525 silly get     etag: '"59a92fe6-3131"',
+525 silly get     'x-npm-region': 'Asia',
+525 silly get     'content-encoding': 'gzip',
+525 silly get     'content-length': '2677',
+525 silly get     'accept-ranges': 'bytes',
+525 silly get     date: 'Sat, 05 May 2018 04:49:06 GMT',
+525 silly get     via: '1.1 varnish',
+525 silly get     age: '0',
+525 silly get     connection: 'keep-alive',
+525 silly get     'x-served-by': 'cache-hnd18739-HND',
+525 silly get     'x-cache': 'MISS',
+525 silly get     'x-cache-hits': '0',
+525 silly get     'x-timer': 'S1525495746.498878,VS0,VE217',
+525 silly get     vary: 'Accept-Encoding, Accept' } ]
+526 verbose get saving datatables.net to /home/jyb5858/.npm/registry.npmjs.org/datatables.net/.cache.json
+527 silly resolveWithNewModule datatables.net@1.10.16 checking installable status
+528 silly cache add args [ 'datatables.net@1.10.16', null ]
+529 verbose cache add spec datatables.net@1.10.16
+530 silly cache add parsed spec Result {
+530 silly cache add   raw: 'datatables.net@1.10.16',
+530 silly cache add   scope: null,
+530 silly cache add   name: 'datatables.net',
+530 silly cache add   rawSpec: '1.10.16',
+530 silly cache add   spec: '1.10.16',
+530 silly cache add   type: 'version' }
+531 silly addNamed datatables.net@1.10.16
+532 verbose addNamed "1.10.16" is a plain semver version for datatables.net
+533 silly mapToRegistry name datatables.net
+534 silly mapToRegistry using default registry
+535 silly mapToRegistry registry https://registry.npmjs.org/
+536 silly mapToRegistry uri https://registry.npmjs.org/datatables.net
+537 verbose addNameVersion registry:https://registry.npmjs.org/datatables.net not in flight; fetching
+538 verbose get https://registry.npmjs.org/datatables.net not expired, no request
+539 silly mapToRegistry name datatables.net
+540 silly mapToRegistry using default registry
+541 silly mapToRegistry registry https://registry.npmjs.org/
+542 silly mapToRegistry uri https://registry.npmjs.org/datatables.net
+543 verbose addRemoteTarball https://registry.npmjs.org/datatables.net/-/datatables.net-1.10.16.tgz not in flight; adding
+544 verbose addRemoteTarball [ 'https://registry.npmjs.org/datatables.net/-/datatables.net-1.10.16.tgz',
+544 verbose addRemoteTarball   '4b052d1082824261b68eed9d22741b711d3d2469' ]
+545 info retry fetch attempt 1 at 1:49:06 PM
+546 info attempt registry request try #1 at 1:49:06 PM
+547 http fetch GET https://registry.npmjs.org/datatables.net/-/datatables.net-1.10.16.tgz
+548 http fetch 200 https://registry.npmjs.org/datatables.net/-/datatables.net-1.10.16.tgz
+549 silly fetchAndShaCheck shasum 4b052d1082824261b68eed9d22741b711d3d2469
+550 verbose addTmpTarball /tmp/npm-9571-bf08ccfd/registry.npmjs.org/datatables.net/-/datatables.net-1.10.16.tgz not in flight; adding
+551 verbose addTmpTarball already have metadata; skipping unpack for datatables.net@1.10.16
+552 silly cache afterAdd datatables.net@1.10.16
+553 verbose afterAdd /home/jyb5858/.npm/datatables.net/1.10.16/package/package.json not in flight; writing
+554 verbose afterAdd /home/jyb5858/.npm/datatables.net/1.10.16/package/package.json written
+555 silly loadAllDepsIntoIdealTree Finishing
+556 silly idealTree:prePrune lib
+556 silly idealTree:prePrune └─┬ startbootstrap-sb-admin@4.0.0
+556 silly idealTree:prePrune   ├── bootstrap@4.0.0
+556 silly idealTree:prePrune   ├── chart.js@2.7.1
+556 silly idealTree:prePrune   ├── chartjs-color-string@0.5.0
+556 silly idealTree:prePrune   ├── chartjs-color@2.2.0
+556 silly idealTree:prePrune   ├── color-convert@0.5.3
+556 silly idealTree:prePrune   ├── color-name@1.1.3
+556 silly idealTree:prePrune   ├── datatables.net-bs4@1.10.16
+556 silly idealTree:prePrune   ├── datatables.net@1.10.16
+556 silly idealTree:prePrune   ├── font-awesome@4.7.0
+556 silly idealTree:prePrune   ├── jquery.easing@1.4.1
+556 silly idealTree:prePrune   ├── jquery@3.3.1
+556 silly idealTree:prePrune   └── moment@2.18.1
+557 silly loadIdealTree Finishing
+558 silly currentTree lib
+559 silly idealTree lib
+559 silly idealTree └─┬ startbootstrap-sb-admin@4.0.0
+559 silly idealTree   ├── bootstrap@4.0.0
+559 silly idealTree   ├── chart.js@2.7.1
+559 silly idealTree   ├── chartjs-color-string@0.5.0
+559 silly idealTree   ├── chartjs-color@2.2.0
+559 silly idealTree   ├── color-convert@0.5.3
+559 silly idealTree   ├── color-name@1.1.3
+559 silly idealTree   ├── datatables.net-bs4@1.10.16
+559 silly idealTree   ├── datatables.net@1.10.16
+559 silly idealTree   ├── font-awesome@4.7.0
+559 silly idealTree   ├── jquery.easing@1.4.1
+559 silly idealTree   ├── jquery@3.3.1
+559 silly idealTree   └── moment@2.18.1
+560 silly generateActionsToTake Starting
+561 silly install generateActionsToTake
+562 warn checkPermissions Missing write access to /usr/local/lib/node_modules
+563 silly rollbackFailedOptional Starting
+564 silly rollbackFailedOptional Finishing
+565 silly runTopLevelLifecycles Starting
+566 silly runTopLevelLifecycles Finishing
+567 silly install printInstalled
+568 warn bootstrap@4.0.0 requires a peer of popper.js@^1.12.9 but none was installed.
+569 verbose stack Error: EACCES: permission denied, access '/usr/local/lib/node_modules'
+569 verbose stack     at Error (native)
+570 verbose cwd /home/jyb5858/bc2018project/public/adminTemplate
+571 error Linux 4.13.0-39-generic
+572 error argv "/usr/bin/nodejs" "/usr/bin/npm" "install" "-g"
+573 error node v4.2.6
+574 error npm  v3.5.2
+575 error path /usr/local/lib/node_modules
+576 error code EACCES
+577 error errno -13
+578 error syscall access
+579 error Error: EACCES: permission denied, access '/usr/local/lib/node_modules'
+579 error     at Error (native)
+579 error  { [Error: EACCES: permission denied, access '/usr/local/lib/node_modules']
+579 error   errno: -13,
+579 error   code: 'EACCES',
+579 error   syscall: 'access',
+579 error   path: '/usr/local/lib/node_modules' }
+580 error Please try running this command again as root/Administrator.
+581 verbose exit [ -13, true ]

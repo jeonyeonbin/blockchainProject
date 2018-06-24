@@ -1,0 +1,29 @@
+
+<style>
+    .nostyle{
+        list-style: none;
+    }
+</style>
+  
+  <main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+        <form action="/board/regist" method="POST">
+            <ul>
+                <li class="nostyle">
+                    <label for="title">제목</label>
+                    <input type="text" name="boardTitle" id="title" placeholder="제목을 입력하시오..">            
+                </li>
+                <li class="nostyle">
+                    <label for="contents">내용</label>
+                    <textarea name="boardContents" id="contents" cols="30" rows="10" placeholder="내용을 입력하세요.."></textarea>
+                </li>
+                <button type="submit" value="제출">제출</button>
+            </ul>
+        </form>
+      </div>
+    </div>
+  </main>
+

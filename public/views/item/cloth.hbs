@@ -1,0 +1,28 @@
+<!-- Breadcrumbs-->
+<link async href="http://fonts.googleapis.com/css?family=Antic" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="/adminTemplate/css/btn.css" type="text/css">
+<script src="/js/image-toggle.js"></script>
+<link rel="stylesheet" href="/static/css/image-toggle.css">
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="#">ITEM</a>
+    </li>
+    <li class="breadcrumb-item active">의류</li>
+</ol>
+<nav>
+    <h1>판매중 상품들</h1>
+    <hr>
+    
+    {{#each items}}
+        <a href="/cloth/{{itemName}}">
+        image
+        <img src="{{itemPic}}" alt="" ><br>
+        상품명 : {{itemName}}<br>
+        상품 가격 : {{itemPrice}}<br>
+        </a>
+        <hr>
+    {{/each}}
+
+    <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
+    <div style="height: 1000px;"></div>
+</nav>

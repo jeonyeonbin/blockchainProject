@@ -1,0 +1,36 @@
+<!-- Breadcrumbs-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link async href="http://fonts.googleapis.com/css?family=Antic" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="/adminTemplate/css/btn.css" type="text/css">
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="#">ITEM</a>
+    </li>
+    <li class="breadcrumb-item active">의류</li>
+</ol>
+<nav>
+    <h1>[{{items.itemName}}]</h1>
+    <hr>
+        
+        image
+        <img src="../{{items.itemContentsPic}}" alt="" width="480px" height="300px"><br>
+        상품명 : {{items.itemName}}<br>
+        상품 가격 : {{items.itemPrice}}<br>
+        </a>
+        <hr>
+        판매자 {{items.seller}}
+        상품내용
+
+        <div class="itemInfo">
+            {{items.itemInfo}}
+        </div>
+        <script>
+            $(document).ready(function(){
+                $('.itemInfo').html($('.itemInfo').text());
+                $('.fixed-action-btn').floatingActionButton();
+            });
+        </script>
+ <!-- Compiled and minified JavaScript -->
+      
+    <div style="height: 1000px;"></div>
+</nav>

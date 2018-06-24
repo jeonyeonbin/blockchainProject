@@ -1,0 +1,55 @@
+<style>
+    .noListStyle{
+        list-style: none;
+    }
+</style>
+<main class="mt-5 pt-4">
+
+		 <div class="container dark-grey-text mt-5">
+
+      <!--Grid row-->
+      		<div class="row wow fadeIn">
+                <ul class="noListStyle">
+                    <li>
+                        <div class="form-group">
+                            <label for="disabledInput" class="col-sm-4 control-label"><strong> 제목</strong></label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="disabledInput" type="text" value="{{data.title}}" disabled>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <label for="disabledInput" class="col-sm-4 control-label"><strong> 내용</strong></label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="disabledInput" type="text" value="{{data.contents}}" disabled>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <label for="disabledInput" class="col-sm-4 control-label"><strong> 조회수</strong></label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="disabledInput" type="text" value="{{data.hits}}" disabled>
+                            </div>
+                        </div>
+                        
+                    </li>
+                    <li>
+                        수정일
+                        {{data.updatedDate}}
+                        {{data.updatedTime}}
+                    </li>
+                    <li>
+                        등록일
+                        {{data.createdDate}}
+                        {{data.createdTime}}
+                    </li>
+                    <li>
+                        <a href="/board/update/{{data._id}}" class="btn btn-success">UPDATE</a>
+                    </li>
+                </ul>
+             </div>
+        </div>
+	</div>
+</main>
