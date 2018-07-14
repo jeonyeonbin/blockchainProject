@@ -5,6 +5,8 @@ var ItemModel = require('../../models/item.model');
 
 var FabricQuery = require('../../hyperledger-fabric/query');
 var FabricInvoke = require('../../hyperledger-fabric/invoke');
+
+
 exports.test = function(req,res){
     // var requestArgs = [req.body.data,]
     var request = {
@@ -59,7 +61,16 @@ exports.clothSelectOneGET = function(req,res){
     };
 
     //상품 조회수 1증가
-    
+    // FabricInvoke({
+    //     chainCodeId : 'fabcar',
+    //     fcn:'updateItemPlus1',
+    //     args:[req.params.key],
+    // }).then((resolvedData)=>{
+    //     console.log('sucess');
+    // }).catch(()=>{
+    //     console.log('fail');
+    // });
+
     //상품 조회
     FabricQuery(request).then(function(resolvedData){
         return resolvedData;    
