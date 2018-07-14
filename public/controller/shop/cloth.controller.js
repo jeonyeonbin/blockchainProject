@@ -6,11 +6,12 @@ var ItemModel = require('../../models/item.model');
 var FabricQuery = require('../../hyperledger-fabric/query');
 var FabricInvoke = require('../../hyperledger-fabric/invoke');
 
-
+var requestReturn = require('../returnRequest');
 exports.test = function(req,res){
     // var requestArgs = [req.body.data,]
+
     var request = {
-        //targets : --- letting this default to the peers assigned to the channel
+        //targets : ---  this default to the peers assigned to the channel
         chaincodeId: 'fabcar',
         // fcn: 'queryAllCars',
         fcn: 'querySellProductByList',

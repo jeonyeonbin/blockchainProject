@@ -6,3 +6,5 @@ function returnRequest(fcn,args){
         chainId : 'myChannel',
     };
 }
+
+module.exports = returnRequest;
