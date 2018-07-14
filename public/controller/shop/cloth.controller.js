@@ -58,6 +58,9 @@ exports.clothSelectOneGET = function(req,res){
         args: [req.params.key]
     };
 
+    //상품 조회수 1증가
+    
+    //상품 조회
     FabricQuery(request).then(function(resolvedData){
         return resolvedData;    
     }).then(function(resolvedData){
