@@ -18,7 +18,7 @@ var os = require('os');
 // 콜백지옥에서 빠져나올수 있는 유일한 기회이다
 var fabric_client = new Fabric_Client();
 
-var serverIP = '172.20.10.2';
+var serverIP = '13.209.186.144';
 // setup the fabric network
 var channel = fabric_client.newChannel('mychannel');
 var peer = fabric_client.newPeer('grpc://' + serverIP + ':7051');

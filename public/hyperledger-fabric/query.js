@@ -15,7 +15,7 @@ var os = require('os');
 
 //
 var fabric_client = new Fabric_Client();
-var serverIP = '172.20.10.2';
+var serverIP = '13.209.186.144';
 // setup the fabric network
 var channel = fabric_client.newChannel('mychannel');
 var peer = fabric_client.newPeer('grpc://' + serverIP + ':7051');

@@ -16,7 +16,12 @@ var storage = multer.diskStorage({
         cb(null,file.fieldname +'-'+Date.now())
     },
 });
-var upload =multer({storage:storage});
+// var upload =multer({storage:storage});
+
+//메모리 상의 버퍼 저장
+var multer = require('multer');
+var memorystorage = multer.memoryStorage();
+var upload = multer({ storage: memorystorage });
 
 router.use(function(req,res,next){
     if(req.session.authorized != true) res.redirect(303,'/login');
@@ -28,7 +33,7 @@ router.get('/',mainController.mainGET);
 router.get('/update',memberUpdateController.memberUpdateGET);
 router.get('/update/:id',memberUpdateController.IDSelectUpdateGET);
 router.get('/item/regist',itemRegistController.itemRegistGET);
-router.post('/item/regist',upload.single('image'),itemRegistController.itemReigstPOST);
+router.post('/item/regist',upload.array('image'),itemRegistController.itemReigstPOST);
 router.post('/validPW',checkController.validCheckPW);
 router.get('/addCoin',coinController.addCoinGET);
 router.post('/addCoin',coinController.addCoinPOST);

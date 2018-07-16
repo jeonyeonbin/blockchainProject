@@ -16,7 +16,7 @@ var os = require('os');
 //
 var fabric_client = new Fabric_Client();
 
-var serverIP = "10.0.22.108";
+var serverIP = "13.209.186.144";
 // setup the fabric network
 var channel = fabric_client.newChannel('mychannel');
 var peer = fabric_client.newPeer('grpc://' + serverIP + ':7051');
@@ -71,7 +71,7 @@ Fabric_Client.newDefaultKeyValueStore({ path: store_path
    		args : [seller, itemName,itemInfo,itemPrice,itemCategory,registDateTime],
    		chainId : 'mychannel'
 	};
-
+	request.txId = tx_id;
 	// send the transaction proposal to the peers
 	return channel.sendTransactionProposal(request);
 }).then((results) => {
