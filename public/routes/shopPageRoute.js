@@ -4,6 +4,6 @@ var shopClothController = require('../controller/shop/cloth.controller');
 var itemPurchaseController = require('../controller/shop/itemPurchase.controller');
 router.get('/',require('../controller/item/all.controller').allGET);
 router.get('/:itemCategory/:key',shopClothController.clothSelectOneGET);
-router.get('/:itemCategory',shopClothController.clothAllGET);
+router.get('/:itemCategory',require('../controller/shop/category.controller').categoryAllGET);
 router.post('/purchase/:key',itemPurchaseController.purchasePOST);
 module.exports = router;

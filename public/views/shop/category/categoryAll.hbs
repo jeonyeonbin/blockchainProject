@@ -1,3 +1,4 @@
+<script src="../../../static/js/mainPage.js"></script>
 <main style="margin-top:100px; padding-bottom:20%;">
     <div class="container">
 
@@ -19,7 +20,7 @@
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">CLOTH
+              <a class="nav-link" href="#">{{itemCategory}}
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -68,10 +69,11 @@
                 <h5>
                   <strong>
                     <a href="/shoPage/c{{itemCategory}}/{{key}}" class="dark-grey-text">{{itemName}}
-                      <span class="badge badge-pill danger-color">NEW</span>
+                      <span class="badge badge-pill"></span>
                     </a>
                   </strong>
                 </h5>
+                <input type="hidden" name="" value="{{sellState}}">
 
                 <h4 class="font-weight-bold blue-text">
                   <strong>{{itemPrice}}원</strong>
