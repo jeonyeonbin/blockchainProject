@@ -10,7 +10,7 @@
         <!--Grid column-->
         <div class="col-md-6 mb-4">
 
-          <img src="../.././{{items.itemContentsPic}}" class="img-fluid" alt="" width="720px" height="600px">
+          <img src="{{items.itemContentsPic}}" class="img-fluid" alt="" width="600px" height="430px">
 
         </div>
         <!--Grid column-->
@@ -23,7 +23,7 @@
 
             <div class="mb-3">
               <a href="">
-                <span class="badge purple mr-1 itemCategory" value="{{items.itemCategory}}">{{items.itemCategory}}</span>
+                <span class="badge purple mr-1 itemCategory" id="itemCategory" value="{{items.itemCategory}}">{{items.itemCategory}}</span>
               </a>
               <a href="">
                 <span class="badge blue mr-1">New</span>
@@ -44,6 +44,7 @@
             <form class="d-flex justify-content-left">
               <!-- Default input -->
               <input type="hidden" name="key" id="key" value="{{items.key}}"> 
+              <!--button True 인지에 따라서 구매하기, 판매완료 버튼 -->
               {{#if button}}
                 <button class="btn btn-primary btn-md my-0 p purchaseItem" type="button" onclick="return false;" style="margin-left:0px; margin">구매하기
                   <i class="fa fa-shopping-cart ml-1"></i>
@@ -97,7 +98,9 @@
       </div>
       <script>
         $(document).ready(function(){
+            //JK Editor를 위한 html 코드를 텍스트 로 변경
             $('#itemInfo > p').html($('#itemInfo > p').text());
+            //페이지가 렌더링 되었을때, 상품정보 보이기
             $('#defaultOpen').click();
           });
       </script>
