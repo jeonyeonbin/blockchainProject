@@ -1,6 +1,6 @@
 function returnRequest(fcn,args){
     return {
-        chainCodeId : 'fabcar',
+        chaincodeId : 'fabcar',
         fcn : fcn,
         args : args,
         chainId : 'myChannel',

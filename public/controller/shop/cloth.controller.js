@@ -62,15 +62,11 @@ exports.clothSelectOneGET = function(req,res){
     };
 
     //상품 조회수 1증가
-    // FabricInvoke({
-    //     chainCodeId : 'fabcar',
-    //     fcn:'updateItemPlus1',
-    //     args:[req.params.key],
-    // }).then((resolvedData)=>{
-    //     console.log('sucess');
-    // }).catch(()=>{
-    //     console.log('fail');
-    // });
+    FabricInvoke(requestReturn('increasHits',[req.params.key])).then((resolvedData)=>{
+        console.log('sucess');
+    }).catch(()=>{
+        console.log('fail');
+    });
 
     //상품 조회
     FabricQuery(request).then(function(resolvedData){
@@ -78,8 +74,11 @@ exports.clothSelectOneGET = function(req,res){
     }).then(function(resolvedData){
         resolvedData = JSON.parse(resolvedData);
         console.log(resolvedData);
+
+        //판매 여부 
         if(resolvedData.sellState == 'selling')res.locals.button = true;
         else res.locals.button =false;
+        
         return res.render('shop/product-page',{items:resolvedData,layout:'../shop/home-page'});
     }).catch(function(err){
         console.log(err);
