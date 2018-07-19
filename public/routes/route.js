@@ -6,7 +6,7 @@ var bodyParser =require('body-parser');
 
 module.exports=function(app){
     //handlebar 순서 중요!!
-    var handlebars =require('express-handlebars').create({
+    var handlebars = require('express-handlebars').create({
         extname:'hbs',
         defaultLayout:path.join(__dirname,'../views/layouts/main.hbs'),
         partialsDir:path.join(__dirname,'../views/partials'),
@@ -26,11 +26,13 @@ module.exports=function(app){
         //connected Mongo DB
         console.log('Open Mongo DataBase!!');
     });
-    try{
+
+    try {
         mongoose.connect('mongodb://jyb:qtrhpr12@ds115360.mlab.com:15360/bc2018');
-    }catch(err){
+    } catch(err) {
         console.error(err);
-    }    
+    } 
+
     //session 설정
     app.use(session({
         resave:false,

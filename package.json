@@ -31,5 +31,8 @@
     "multer": "^1.3.0",
     "multer-s3": "^2.7.0",
     "nodemon": "^1.17.3"
+  },
+  "engines": {
+    "node": "^8"
   }
 }
