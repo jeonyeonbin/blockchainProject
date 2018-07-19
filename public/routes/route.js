@@ -4,7 +4,7 @@ var session = require('express-session');
 var mongoose = require('mongoose');
 var bodyParser =require('body-parser');
 
-module.exports=function(app){
+module.exports = function(app){
     //handlebar 순서 중요!!
     var handlebars = require('express-handlebars').create({
         extname:'hbs',
@@ -52,14 +52,14 @@ module.exports=function(app){
     app.use(function(req,res,next){
         res.status(404);
         res.render('404');
-        next();
     });
     //서버 에러 페이지
-    app.use(function(err,req,res,next){
-        if(err) console.error(err.stack);
+    app.use(function errorHandler(err,req,res,next){
+        if (res.headerSent) {
+            return next(err)
+        }
         res.status(500);
-        res.render('500');
-        next();
+        res.render('500', { error: err });
     });
     // 포트로 시작
     app.listen(port,function(){
