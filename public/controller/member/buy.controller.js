@@ -9,7 +9,7 @@ exports.showBuyProductAllGET = function(req,res){
     var request = makeRequest('queryBuyProductById',[myId]);
     
     FabricQuery(request).then((resolvedData)=>{
-        return res.render('member/showBuyProduct',{items:resolvedData});
+        return res.render('member/myProduct',{items:resolvedData});
     }).catch((e)=>{
         console.log(e);
     });
@@ -22,7 +22,7 @@ exports.showBuyOneProduct = function(req,res){
     var request = makeRequset('queryBuyProductOne',uuid);
 
     FabricQuery(request).then((resolvedData)=>{
-        return res.render('member/showBuyProductOne',{items:resolvedData});        
+        return res.render('member/showProductOne',{items:resolvedData});        
     }).catch((e)=>{
         console.log(e);
     })
