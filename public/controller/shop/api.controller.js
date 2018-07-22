@@ -1,0 +1,24 @@
+//mainHomePage에 카테고리 클릭시 데이터 변환
+var FabricQuery = require('../../hyperledger-fabric/query');
+var makeRequest = require('../returnRequest');
+exports.changeListInMain = function(req,res){
+    var category = req.body.itemCategory;
+    console.log('CATEGORY CLICK : '+ category);
+    var request;
+    //fabric 통신을 위한 request
+    if(category == 'all') request = makeRequest('queryItemAll',[]);
+    else request= makeRequest('queryItemByCategory',[category]);
+
+    //itemCategory 별 데이터 찾기
+    FabricQuery(request).then(function(resolvedData){
+        return resolvedData;    
+    }).then(function(resolvedData){
+        resolvedData = JSON.parse(resolvedData);
+        console.log(resolvedData);
+        return res.send(resolvedData);  
+        //return res.render('shop/category/categoryAll',{itemCategory:req.params.itemCategory,items:resolvedData,layout:'../shop/home-page'});
+        // return res.json(resolvedData);
+    }).catch(function(err){
+        console.log(err);
+    });
+}
