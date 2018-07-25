@@ -8,10 +8,6 @@ exports.showSellProductAllGET= function(req,res){
     var request = makeRequest('queryItemBySeller',[myId]);
     
     FabricQuery(request).then((resolvedData)=>{
-        console.log('');
-        console.log('');
-        console.log('');
-        console.log('');
         console.log('판매 상품 보기!!!!!!');
                 
         console.log(resolvedData);
