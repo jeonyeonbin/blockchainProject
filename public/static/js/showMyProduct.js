@@ -3,6 +3,7 @@ $(document).ready(function(){
         $('input[type="hidden"]').each(function(){
             var $val = $(this).val();
             //팔렷을때 
+            alert($val);
             if($val == 'sold'){
                 $(this).parent().css("opacity","0.5");
                 $(this).parent().find('.offer-radius').addClass("offer-danger");
@@ -16,5 +17,5 @@ $(document).ready(function(){
             }        
         });
     }
-
+    showState();
 });

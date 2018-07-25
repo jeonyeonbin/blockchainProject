@@ -1,5 +1,5 @@
 var FabricQuery = require('../../hyperledger-fabric/query');
-var makeRequset = require('../returnRequest');
+var makeRequest = require('../returnRequest');
 
 
 //구매 상품 리스트 보기
@@ -19,7 +19,7 @@ exports.showBuyOneProduct = function(req,res){
     //구매 물품 키값
     var uuid = req.params.key;
     //구매 물품 키값으로 조회
-    var request = makeRequset('queryBuyProductOne',uuid);
+    var request = makeRequest('queryBuyProductOne',uuid);
 
     FabricQuery(request).then((resolvedData)=>{
         return res.render('member/showProductOne',{items:resolvedData});        
