@@ -9,14 +9,7 @@ var checkController = require('../controller/member/check.controller');
 var coinController = require('../controller/member/coin.controller');
 var sellProductController = require('../controller/member/sell.controller');
 var buyProductController = require('../controller/member/buy.controller');
-var storage = multer.diskStorage({
-    destination:function(req,file,cb){
-        cb(null,'./uploads');
-    },
-    filename:function(req,file,cb){
-        cb(null,file.fieldname +'-'+Date.now())
-    },
-});
+
 // var upload =multer({storage:storage});
 
 //메모리 상의 버퍼 저장
@@ -45,10 +38,11 @@ router.post('/addCoin',coinController.addCoinPOST);
 router.get('/showMySellProduct',sellProductController.showSellProductAllGET);
 //판매 상품 한개 보기
 router.get('/showMySellProduct/:key',sellProductController.showSellOneProduct);
+//판매 상품 정보 수정
+router.post('/updateProduct',upload.array('image'),sellProductController.updateProduct);
 //구매 상품 보기
 router.get('/showMyBuyProduct',buyProductController.showBuyProductAllGET);
 //구매 상품 한개 보기
 router.get('/showMyBuyProduct/:key',buyProductController.showBuyOneProduct);
-
 
 module.exports = router;
