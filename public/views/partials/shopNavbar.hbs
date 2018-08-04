@@ -104,14 +104,20 @@
         <!-- Right -->
         <ul class="navbar-nav nav-flex-icons">
          
+          {{#if authorized}}
           <li class="nav-item">
-            {{#if authorized}}
               <a class="nav-link waves-effect"href="/myPage">
                 <i class="fa fa-shopping-cart"></i>
                 <span class="clearfix d-none d-sm-inline-block">MyPage</span>
               </a>
-            {{/if}}
           </li>
+          <li class="nav-item">
+              <a class="nav-link waves-effect" href="/chat" onClick="window.open(this.href, 'new', 'width=650, height=600'); return false;">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="clearfix d-none d-sm-inline-block">채팅</span>
+              </a>
+          </li>
+          {{/if}}
             <li class="nav-item">
               {{#if authorized}}
                 <a href="/logout" class="nav-link border border-light rounded waves-effect">
