@@ -18,7 +18,7 @@ $(document).ready(function(){
     }
 
     showState();
-    $('.nav-item').click(function(){
+    $('.nav-item.mainList').click(function(){
 
         //active한것 먼저 삭제
         $('ul.navbar-nav.categorySelectMain').each(function(){

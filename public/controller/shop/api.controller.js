@@ -20,5 +20,6 @@ exports.changeListInMain = function(req,res){
         // return res.json(resolvedData);
     }).catch(function(err){
         console.log(err);
+        return ;
     });
 }
