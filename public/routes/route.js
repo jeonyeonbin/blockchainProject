@@ -42,10 +42,12 @@ module.exports=function(app){
     //page url 처리 라우터
     var page = require('./page')(app);
 
-    app.use('/board',require('./boardRoute'));  //board router
-    app.use('/shopPage',require('./shopPageRoute'));   //shopPage
-    app.use('/myPage',require('./myPageRoute'));
-    app.use('/testing',require('./testingRoute'));
+    app.use('/board',require('./boardRoute'));         //board Router
+    app.use('/shopPage',require('./shopPageRoute'));   //shopPage Router
+    app.use('/myPage',require('./myPageRoute'));       //myPage Router
+    app.use('/testing',require('./testingRoute'));     //test용 Router
+    app.use('/chat',require('./chatRoute'));           //chatting Router
+    
     //404 에러 페이지
     app.use(function(req,res,next){
         res.status(404);
