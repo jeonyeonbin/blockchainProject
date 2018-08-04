@@ -3,9 +3,9 @@ var server =require('http').createServer(app);
 
 var chatController = require('../controller/chat/chatting.controller');
 
-app.use(function(req,res,next){
-    require('../controller/chat/chatSocket.controller')(server);
-});
+
+require('../controller/chat/chatSocket.controller')(server);
+
 app.get('/',chatController.chatGET);
 
 // 채팅 서버 7878 포트 이용
