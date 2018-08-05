@@ -48,16 +48,7 @@ $(document).ready(function(){
 
   chatting().then((result)=>{
     //채팅방이 있을때
-    if(result.result == 'alreadyRoom'){
-      alert('already');
-      alert(result.chatRoomNumber.toString());
-      window.location.href="/chat/"+result.chatRoomNumber;
-      return;
-     
-    //채팅방이 없을때
-    }else if(data.result=='newRoom'){
-      alert('new');
-      alert(result.chatRoomNumber.toString());
+    if(result.result == 'alreadyRoom' || result.result=='newRoom'){
       window.location.href="/chat/"+result.chatRoomNumber;
     }else{
       alert('Error발생');
