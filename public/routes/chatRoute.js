@@ -2,9 +2,10 @@ var app = require('express')();
 var server =require('http').createServer(app);
 
 var chatController = require('../controller/chat/chatting.controller');
-
-
-require('../controller/chat/chatSocket.controller')(server);
+app.use(function(req,res,next){
+    require('../controller/chat/chatSocket.controller')(server,req);
+    next();
+});
 
 app.get('/',chatController.chatGET);
 app.post('/chatCheck',chatController.chatCheck);
