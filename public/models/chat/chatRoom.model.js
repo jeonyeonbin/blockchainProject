@@ -9,5 +9,5 @@ var chatRoomSchema = new Schema({
 });
 // autoIncrement 설정
 autoIncreament.initialize(mongoose.connection);
-chatRoomSchema.plugin(autoIncreament.plugin,{model:'chatRoom',startAt:1,incrementBy:1});
+chatRoomSchema.plugin(autoIncreament.plugin,{model:'chatRoom',field:'chatRoomNumber',startAt:1,incrementBy:1});
 module.exports= mongoose.model('chatRoom',chatRoomSchema);

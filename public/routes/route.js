@@ -41,7 +41,7 @@ module.exports=function(app){
     app.use(bodyParser.json());
     //page url 처리 라우터
     var page = require('./page')(app);
-
+    app.get('/',function(req,res){return res.redirect(303,'/shopPage')});
     app.use('/board',require('./boardRoute'));         //board Router
     app.use('/shopPage',require('./shopPageRoute'));   //shopPage Router
     app.use('/myPage',require('./myPageRoute'));       //myPage Router

@@ -10,33 +10,40 @@ exports.chatGET = function(req,res){
 exports.chatCheck = function(req,res){
     console.log('chatCheck');
     console.log('userID : '+ req.body.id);
-    if(req.session.name == undefined) return res.send('login');
+
+    if(req.session.name == undefined) return res.json({result:'login'});  //세션이 없을경우
+    // 채팅방 체크후 없으면 생성, 있으면 기존채팅방의 데이터불러오기
     return new Promise(function(resolve,reject){
             chatRoomModel.findOne({$or:[{user1:req.session.name,user2:req.body.id},{user1:req.body.id,user2:req.session.name}]},function(err,data){
             if(err) return res.json({success:false,message:err});
             
-            
-            if(data == null) reject('new');    // 채팅방이 없을때
-            else reject('origin');             // 채팅방이 있을때
+            if(data == null) resolve('new');    // 채팅방이 없을때
+            else resolve(data.chatRoomNumber.toString());            // 채팅방이 있을때
         });
     }).then((result)=>{
         if(result =='new'){
-            console.log('빈방');
+            //방이 없을경우
             var chatRoom = new chatRoomModel();
             
             chatRoom.user1 = req.session.name;     // 자기 자신
             chatRoom.user2 = req.body.id;          // 상대방
-            chatRoom.chatRoomNumber = 1;
             chatRoom.save(function(err){
-                if(err) return res.send("errorRoom");
-                return res.send('newRoom');
+                console.log(chatRoom.chatRoomNumber);
+
+                if(err) return res.json({result:'errorRoom'});
+                return res.json({result:'newRoom',chatRoomNumber:chatRoom.chatRoomNumber});
             });
         }else{
-            res.send('alreadyRoom');
+            //방이 있을경우
+            res.json({result:'alreadyRoom',chatRoomNumber:result});
         }
         
     }).catch((err)=>{
         console.log(err);
     });
+};
+exports.chatRoomGET = function(req,res){
+    console.log("myRoomNumber :"+req.params.room);
+    res.render('chatting/chatRoom',{layout:false,chatRoomNumber:req.params.room});
 };
 
