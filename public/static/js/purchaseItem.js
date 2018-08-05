@@ -1,7 +1,6 @@
 
 $(document).ready(function(){
     $('.purchaseItem').click(()=>{
-        
         //아이템 고유키값
         var key = $('#key').val();
         //카테고리 변수
@@ -25,5 +24,12 @@ $(document).ready(function(){
                 alert(error);
             }
         });
+    });
+
+    $('.purchaseChatting').click(()=>{
+        var userId = $('#userId').text();
+        console.log(userId);
+        var url ='http://localhost:5555/chat?id='+userId;
+        window.open(url,'_blank','width=650px, height=500px,scrollbar=true,status=no,menubar=no');
     });
 }); 

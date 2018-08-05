@@ -14,6 +14,14 @@
     <title>
         Chatting
     </title>
+    <style>
+      #Progress_Loading{
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          background: #ffffff;
+      }
+    </style>
 </head>
 <body>
     <!-- 채팅 메세지 공간-->
@@ -25,7 +33,10 @@
     <div style="margin-top:57px;">
      <ul id="messages"></ul>
     </div>
-    
+    <input type="hidden" name="" id="userId" value="{{userId}}">
+    <div id = "Progress_Loading"><!-- 로딩바 -->
+      <img src="../static/img/progressbar.gif"/>
+    </div>
 
     <!-- 전송 -->
     <div class="form">

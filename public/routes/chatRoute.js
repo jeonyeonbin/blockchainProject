@@ -7,6 +7,7 @@ var chatController = require('../controller/chat/chatting.controller');
 require('../controller/chat/chatSocket.controller')(server);
 
 app.get('/',chatController.chatGET);
+app.post('/chatCheck',chatController.chatCheck);
 
 // 채팅 서버 7878 포트 이용
 server.listen(7878,function(){

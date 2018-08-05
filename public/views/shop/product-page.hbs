@@ -39,7 +39,7 @@
             <p class="lead font-weight-bold">품명</p>
             <p>{{items.itemName}}</p>
             <p class="lead font-weight-bold">판매자</p>
-            <p>{{items.seller}}</p>          
+            <p id="userId">{{items.seller}}</p>          
             <p class="lead font-weight-bold">조회수</p>
             <p>{{items.hits}}</p>
             <form class="d-flex justify-content-left">
@@ -50,11 +50,15 @@
                 <button class="btn btn-primary btn-md my-0 p purchaseItem" type="button" onclick="return false;" style="margin-left:0px; margin">구매하기
                   <i class="fa fa-shopping-cart ml-1"></i>
                 </button>
+                <button class="btn btn-warning btn-md my-0 p purchaseChatting" type="button" style="margin-left:0px; margin"> 채팅
+                  <i class="fa fa-comment" aria-hidden="true"></i>  
+                </button>
               {{else}}
                 <button class="btn btn-danger btn-md my-0 p" type="button" onclick="return false;" style="margin-left:0px; margin" disabled>판매 완료
                   <i class="fa fa-shopping-cart ml-1"></i>
                 </button>
               {{/if}}
+
 
             </form>
 
