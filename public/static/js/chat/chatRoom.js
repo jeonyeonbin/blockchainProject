@@ -11,7 +11,7 @@ $(document).ready(function(){
       //채팅 수신
       function receiveMsg(socket){
         socket.on('chat message',function(data){
-        $('#messages').append($('<li>').text(msg.msg));
+        $('#messages').append($('<li>').text(data));
         });
       }
 
