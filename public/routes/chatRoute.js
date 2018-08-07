@@ -1,11 +1,12 @@
-var app = require('express')();
-var server =require('http').createServer(app);
+const path = require('path');
+const express = require('express');
+const chatController = require('../controller/chat/chatting.controller');
+const app = express();
+const server = require('http').createServer(app);
 
-var chatController = require('../controller/chat/chatting.controller');
-app.use(function(req,res,next){
-    require('../controller/chat/chatSocket.controller')(server,req);
-    next();
-});
+require('../controller/chat/chatSocket.controller')(server);
+
+app.use(express.static(path.resolve(path.join(__dirname, '..'))));
 
 app.get('/',chatController.chatGET);
 app.post('/chatCheck',chatController.chatCheck);
@@ -15,4 +16,5 @@ app.get('/:room',chatController.chatRoomGET);
 server.listen(7878,function(){
     console.log('Socket IO Server Listen');
 });
-module.exports=app;
+
+module.exports = app;

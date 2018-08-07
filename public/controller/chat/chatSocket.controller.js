@@ -1,5 +1,5 @@
 //socket 관련 함수
-function sockFunction(server,req){
+function sockFunction(server) {
     var io = require('socket.io')(server);
     io.on('connection',function(socket){
         console.log('a user login');
