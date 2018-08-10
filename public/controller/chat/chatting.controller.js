@@ -1,5 +1,5 @@
-
 const chatRoomModel = require('../../models/chat/chatRoom.model');
+const chatContent = require('../../models/chat/chatContents.model');
 // 채팅방 홈페이지 보여주기
 exports.chatGET = function (req, res) {
   console.log(req.query.id);
@@ -41,7 +41,17 @@ exports.chatCheck = function (req, res) {
     console.log(err);
   });
 };
+
+
 exports.chatRoomGET = function (req, res) {
   console.log(`myRoomNumber :${req.params.room}`);
-  res.render('chatting/chatRoom', { layout: false, chatRoomNumber: req.params.room });
+
+  chatContent.find({chatNo : req.params.room},(err,data)=>{
+    if (err) return res.render('500',err);
+    data.forEach((myDate)=>{
+      console.log(myDate);
+    });
+    return res.render('chatting/chatRoom', { layout: false,chatInfo:data, myId:req.session.name, chatRoomNumber: req.params.room });
+
+  });
 };

@@ -1,4 +1,24 @@
+const chatContentsModel = require('../../models/chat/chatContents.model');
+const chatRoomModel = require('../../models/chat/chatRoom.model');
+
+//Date함수에서 +문자열로가져오기
+Object.defineProperty(Date.prototype, 'YYYYMMDDHHMMSS', {
+    value: function() {
+        function pad2(n) {  // always returns a string
+            return (n < 10 ? '0' : '') + n;
+        }
+
+        return this.getFullYear() +
+               pad2(this.getMonth() + 1) + 
+               pad2(this.getDate()) +
+               pad2(this.getHours()) +
+               pad2(this.getMinutes()) +
+               pad2(this.getSeconds());
+    }
+});
 //socket 관련 함수
+
+
 function sockFunction(server) {
     var io = require('socket.io')(server);
     io.on('connection',function(socket){
@@ -22,7 +42,16 @@ function receiveMsg(socket,io){
     socket.on('chat message',function(data){
         console.log(data.msg);
         console.log(data.roomId);
-        io.sockets.in(data.roomId).emit('chat message',data.msg);
+        console.log(data.userId);
+        var chatContentM = new chatContentsModel();
+        chatContentM.chatContents = data.msg;
+        chatContentM.chatSender = data.userId;
+        chatContentM.chatNo = data.roomId;
+        chatContentM.chatDate = new Date().YYYYMMDDHHMMSS();
+        chatContentM.save((err)=>{
+            if(err) return ;
+        });
+        io.sockets.in(data.roomId).emit('chat message',{sendDate: chatContentM.chatDate,msg:data.msg,userId:data.userId});
         // io.emit('chat message',msg);
         // console.log('msg :  '+ msg);
     });

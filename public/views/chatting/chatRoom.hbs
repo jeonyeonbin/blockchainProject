@@ -31,10 +31,14 @@
       </div>
     </nav>
     <div style="margin-top:57px;">
-     <ul id="messages"></ul>
+     <ul id="messages">
+       {{#each chatInfo}}
+        <li>{{chatSender}} : {{chatContents}}  : {{chatDate}}</li>
+       {{/each}}
+     </ul>
     </div>
     <input type="hidden" name="" id="chatRoomNumber" value="{{chatRoomNumber}}">
-  
+    <input type="hidden" name="" id="myId" value="{{myId}}">
     <!-- 전송 -->
     <div class="form">
       <input id="message" autocomplete="off" /><button class="btn btn-primary">전 송</button>

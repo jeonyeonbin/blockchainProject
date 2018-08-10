@@ -1,11 +1,14 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var chatRoomSchema = new Schema({
-    chatNo: Number,
+var chatContentsSchema = new Schema({
+    chatNo:{ type: Number},
     chatSender : {type:String,required:true},
     chatContents: {type:String,required:true},
-    chatDate : {type:Date,default:Date.now()}
+    chatDate : {type:String},
 });
 
-module.exports= mongoose.model('chatRoom',chatRoomSchema);
+
+   
+   
+module.exports= mongoose.model('chatContent',chatContentsSchema);
