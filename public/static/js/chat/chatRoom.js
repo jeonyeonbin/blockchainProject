@@ -24,12 +24,19 @@ $(document).ready(function(){
           $('#message').val('');
           return false;
       }
+      //채팅 아이디에따라 위치정하기
+      function getPositionById(id){
+        var userId = $('#userId').val();
+        var myId = $('#myId').val();
+        
+      }
       //채팅방 입장
       function joinRoom(socket,chatRoomNumber){
         socket.emit('joinRoom',{room:+chatRoomNumber});
       }
       var socket = io.connect('http://localhost:7878');
       var chatRoomNumber = $('input[type="hidden"]').val();
+
       joinRoom(socket,chatRoomNumber);               //채팅방 입장
       EnterKeyPress(socket,chatRoomNumber);          //채팅 송신
       receiveMsg(socket);                            //채팅 수신

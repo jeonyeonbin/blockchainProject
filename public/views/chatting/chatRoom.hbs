@@ -10,7 +10,7 @@
     <!-- Custom styles for this template -->
     <link href="../adminTemplate/css/scrolling-nav.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/chat/chatting.css">
-
+    <link rel="stylesheet" href="../../static/css/chat/message.css">
     <title>
         Chatting
     </title>
@@ -30,10 +30,16 @@
         <div class="navbar-brand js-scroll-trigger" href="#page-top" style="font-family:'Courier New', Courier, monospace;" >BC2018 채팅방</div>
       </div>
     </nav>
-    <div style="margin-top:57px;">
+    <div style="margin-top:57px; margin-bottom:50px;">
      <ul id="messages">
        {{#each chatInfo}}
-        <li>{{chatSender}} : {{chatContents}}  : {{chatDate}}</li>
+       <img src="../../static/img/kakaoimg.jpg" id="profileImg" alt="" style>
+      <div class="talk-bubble tri-right round left-top">
+          <div class="talktext">
+            <input type="hidden" name="" id="userId" value="{{chatSender}}">
+            <p>{{chatContents}}</p>
+          </div>
+        </div><br>
        {{/each}}
      </ul>
     </div>
