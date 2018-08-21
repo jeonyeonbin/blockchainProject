@@ -57,7 +57,7 @@
       </div>
     </nav>
 
-    <input type="hidden" name="" id="myId" value="{{myId}}">
+    <input type="hidden" name="" id="myId" value="{{users.myId}}">
     {{#each users}}
     <div class="panel panel-default" style="margin-bottom:0px;margin-top:0px;">
       <a href="http://localhost:5555/chat/{{chatRoomNumber}}">
@@ -65,7 +65,7 @@
             <input type="hidden" name="" value="{{user1}}" id="user1">
             <input type="hidden" name="" value="{{user2}}" id="user2">
             <img src="../../static/img/kakaoimg.jpg" class="rounded-circle" alt="" width="60px" height="60px" style="margin-right:20px;">
-            <h3 style="display:inline;" class="title"></h3>
+            <h3 style="display:inline;"></h3>
         </div>
       </a>
     </div>
@@ -77,22 +77,25 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
  <script>
      $(document).ready(function(){
-         var myId = $('#myId').val();
-         $('a').hover(()=>{
+         $('a').hover(function(){
              $(this).find('h3').css('color','white');
          });
-         $('a').mouseout(()=>{
+         $('a').mouseout(function(){
              $(this).find('h3').css('color','gray');
          });
-         $('h3.title').each(()=>{
-             var user1 = $(this).prev().prev().prev().val();
-             var user2 = $(this).prev().prev().val();
-             console.log('user1' + user1);
-             console.log('user2' + user2);
-             if(user1 != myId) $(this).html(user1+'님 과의 채팅방');
-             else $(this).html(user2 + '님 과의 채팅방'); 
+         $('div.panel-body').each(function(user){
+             var $this = $(this);
+             console.dir($this);
+             console.log($this.find('#user1').val());
+             console.log('user 1 :' + $this.find('#user1').val());
+             console.log('user 2 :' + $this.find('#user2').val());
+             if($this.find('#user1').val() != $('#myId').val()){
+               $this.find('h3').html($this.find('#user1').val() + '님 과의 대화방');
+             } else{
+                 $this.find('h3').html($this.find('#user2').val() +'님 과의 대화방');
+             } 
          });
-     });
+     })
  </script>
 </body>
 </html>

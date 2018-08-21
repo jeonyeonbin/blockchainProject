@@ -8,10 +8,11 @@ exports.chatGET = function (req, res) {
 
 // 채팅방 리스트 보여주기
 exports.chatListGET = function(req,res){
-  var id = 'jyb'
+  var id = req.session.name;
   chatRoomModel.find({ $or: [{ user1: id}, {user2: id}]}, (err, data) => {
     if (err) return res.json({ success: false, message: err });
-    data.myId = req.session.id;
+    data.myId = id;
+    console.log(data);
     return res.render('chatting/chatList',{users: data,layout:false});
   });
 };
