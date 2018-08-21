@@ -44,16 +44,40 @@ $(document).ready(function(){
       });
     });
   }
-
-
-  chatting().then((result)=>{
-    //채팅방이 있을때
-    if(result.result == 'alreadyRoom' || result.result=='newRoom'){
-      window.location.href="/chat/"+result.chatRoomNumber;
+  function checkMyId(){
+    return new Promise((resolve,reject)=>{
+      $.ajax({
+        type : "POST", //전송방식을 지정한다 (POST,GET)
+        url : "http://localhost:5555/chat/checkId",     // id Check 
+        data : {id:$('input[type="hidden"]').val()},    // 상대방의 아이디
+        dataType:'json',
+        error : function(err){
+            console.log(err);
+            alert('통신실패!!');
+        },  
+        success : function(data){
+            resolve(data);
+         }
+    
+      });
+    });
+  }
+  checkMyId().then((result)=>{
+    if(result == 'true'){
+      chatting().then((result)=>{
+        //채팅방이 있을때
+        if(result.result == 'alreadyRoom' || result.result=='newRoom'){
+          window.location.href="/chat/"+result.chatRoomNumber;
+        }else{
+          alert('Error발생');
+        }
+      }).catch((err)=>{
+        console.log(err);
+      });
     }else{
-      alert('Error발생');
+      alert('자기 자신과 채팅을 할수 없습니다.');
+      window.close();
+      return false;
     }
-  }).catch((err)=>{
-    console.log(err);
   });
 });

@@ -52,7 +52,7 @@ exports.chatCheck = function (req, res) {
   });
 };
 
-
+//채팅방 룸 보여주기
 exports.chatRoomGET = function (req, res) {
   console.log(`myRoomNumber :${req.params.room}`);
 
@@ -64,4 +64,10 @@ exports.chatRoomGET = function (req, res) {
     return res.render('chatting/chatRoom', { layout: false,chatInfo:data, myId:req.session.name, chatRoomNumber: req.params.room });
 
   });
+};
+
+//채팅방 들어가기전 ID 체크
+exports.chatIdCheck = function(req,res){
+  if(req.session.name == req.body.id) return res.json('false');
+  else return res.json('true');
 };
