@@ -9,6 +9,7 @@ require('../controller/chat/chatSocket.controller')(server);
 app.use(express.static(path.resolve(path.join(__dirname, '..'))));
 
 app.get('/',chatController.chatGET);
+app.get('/chatList',chatController.chatListGET);
 app.post('/chatCheck',chatController.chatCheck);
 app.get('/:room',chatController.chatRoomGET);
 

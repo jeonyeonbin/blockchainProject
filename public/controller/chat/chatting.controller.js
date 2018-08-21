@@ -6,6 +6,15 @@ exports.chatGET = function (req, res) {
   res.render('chat', { userId: req.query.id, layout: false });
 };
 
+// 채팅방 리스트 보여주기
+exports.chatListGET = function(req,res){
+  var id = 'jyb'
+  chatRoomModel.find({ $or: [{ user1: id}, {user2: id}]}, (err, data) => {
+    if (err) return res.json({ success: false, message: err });
+    data.myId = req.session.id;
+    return res.render('chatting/chatList',{users: data,layout:false});
+  });
+};
 // 채팅방 확인여부
 exports.chatCheck = function (req, res) {
   console.log('chatCheck');
