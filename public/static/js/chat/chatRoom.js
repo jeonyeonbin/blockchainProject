@@ -32,7 +32,7 @@ $(document).ready(function(){
         var myId = $('#myId').val();
         $('input[type="hidden"]#userId').each(function(){
           var $val = $(this).val();
-          //자신 아이디일때
+          //자신 아이디일 때
           if($val == myId){
               $(this).parent().parent().addClass('yellowColorChange');
               $(this).parent().parent().prev().css("display","none");
