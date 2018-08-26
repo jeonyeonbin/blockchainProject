@@ -19,11 +19,8 @@ args : [
 	// 7, address
 ]
    */
-    var request ={
-        chaincodeId:'fabcar',
-        fcn : 'registUser',
-        args : [req.body.identity,req.body.password,req.body.name,req.body.birth,req.body.lastIdNumber,req.body.phone,req.body.email,req.body.address],  
-    };
+    var request = require('../returnRequest')('registUser',[req.body.identity,req.body.password,req.body.name,req.body.birth,req.body.lastIdNumber,req.body.phone,req.body.email,req.body.address]);
+
     FabricInvoke(request).then((resolvedData)=>{
         return res.send("success");
     }).catch((err)=>{ 

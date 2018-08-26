@@ -19,8 +19,6 @@ module.exports =function(app){
         res.render('test/testChild',{layout:false});
     })
     // block chain test 용 페이지 
-    app.get('/test',shopClothController.test);
-    app.post('/test',shopClothController.insertTest);
     
     app.get('/cloth',clothController.clothItemGET);
     app.get('/cloth/:itemName',clothController.clothSelectOneGET);

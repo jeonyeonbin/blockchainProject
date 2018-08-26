@@ -1,20 +1,11 @@
 var FabricQuery = require('../../hyperledger-fabric/query');
-
+var makeRequest = require('../returnRequest');
 exports.clothSelectOneGET = function(req,res){
     if(req.session.authorized == true) {
         res.locals.authorized = true;
     }
 
-    var key = "";
-    var request = {
-        //targets : --- letting this default to the peers assigned to the channel
-        chaincodeId: 'fabcar',
-        // fcn: 'queryAllCars',
-        fcn: 'queryOneItem',
-        // args: ['']
-        args: [key]
-    };
-
+    var reuqest = makeRequest('queryOneItem',[key]);
     FabricQuery(request).then(function(resolvedData){
         return resolvedData;    
     }).then(function(resolvedData){

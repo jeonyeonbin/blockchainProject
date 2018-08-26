@@ -1,6 +1,6 @@
 var Item = require('../../models/item.model');
 var FabricInvoke = require('../../hyperledger-fabric/invoke');
-
+var makeRequest = require('../returnRequest');
 var fileUpload = require('../uploadFile.controller');
 exports.itemRegistGET = function(req,res){
 
@@ -26,12 +26,7 @@ exports.itemReigstPOST = function(req,res,next){
         console.log("Promise : "+PicURL);
         return PicURL;   
     }).then((PicURL)=>{
-        var request={
-            chaincodeId:'fabcar',
-            fcn:'registItem',
-            //url 정보 저장
-            args:[req.session.name,req.body.itemName,req.body.itemInfo,req.body.itemPrice,req.body.itemCategory,PicURL,PicURL],
-     };
+        var request = makeRequest('registItem',[req.session.name,req.body.itemName,req.body.itemInfo,req.body.itemPrice,req.body.itemCategory,PicURL,PicURL]);
      console.log("Pic URL :"+PicURL);
      return request;
     }).then((request)=>{

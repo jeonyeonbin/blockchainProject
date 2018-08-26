@@ -20,7 +20,7 @@ var fabric_client = new Fabric_Client();
 
 var serverIP = '13.209.186.144';
 // setup the fabric network
-var channel = fabric_client.newChannel('mychannel');
+var channel = fabric_client.newChannel('bc2018channel');
 var peer = fabric_client.newPeer('grpc://' + serverIP + ':7051');
 channel.addPeer(peer);
 var order = fabric_client.newOrderer('grpc://' + serverIP + ':7050')

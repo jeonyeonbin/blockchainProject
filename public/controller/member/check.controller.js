@@ -1,6 +1,6 @@
 var Member = require('../../models/member.model');
 var FabricQuery = require('../../hyperledger-fabric/query');
-
+var makeRequest = require('../returnRequest');
 
 function check(request,res){
     FabricQuery(request).then((resolvedData)=>{
@@ -14,10 +14,7 @@ exports.validCheckPW = function(req,res){
     var id  = req.session.name;
     var pw = req.body.pw;
     console.log(id + ' ' +pw);
-    var request={
-          fcn : checkPasswordUser,
-          args: [identity,password], 
-    };
+    var request = makeRequest('checkPasswordUser',[id,pw]);
     check(request,res);
        
     // Member.findOne({id:id,pw:pw},function(err,user){
@@ -29,11 +26,7 @@ exports.validCheckPW = function(req,res){
 
 exports.validCheckID = function(req,res){
 
-    var request ={
-        chaincodeId : 'fabcar',
-        fcn : 'identityOverlapCheck',
-        args : [req.body.identity],
-    };
+    var request = makeRequest('identityOverlapCheck',[req.body.identity]);
     
     check(request,res);
     console.log(req.body.id);

@@ -1,9 +1,9 @@
 function returnRequest(fcn,args){
     return {
-        chaincodeId : 'fabcar',
+        chaincodeId : 'bc2018',
         fcn : fcn,
         args : args,
-        chainId : 'myChannel',
+        chainId : 'bc2018channel',
     };
 }
 

@@ -11,11 +11,9 @@ exports.loginPOST = function(req,res){
 
     console.log(identity);
     console.log(password);
-     var request = {
-         chaincodeId: 'fabcar',
-         fcn:'loginUser',
-         args:[identity,password]
-     }
+
+
+     var request = require('../returnRequest')('loginUser',[identity,password]);
      FabricQuery(request).then((resolvedData)=>{
         req.session.name =identity;
         req.session.pw = password;

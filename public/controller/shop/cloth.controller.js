@@ -10,15 +10,7 @@ var requestReturn = require('../returnRequest');
 exports.test = function(req,res){
     // var requestArgs = [req.body.data,]
 
-    var request = {
-        //targets : ---  this default to the peers assigned to the channel
-        chaincodeId: 'fabcar',
-        // fcn: 'queryAllCars',
-        fcn: 'querySellProductByList',
-        // args: ['']
-        args: ['sumin974#20180605/1505','sumin974#20180605/1506']
-    };
-
+    var requst = requestReturn('querySellProductByList',['sumin974#20180605/1505','sumin974#20180605/1506']);
     FabricQuery(request).then(function(resolvedData){
         return resolvedData;    
     }).then(function(resolvedData){
@@ -29,38 +21,13 @@ exports.test = function(req,res){
         console.log(err);
     });
 }
-exports.insertTest = function(req,res){
-    var request = {
-        chaincodeId : 'fabcar',
-   		fcn : 'createSellProduct',
-   		args : [ 'sumin4', '청바지', '20000', '20180605/1507' ],
-   		chainId : 'mychannel',
-    };
-    FabricInvoke(request).then(function(resolvedData){
-        console.log(resolvedData);
-    }).then(function(){
-        res.json('success');
-    }).catch((err)=>{
-        console.log(err);
-    })
-
-
-}
 
 exports.clothSelectOneGET = function(req,res){
     if(req.session.authorized == true) {
         res.locals.authorized = true;
     }
     console.log("진입");
-    var request = {
-        //targets : --- letting this default to the peers assigned to the channel
-        chaincodeId: 'fabcar',
-        // fcn: 'queryAllCars',
-        fcn: 'queryItem',
-        // args: ['']
-        args: [req.params.key]
-    };
-
+    var request = requestReturn('queryItem',[req.params.key]);
     //상품 조회수 1증가
     FabricInvoke(requestReturn('increasHits',[req.params.key])).then((resolvedData)=>{
         console.log('sucess');
@@ -100,20 +67,8 @@ exports.clothAllGET = function(req,res){
     if(req.session.authorized == true) {
         res.locals.authorized = true;
     }
-    var returnQueryValue1="";
-    
     var itemCategory = 'cloth';
-
-
-    var request = {
-        //targets : --- letting this default to the peers assigned to the channel
-        chaincodeId: 'fabcar',
-        // fcn: 'queryAllCars',
-        fcn: 'queryItemByCategory',
-        // args: ['']
-        args: [itemCategory]
-    };
-
+    var request = requestReturn('queryItemByCategory',[itemCategory]);
     FabricQuery(request).then(function(resolvedData){
         return resolvedData;    
     }).then(function(resolvedData){
