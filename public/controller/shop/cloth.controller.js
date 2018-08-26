@@ -43,7 +43,7 @@ exports.clothSelectOneGET = function(req,res){
         console.log(resolvedData);
 
         //판매 여부 
-        if(resolvedData.sellState == 'selling')res.locals.button = true;
+        if(resolvedData.sellState == '1')res.locals.button = true;
         else res.locals.button =false;
         
         return res.render('shop/product-page',{items:resolvedData,layout:'../shop/home-page'});

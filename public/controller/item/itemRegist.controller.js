@@ -11,6 +11,12 @@ exports.itemRegistGET = function(req,res){
 }
 
 exports.itemReigstPOST = function(req,res,next){
+    console.log('---------------------------------------------');
+    console.log('transactionMode'+ req.body.transactionMode);
+    console.log('transactionPosition '+ req.body.transactionPosition);
+    console.log('deliveryFee' + req.body.deliveryFee);
+    console.log('---------------------------------------------');
+    
     // console.log(req.files);
     /*
     [Multer 초기화]
@@ -21,12 +27,16 @@ exports.itemReigstPOST = function(req,res,next){
     */ 
     //등록하는사람의 아이디 + 현재시간 
     var PicURL;
+    if(req.body.transactionMode == '1'){
+        req.body.deliveryFee = '0';
+    }
+    console.log(req.body.deliveryFee);
     fileUpload(req).then(function(url){
         PicURL = url;
         console.log("Promise : "+PicURL);
         return PicURL;   
     }).then((PicURL)=>{
-        var request = makeRequest('registItem',[req.session.name,req.body.itemName,req.body.itemInfo,req.body.itemPrice,req.body.itemCategory,PicURL,PicURL]);
+        var request = makeRequest('registItem',[req.session.name,req.body.itemName,req.body.itemInfo,req.body.itemPrice,req.body.itemCategory,PicURL,PicURL,req.body.transactionMode,req.body.transactionPosition,req.body.deliveryFee]);
      console.log("Pic URL :"+PicURL);
      return request;
     }).then((request)=>{

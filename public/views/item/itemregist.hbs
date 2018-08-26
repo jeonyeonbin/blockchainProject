@@ -1,6 +1,7 @@
 <!-- Breadcrumbs-->
 <link async href="http://fonts.googleapis.com/css?family=Antic" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" href="/adminTemplate/css/btn.css" type="text/css">
+<link rel="stylesheet" href="../../static/css/myPage/regist.css">
 <script src="/js/ckeditor/ckeditor.js" type="text/javascript"></script>
 <ol class="breadcrumb">
     <li class="breadcrumb-item">
@@ -32,8 +33,32 @@
             <li><label for="pic" class="registItem" style="margin-right:25px"><h5>상품사진</h5></label>
                 <input type="file" name="image" id="pic" value="사진 업로드">
             </li><br>
+            <li><label for="transactionMode" class="registItem" style="margin-right:25px"><h5>거래 방식</h5></label>
+                <label>
+                    <input type="radio" class="transactionMode" name="transactionMode" value="1" > <span class="label-text transactionMode">직거래</span>
+                </label>
+                <label>
+                    <input type="radio" class="transactionMode" name="transactionMode" value="2" > <span class="label-text transactionMode">택배 배송</span>
+                </label>
+                <label>
+                    <input type="radio" class="transactionMode" name="transactionMode" value="3" > <span class="label-text transactionMode">직거래 및 택배배송</span>
+                </label>
+            </li>
+            <li>
+                <label for="transactionPosition" class="registItem" style="margin-right:25px"><h5 class="transactionPosition">선호 배송 지역</h5>
+                <input type="text" name="transactionPosition" class="transactionPosition">
+            </li><br>
+            <li class="deliveryFee"><label for="deliveryFee" class="registItem" style="margin-right:25px"><h5 class="deliveryFee">배송방식</h5></label>
+                <label>
+                    <input type="radio" class="deliveryFee" name="deliveryFee" value="1" > <span class="label-text">배송비 포함</span>
+                </label>
+                <label>
+                    <input type="radio" class="deliveryFee" name="deliveryFee" value="2" > <span class="label-text">착불</span>
+                </label>
+            </li><br>
+
             <li><label for="category" class="registItem"><h5>카테고리</h5></label>
-                <select class="selectpicker" name="itemCategory">
+                <select class="selectpicker form-control form-control-lg" name="itemCategory">
                     <option value="cloth">의류</option>
                     <option value="sports">스포츠 및 레저</option>
                     <option value="electronics">전자 제품</option>
@@ -51,3 +76,27 @@
     <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
     <div style="height: 1000px;"></div>
 </nav>
+
+<script>
+    $(document).ready(function(){
+        $('.transactionPosition').css('display','none');
+        $('.deliveryFee').css('display','none');
+
+        $('span.transactionMode.label-text').click(function(){
+            var transactionMode = $(this).siblings('input[type="radio"]').val();
+            if(transactionMode == '1' ){            //직거래
+                $('.transactionPosition').css('display','block');
+                $('.deliveryFee').css('display','none');
+            }else if(transactionMode =='2'){        //배송 거래
+                $('.transactionPosition').css('display','none');
+                $('.deliveryFee').css('display','block');
+                
+            }else if(transactionMode == '3'){       //직거래 및 배송거래
+                $('.transactionPosition').css('display','block');
+                $('.deliveryFee').css('display','block');
+            }            
+        });
+
+
+    });
+</script>
