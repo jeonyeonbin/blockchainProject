@@ -8,4 +8,5 @@ router.get('/:itemCategory/:key',shopClothController.clothSelectOneGET);
 router.get('/:itemCategory',require('../controller/shop/category.controller').categoryAllGET);
 router.post('/purchase/:key',itemPurchaseController.purchasePOST);
 router.post('/api/changeList',apiController.changeListInMain);
+
 module.exports = router;

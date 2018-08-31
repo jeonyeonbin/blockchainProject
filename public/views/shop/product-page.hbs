@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="/static/css/product.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="/static/js/product.js"></script>
+<script src="../../static/js/product.js"></script>
 <script src="../../shopTemplate/js/popper.min.js"></script>
   <!--Main layout-->
   <main class="mt-5 pt-4">
@@ -70,20 +70,20 @@
                           <!-- Default unchecked -->
                           <!-- Group of default radios - option 1 -->
                             <div class="custom-control custom-radio op1">
-                              <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="transactionMode">
+                              <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="transactionMode" value="1">
                               <label class="custom-control-label" for="defaultGroupExample1"><h3>직거래</h3></label>
                             </div>
 
                             <!-- Group of default radios - option 2 -->
                             <div class="custom-control custom-radio op2">
-                              <input type="radio" class="custom-control-input" id="defaultGroupExample2" name="transactionMode">
+                              <input type="radio" class="custom-control-input" id="defaultGroupExample2" name="transactionMode" value="2">
                               <label class="custom-control-label" for="defaultGroupExample2"><h3>택배 거래</h3></label>
                             </div>
                           
                         </div>
                         <!--Footer-->
                         <div class="modal-footer flex-center">
-                            <a href="https://mdbootstrap.com/product/material-design-for-bootstrap-pro/" class="btn  btn-outline-danger">Yes</a>
+                            <a class="btn  btn-outline-danger purchaseItem">Yes</a>
                             <a type="button" class="btn  btn-danger waves-effect" data-dismiss="modal">No</a>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
               <!-- Default input -->
               <input type="hidden" name="key" id="key" value="{{items.key}}"> 
               <!--button True 인지에 따라서 구매하기, 판매완료 버튼 -->
-                <button class="btn btn-md my-0 p purchaseItem" type="button" style="margin-left:0px; margin" data-toggle="modal" data-target="#modalConfirmDelete">
+                <button class="btn btn-md my-0 p purchasing" type="button" style="margin-left:0px; margin" data-toggle="modal" data-target="#modalConfirmDelete">
                   <i class="fa fa-shopping-cart ml-1"></i>
                 </button>
                 

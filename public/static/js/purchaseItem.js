@@ -1,23 +1,69 @@
 $(document).ready(function(){
+    // 현재 지금 아이디 되어있는지
+    function checkUser(){
+
+        var returnData;
+        $.ajax({
+            url:'/sessionCheck',
+            method:'POST',
+            async:false,
+            success:function(data){
+                console.log(data);
+                if(data == 'success') {
+                    console.log('success');
+                    returnData = true;
+                }
+                else {
+                    console.log('fail');
+                    returnData = false;
+                }
+            },  
+            error:function(data){
+                console.log(data);
+            }
+        });
+        return returnData;
+    }
+
+    // 구매버튼 클릭
+    function purchasingButtonClick(){
+        $('.purchasing').click(function(){
+            if(checkUser()== false){
+                $('.modal').remove('#modalConfirmDelete');
+                alert('로그인 먼저해주세요');
+                window.location.href ="/login";
+                return;
+            }
+        });
+    }
+
+    // 실제 구매
     function purchaseItem(){
+
         $('.purchaseItem').click(()=>{
-            //아이템 고유키값
-            var key = $('#key').val();
-            //카테고리 변수
-    
-            var category = $('div.mb-3 span#itemCategory').text();
+            var sendData={
+                key :$('#key').val(),                                                         //아이템 고유 키값
+                transactionMode : $('input[name="transactionMode"]:checked').val(),           // 1 : 직거래 , 2: 택배 거래 
+                seller : $('#userId').text(),                                                 // 판매자
+            };
+            var category = $('div.mb-3 span#itemCategory').text();                            // 카테고리
             $.ajax({
                 url: '/shopPage/purchase/'+key,
                 method:'POST',
-                data:{key:key},
+                data:sendData,
                 success:function(data){
-                    if(data == "success"){
-                        alert('구매가 완료 되었습니다');
-                        window.location.href="/shopPage";
+                    if(data == '1'){
+                        alert('현재 구매가 불가한 상품입니다 다시한번 확인해주세요');
+                        window.location.href ='/shopPage/'+category+'/'+sendData.key;
+                        return;
+                    }else if(data == '2'){  //코인 부족
+                        alert('코인이 부족합니다. 충전해주세요.');
+                        window.location.href='/myPage/addCoin';
+                        return;
                     }else{
-                        //모달창 꺼야댐 필수!
-                        alert('코인이 부족합니다.');
-                        window.location.href="/shopPage/"+category+'/'+key;
+                        alert('거래 신청이 완료되었습니다.');
+                        window.location.href='/shopPage/'+category+'/'+sendData.key;
+                        return;
                     }
                 },
                 error:function(err){
@@ -26,19 +72,23 @@ $(document).ready(function(){
             });
         });
     }
+
+
+    purchasingButtonClick();
+    purchaseItem();
     $('.purchaseChatting').click(()=>{
         var userId = $('#userId').text();
         console.log(userId);
-        var url ='http://13.209.211.60:5555/chat?id='+userId;
+        var url ='http://localhost:5555/chat?id='+userId;
         window.open(url,'_blank','width=650px, height=500px,scrollbar=true,status=no,menubar=no');
     });
 
     if($('#sellStateHidden').val()=='1'){                               //판매 상태
-        $('.purchaseItem').addClass('btn-primary').text('구매하기');
+        $('.purchasing').addClass('btn-primary').text('구매하기');
     }else if($('#sellStateHidden').val()=='2'){                         //거래중 상태
-        $('.purchaseItem').addClass('btn-warning').text('거래중');
+        $('.purchasing').addClass('btn-warning').text('거래중');
     }else if($('#sellStateHidden').val()=='3'){                         //판매 완료 상태
-        $('.purchaseItem').addClass('btn-danger').text('판매완료');
+        $('.purchasing').addClass('btn-danger').text('판매완료');
     }
 
     if($('#transactionModeHidden').val()=='1'){

@@ -35,4 +35,16 @@ exports.validCheckID = function(req,res){
     //     if(!user) return res.send("fail");
     //     return res.send('success');
     // });
-}
+};
+
+
+exports.sessionCheck = function(req,res){
+    console.log('hello');
+    if(req.session.name ==undefined || req.session.name=='') {
+        console.log('login request');
+        return res.send('fail');
+    }else{
+        console.log('login success');
+        return res.send('success');
+    } 
+};

@@ -28,4 +28,5 @@ module.exports =function(app){
     app.get('/regist',registController.registGET);
     app.post('/regist',registController.registPOST);
     app.post('/validID',checkController.validCheckID);
+    app.post('/sessionCheck',checkController.sessionCheck); // session Check
 }
