@@ -9,9 +9,10 @@ exports.showBuyProductAllGET = function(req,res){
     var request = makeRequest('queryBuyProductById',[myId]);
     
     FabricQuery(request).then((resolvedData)=>{
-        return res.render('member/myProduct',{items:resolvedData});
+        return res.render('member/buyProduct',{items:resolvedData,layout:'../shop/home-page'});
     }).catch((e)=>{
         console.log(e);
+        return res.render('member/buyProduct',{layout:'../shop/home-page'});
     });
 };
 

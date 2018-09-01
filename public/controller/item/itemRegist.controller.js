@@ -7,7 +7,7 @@ exports.itemRegistGET = function(req,res){
     if(req.session.authorized == true) {
         res.locals.authorized = true;
     }
-    res.render('item/itemregist');
+    res.render('item/itemregist',{layout:'../shop/home-page'});
 }
 
 exports.itemReigstPOST = function(req,res,next){

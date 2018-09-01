@@ -7,7 +7,7 @@ exports.addCoinGET = function(req,res){
     FabricQuery(request).then((resolvedData)=>{
         resolvedData = JSON.parse(resolvedData);
         console.log(resolvedData.amountOfCoin);
-        res.render('member/addCoin',{coin:resolvedData.amountOfCoin});
+        res.render('member/addCoin',{layout:'../shop/home-page',coin:resolvedData.amountOfCoin});
     }).catch((err)=>{
         console.log('errPage!!!!!!!!!!!!!!!!!!!!!');
     });

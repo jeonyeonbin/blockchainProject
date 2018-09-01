@@ -1,5 +1,5 @@
 var FabricQuery = require('../../hyperledger-fabric/query');
-var makeReuqest = require('../returnRequest');
+var makeRequest = require('../returnRequest');
 exports.categoryAllGET = function(req,res){
     if(req.session.authorized == true) {
         res.locals.authorized = true;

@@ -106,11 +106,44 @@
          
           {{#if authorized}}
           <li class="nav-item">
-              <a class="nav-link waves-effect"href="/myPage">
+              <a class="nav-link waves-effect waves-light" id=""  data-toggle="modal" data-target="#fullHeightModalRight">
                 <i class="fa fa-shopping-cart"></i>
                 <span class="clearfix d-none d-sm-inline-block">MyPage</span>
               </a>
-          </li>
+
+              {{!-- <button type="button" cla ss="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#fullHeightModalRight">Right</button> --}}
+              <!-- Full Height Modal Right -->
+              <div class="modal fade right" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true" data-backdrop="false">
+                <div class="modal-dialog modal-full-height modal-right" role="document">
+                  <!--Content-->
+                  <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                      <h4 class="modal-title w-100" id="myModalLabel">MY PAGE</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body">
+                      <div class="list-group">
+
+                        <a href="#" class="list-group-item list-group-item-action waves-effect">내 정보 수정</a>
+                        <a href="/myPage/showMySellProduct" class="list-group-item list-group-item-action waves-effect">내 판매 목록</a>
+                        <a href="/myPage/showMySellProduct" class="list-group-item list-group-item-action waves-effect">내 구매 목록</a>
+                        <a href="/myPage/addCoin" class="list-group-item list-group-item-action waves-effect">코인 충전</a>
+                    </div>
+                    </div>
+                    <!--Footer-->
+                    <div class="modal-footer justify-content-center">
+                      <button type="button" class="btn btn-secondary waves-effect waves-light" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                  <!--/.Content-->
+                </div>
+             </div>
+                <!-- Full Height Modal Right -->
+              </li>
           <li class="nav-item">
               <a class="nav-link waves-effect" href="/chat/chatList" onClick="window.open(this.href, 'new', 'width=650, height=600'); return false;">
                 <i class="fa fa-shopping-cart"></i>

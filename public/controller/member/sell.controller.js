@@ -11,7 +11,8 @@ exports.showSellProductAllGET= function(req,res){
     
     FabricQuery(request).then((resolvedData)=>{
         resolvedData = JSON.parse(resolvedData);
-        res.render('member/myProduct',{items:resolvedData});
+        console.log(resolvedData);
+        res.render('member/myProduct',{items:resolvedData,layout:'../shop/home-page'});
     }).catch((e)=>{
        console.log(e);
     });
