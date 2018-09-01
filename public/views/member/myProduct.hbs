@@ -18,18 +18,96 @@
       <th scope="col">상품</th>
       <th scope="col">구매자</th>
       <th scope="col">거래방식</th>
-      <th scope="col">등록시간</th>
+      <th scope="col">거래요청시간</th>
+      <th scope="col">현재상태</th>
     </tr>
   </thead>
   <tbody>
     {{#each items}}
     <tr>
+      <input type="hidden" name="" id="transactionKey" value="{{transInfo}}">
       <th scope="row">{{@index}}</th>
       <td><img src="{{itemContentsPic}}" class="rounded" alt="" width="50px;" height="50px;">{{itemName}}</td>
-      <td>root</td>
-	    <td><input type="hidden" name="" value="{{transactionMode}}"></td>
-      <td>{{registDateTime}}</td>
+      <td ><h4>{{transInfo.Buyer}}</h4></td>
+	    <td class="transactionMode">{{transInfo.transactionMode}}</td>
+      <td><h4>{{transInfo.startDateTime}}</h4></td>
+      <td class="transactionState">{{transInfo.transactionState}}</td>
     </tr>
     {{/each}}
   </tbody>
 </table>
+
+<div class="modal fade" id="centralModalSuccessDemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog modal-notify modal-success" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                        <p class="heading lead">송장 번호 및 회사</p>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="white-text">×</span>
+                        </button>
+                    </div>
+
+                    <!--Body-->
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
+                        </div>
+                        <label for="category" class="registItem"><h5>택배 회사</h5></label>
+                        <select class="selectpicker form-control form-control-lg" name="itemCategory">
+                            <option value="EPOST">우체국택배</option>
+                            <option value="CJ">CJ대한통운	</option>
+                            <option value="HANJIN">한진택배</option>
+                            <option value="LOTTE">롯데택배 (구. 현대택배)</option>
+                            <option value="LOGEN">로젠택배</option>
+                            <option value="DREAM">드림택배 (구. KG로지스)</option>
+                            <option value="CVSNET">CVSnet 편의점택배	</option>
+                            <option value="CU">CU 편의점택배	</option>
+                        </select>
+                        <br><br>
+                        <label for="sdNumber"><h5>배송 번호</h5></label>
+                        <input type="text" id="sdNumber" class="form-control" name="sendNumber">
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer justify-content-center">
+                        <a type="button" class="btn btn-success waves-effect waves-light">입력
+                        </a>
+                    </div>
+                </div>
+                <!--/.Content-->
+            </div>
+        </div>
+<script>
+  $(document).ready(function(){
+    function transactionState(){
+
+      $('.transactionState').each(function(data){
+        var state = $(this).text();
+        if(state=='1'){
+          $(this).text('').html('<button type="button" class="btn btn-outline-secondary btn-rounded waves-effect">거래중</button>');
+        }else if(state =='2'){
+          $(this).text('').html('<button type="button" class="btn btn-outline-default btn-rounded waves-effect">배송중</button>');
+        }else if(state =='3'){
+          $(this).text('').html('<button type="button" class="btn btn-outline-primary btn-rounded waves-effect">거래완료</button>');
+        }else if(state =='4'){
+          $(this).text('').html('<button type="button" class="btn btn-outline-danger btn-rounded waves-effect">거래취소</button>');
+        }
+      });
+    }
+    function transactionMode(){
+      $('.transactionMode').each(function(data){
+       var state = $(this).text();
+        if(state=='1'){
+          $(this).text('').html('<button type="button" class="btn btn-outline-secondary btn-rounded waves-effect">직거래</button>');
+        }else if(state =='2'){
+          $(this).text('').html('<button type="button" class="btn btn-outline-default btn-rounded waves-effect" id="modal" data-toggle="modal" data-target="#centralModalSuccessDemo">택배거래</button>');
+        }
+      });
+    }
+    transactionMode();
+    transactionState();
+  });
+</script>

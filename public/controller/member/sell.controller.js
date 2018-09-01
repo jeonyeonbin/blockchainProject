@@ -9,22 +9,22 @@ exports.showSellProductAllGET= function(req,res){
     //세션 ID로 판매상품 검색
     var request = makeRequest('queryItemBySeller',[myId]);
     var transactionInfo;            // transactionInfo
+    var items;
     FabricQuery(request).then((resolvedData)=>{
-        resolvedData = JSON.parse(resolvedData);
+        items = JSON.parse(resolvedData);
         FabricQuery(makeRequest('queryTransactionInfoBySeller',[myId])).then((result)=>{
-            transactionInfo = result;                   //결과값 삽입
+            transactionInfo = JSON.parse(result);                   //결과값 삽입
+            
+            //item 정보에 transInfo 넣어주기
+            items.forEach(function(item,idx){
+                    item.transInfo = transactionInfo[idx];
+            });
+             
+            console.log(items);
+            return res.render('member/myProduct',{items:items,layout:'../shop/home-page'});
         }).catch((err)=>{
             return res.render('500',{error:err});
         })
-        console.log(resolvedData);
-        console.log('');
-        console.log('');
-        console.log('');
-        console.log('');
-        console.log('');
-        
-        console.log(transactionInfo);
-        res.render('member/myProduct',{transactionInfo: transactionInfo,items:resolvedData,layout:'../shop/home-page'});
     }).catch((e)=>{
        console.log(e);
     });
