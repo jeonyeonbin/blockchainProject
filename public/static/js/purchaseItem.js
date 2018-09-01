@@ -86,9 +86,13 @@ $(document).ready(function(){
     if($('#sellStateHidden').val()=='1'){                               //판매 상태
         $('.purchasing').addClass('btn-primary').text('구매하기');
     }else if($('#sellStateHidden').val()=='2'){                         //거래중 상태
-        $('.purchasing').addClass('btn-warning').text('거래중');
+        $('.purchasing').addClass('btn-success').text('거래중');
+        $('.purchasing').attr('disabled',true);
+        $('.purchasing').css('opacity','0.5');
     }else if($('#sellStateHidden').val()=='3'){                         //판매 완료 상태
         $('.purchasing').addClass('btn-danger').text('판매완료');
+        $('.purchasing').attr('disabled',true);
+        $('.purchasing').css('opacity','0.5');
     }
 
     if($('#transactionModeHidden').val()=='1'){

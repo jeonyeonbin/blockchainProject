@@ -13,16 +13,25 @@ exports.purchasePOST= function(req,res){
     console.log(transactionMode);
     console.log(identity);
 
-    FabricQuery(makeRequest('registTransactionInfo',[itemKey,identity,transactionMode])).then((data)=>{
-        //(1 : 구매불가, 2: 코인부족, 3: 성공)
-        console.log(data);
-        return res.send(data);
-    }).catch((err)=>{
-        console.log(err);
-    });  
-    // FabricInvoke(makeRequest('purchaseItem',[key,buyer])).then((resolvedData)=>{
-    //     return res.send("success");
-    // }).catch((err)=>{ 
-    //     return res.send("fail");
-    // });
+    //     (1 : 구매불가, 2: 코인부족, 3: 성공)
+    FabricQuery(makeRequest('checkItemState',[itemKey])).then((result)=>{                     //구매 불가 상품인지
+        console.log('');
+        console.log('first');
+        console.log('');
+        FabricQuery(makeRequest('checkCoin',[identity,itemKey])).then((result)=>{            //코인이 부족한지
+            console.log('');
+            console.log('second');
+            console.log('');
+            FabricInvoke(makeRequest('registTransactionInfo',[itemKey,identity,transactionMode])).then((result)=>{
+                return res.send('3');
+            }).catch((err)=>{
+                return res.send('1');
+            })
+        }).catch((fail)=>{
+            return res.send('2');
+        })
+    }).catch((fail)=>{
+        console.log('hello');
+        return res.send('1');
+    });
 }

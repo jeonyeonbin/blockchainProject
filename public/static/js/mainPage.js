@@ -3,17 +3,22 @@ $(document).ready(function(){
         $('input[type="hidden"]').each(function(){
             var $val = $(this).val();
             //팔렷을때 
-            if($val == 'sold'){
+            if($val == '3'){
                 $(this).parent().css("opacity","0.5");
                 $(this).parent().find('.badge').addClass("danger-color");
-                $(this).parent().find('.badge').text('SOLD');
+                $(this).parent().find('.badge').text('판매 완료');
             }
             //팔린상태가 아닐때
-            else {
+            else if($val=='1'){
                 $(this).parent().css("opacity","1.0");
                 $(this).parent().find('.badge').addClass("primary-color");
-                $(this).parent().find('.badge').text('NEW');
-            }        
+                $(this).parent().find('.badge').text('구매 가능');
+            }else if($val =='2'){
+                $(this).parent().css("opacity","0.5");
+                $(this).parent().find('.badge').addClass("success-color");
+                $(this).parent().find('.badge').text('거래중');
+                
+            }
         });
     }
 

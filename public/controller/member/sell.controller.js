@@ -8,11 +8,23 @@ exports.showSellProductAllGET= function(req,res){
     var myId = req.session.name;
     //세션 ID로 판매상품 검색
     var request = makeRequest('queryItemBySeller',[myId]);
-    
+    var transactionInfo;            // transactionInfo
     FabricQuery(request).then((resolvedData)=>{
         resolvedData = JSON.parse(resolvedData);
+        FabricQuery(makeRequest('queryTransactionInfoBySeller',[myId])).then((result)=>{
+            transactionInfo = result;                   //결과값 삽입
+        }).catch((err)=>{
+            return res.render('500',{error:err});
+        })
         console.log(resolvedData);
-        res.render('member/myProduct',{items:resolvedData,layout:'../shop/home-page'});
+        console.log('');
+        console.log('');
+        console.log('');
+        console.log('');
+        console.log('');
+        
+        console.log(transactionInfo);
+        res.render('member/myProduct',{transactionInfo: transactionInfo,items:resolvedData,layout:'../shop/home-page'});
     }).catch((e)=>{
        console.log(e);
     });
