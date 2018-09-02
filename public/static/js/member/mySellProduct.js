@@ -1,5 +1,7 @@
+'use strict';
+
 $(document).ready(function(){
-    
+    //트랜잭션의 현재 상태에 따라 변화 (1. 거래중 , 2. 배송중 , 3. 거래완료 , 4. 거래 취소)
     function transactionState(){
       $('.transactionState').each(function(data){
         var state = $(this).text();
@@ -15,6 +17,7 @@ $(document).ready(function(){
       });
     }
     
+    //트랜잭션 모드에 따라 버튼 구별 (1 . 직거래 , 2. 택배 거래)
     function transactionMode(){
       $('.transactionMode').each(function(data){
        var state = $(this).text();
@@ -28,6 +31,7 @@ $(document).ready(function(){
       });
     }
 
+    // 송장번호 입력후 업데이트 하기
     function sendDelivery(){
         $('.sendDelivery').click(function(){
             var number = $('input[name="sendNumber"]').val();
@@ -55,6 +59,8 @@ $(document).ready(function(){
             }
         });
     }
+    
+    // 배송버튼 클릭시에 트랜잭션 키값 넘겨주기
     function clickDeliveryService(){
       $('.transactionMode').click(function(){
           var transactionInfoKey = $(this).siblings('input[type="hidden"]').val();
@@ -62,17 +68,28 @@ $(document).ready(function(){
       });
     }
 
+    // 구매 신청 여부 있는지 판별
     function confirmTransaction(){
       $('.confirmTransaction').each(function(){
         if($(this).val() == 'false'){
-          // alert('hi');
-          $(this).parent().find('.buyer').text('구매신청자 없음');
+          $(this).parent().find('.buyer').text('구매신청자 없음').css('cursor','default').removeClass('chatting');
           $(this).parent().find('.transactionMode').text('구매신청자 없음');
           $(this).parent().find('.startDateTime').text('구매신청자 없음');
           $(this).parent().find('.transactionState').html('<button type="button" class="btn btn-outline-warning waves-effect">구매 신청자 없음</button>')
         }
       })
     }
+
+    // 채팅 시작
+    function chattingClick(){
+      $('.buyer').click(function(){
+        var userId = $(this).children('h4').text();
+        var url ='http://localhost:5555/chat?id='+userId;
+        window.open(url,'_blank','width=650px, height=500px,scrollbar=true,status=no,menubar=no');
+      });
+    }
+
+    chattingClick();
     confirmTransaction();
     clickDeliveryService();
     transactionMode();
