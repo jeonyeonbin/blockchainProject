@@ -79,7 +79,7 @@ $(document).ready(function(){
     $('.purchaseChatting').click(()=>{
         var userId = $('#userId').text();
         console.log(userId);
-        var url ='http://13.209.211.60:5555/chat?id='+userId;
+        var url ='http://localhost:5555/chat?id='+userId;
         window.open(url,'_blank','width=650px, height=500px,scrollbar=true,status=no,menubar=no');
     });
 

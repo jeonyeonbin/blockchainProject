@@ -9,6 +9,7 @@ $(document).ready(function(){
           $(this).text('').html('<button type="button" class="btn btn-outline-secondary btn-rounded waves-effect">거래중</button>');
         }else if(state =='2'){
           $(this).text('').html('<button type="button" class="btn btn-outline-default btn-rounded waves-effect">배송중</button>');
+          $(this).siblings('.transactionMode').find('button').removeAttr('data-toggle').removeAttr('data-target');
         }else if(state =='3'){
           $(this).text('').html('<button type="button" class="btn btn-outline-primary btn-rounded waves-effect">거래완료</button>');
         }else if(state =='4'){
@@ -24,7 +25,7 @@ $(document).ready(function(){
         if(state=='1'){
           $(this).text('').html('<button type="button" class="btn btn-outline-secondary btn-rounded waves-effect">직거래</button>');
         }else if(state =='2'){
-          $(this).text('').html('<button type="button" class="btn btn-outline-default btn-rounded waves-effect delivery" id="modal" data-toggle="modal" data-target="#centralModalSuccessDemo" value="delivery">택배거래</button>');
+          $(this).text('').html('<button type="button" class="btn btn-outline-default btn-rounded waves-effect delivery" data-toggle="modal" data-target="#centralModalSuccessDemo" value="delivery">택배거래</button>');
           
 
         }
@@ -63,7 +64,7 @@ $(document).ready(function(){
     // 배송버튼 클릭시에 트랜잭션 키값 넘겨주기
     function clickDeliveryService(){
       $('.transactionMode').click(function(){
-          var transactionInfoKey = $(this).siblings('input[type="hidden"]').val();
+          var transactionInfoKey = $(this).siblings('.transactionInfoKey').val();
           $('#modalTransInfoKey').val(transactionInfoKey.toString());
       });
     }
@@ -89,10 +90,10 @@ $(document).ready(function(){
       });
     }
 
+    transactionMode();
     chattingClick();
     confirmTransaction();
     clickDeliveryService();
-    transactionMode();
     transactionState();
     sendDelivery();
   });

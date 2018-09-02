@@ -88,7 +88,7 @@ exports.updateDelivery = function(req,res){
     console.log(deliveryCompany);
     console.log(deliveryInvoice);
     
-    var request = makeRequest('updateTransactionInfoForDelivery',[transactionInfoKey,deliveryCompany,deliveryInvoice]);
+    var request = makeRequest('updateTransactionInfoForDelivery',[transactionInfoKey,deliveryCompany,deliveryInvoice,transactionState]);
 
     FabricInvoke(request).then((result)=>{
         console.log(result);

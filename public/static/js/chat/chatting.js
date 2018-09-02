@@ -16,7 +16,7 @@ $(document).ready(function(){
     return new Promise((resolve,reject)=>{
       $.ajax({
         type : "POST", //전송방식을 지정한다 (POST,GET)
-        url : "http://13.209.211.60:5555/chat/chatCheck",   // 채팅방 있는지 여부 체크
+        url : "http://localhost:5555/chat/chatCheck",   // 채팅방 있는지 여부 체크
         data : {id:$('input[type="hidden"]').val()},    // 상대방의 아이디
         dataType:'json',
         error : function(err){
@@ -48,7 +48,7 @@ $(document).ready(function(){
     return new Promise((resolve,reject)=>{
       $.ajax({
         type : "POST", //전송방식을 지정한다 (POST,GET)
-        url : "http://13.209.211.60:5555/chat/checkId",     // id Check 
+        url : "http://localhost:5555/chat/checkId",     // id Check 
         data : {id:$('input[type="hidden"]').val()},    // 상대방의 아이디
         dataType:'json',
         error : function(err){
