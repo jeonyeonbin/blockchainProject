@@ -14,10 +14,16 @@ exports.showSellProductAllGET= function(req,res){
         items = JSON.parse(resolvedData);
         FabricQuery(makeRequest('queryTransactionInfoBySeller',[myId])).then((result)=>{
             transactionInfo = JSON.parse(result);                   //결과값 삽입
-            
             //item 정보에 transInfo 넣어주기
             items.forEach(function(item,idx){
-                    item.transInfo = transactionInfo[idx];
+                    transactionInfo.some(function(ele){
+                        if(item.key == ele.itemKey){
+                            item.transInfo = ele;
+                            item.confirmTransaction = 'true';
+                            return true;
+                        }  
+                    })
+                    if(item.transInfo == undefined) item.confirmTransaction = 'false';
             });
              
             console.log(items);

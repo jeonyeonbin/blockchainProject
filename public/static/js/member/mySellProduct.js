@@ -61,6 +61,19 @@ $(document).ready(function(){
           $('#modalTransInfoKey').val(transactionInfoKey.toString());
       });
     }
+
+    function confirmTransaction(){
+      $('.confirmTransaction').each(function(){
+        if($(this).val() == 'false'){
+          // alert('hi');
+          $(this).parent().find('.buyer').text('구매신청자 없음');
+          $(this).parent().find('.transactionMode').text('구매신청자 없음');
+          $(this).parent().find('.startDateTime').text('구매신청자 없음');
+          $(this).parent().find('.transactionState').html('<button type="button" class="btn btn-outline-warning waves-effect">구매 신청자 없음</button>')
+        }
+      })
+    }
+    confirmTransaction();
     clickDeliveryService();
     transactionMode();
     transactionState();

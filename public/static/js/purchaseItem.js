@@ -101,14 +101,14 @@ $(document).ready(function(){
     }else if($('#transactionModeHidden').val()=='2'){
         $('.op1').css('display','none');
         var deliveryFee;
-        if($('#deliveryFee').val()=='1') deliveryFee ='O'; 
+        if($('#deliveryFeeHidden').val()=='2') deliveryFee ='O'; 
         else deliveryFee='X';
         $('.transactionModeAppend').after('<p>택배 거래 (착불 여부 : '+deliveryFee+')</p>');       
     }else{
         $('.transactionModeAppend').after('<p>직거래 (거래장소 : '+$('#transactionPositionHidden').val()+')</p>');
         
         var deliveryFee;
-        if($('#deliveryFee').val()=='1') deliveryFee ='O'; 
+        if($('#deliveryFeeHidden').val()=='2') deliveryFee ='O'; 
         else deliveryFee='X';
         $('.transactionModeAppend').after('<p>택배 거래 (착불 여부 : '+deliveryFee+')</p>');  
     }
