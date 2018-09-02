@@ -44,5 +44,7 @@ router.post('/updateProduct',upload.array('image'),sellProductController.updateP
 router.get('/showMyBuyProduct',buyProductController.showBuyProductAllGET);
 //구매 상품 한개 보기
 router.get('/showMyBuyProduct/:key',buyProductController.showBuyOneProduct);
+//택배 상품 송장번호 수정하기
+router.post('/updateDelivery',sellProductController.updateDelivery);
 
 module.exports = router;

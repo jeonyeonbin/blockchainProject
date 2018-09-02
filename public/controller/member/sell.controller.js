@@ -71,3 +71,25 @@ exports.updateProduct = function(req,res){
          console.log("file Error : "+err);
      });
 }
+
+exports.updateDelivery = function(req,res){
+
+    var transactionInfoKey = req.body.transactionInfoKey; //트랜잭션 번호
+    var deliveryCompany = req.body.company;               //송장 회사
+    var deliveryInvoice = req.body.number;                //송장 번호
+    var transactionState ='2';                            //배송중으로 알림
+    console.log(transactionInfoKey);
+    console.log(deliveryCompany);
+    console.log(deliveryInvoice);
+    
+    var request = makeRequest('updateTransactionInfoForDelivery',[transactionInfoKey,deliveryCompany,deliveryInvoice]);
+
+    FabricInvoke(request).then((result)=>{
+        console.log(result);
+        return res.send('true');
+    }).catch((err)=>{
+        console.log(err);
+        return res.send('false');
+    })
+
+}

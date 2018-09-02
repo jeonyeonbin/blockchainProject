@@ -41,7 +41,7 @@ exports.itemReigstPOST = function(req,res,next){
      return request;
     }).then((request)=>{
         FabricInvoke(request).then((resolvedData)=>{
-            return res.redirect(303,'/myPage');
+            return res.redirect(303,'/shopPage');
         }).catch((err)=>{
                 console.log(err);
         });

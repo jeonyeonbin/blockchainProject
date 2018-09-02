@@ -25,7 +25,7 @@
   <tbody>
     {{#each items}}
     <tr>
-      <input type="hidden" name="" id="transactionKey" value="{{transInfo}}">
+      <input type="hidden" name="" id="transactionInfoKey{{@index}}" value="{{transInfo.key}}">
       <th scope="row">{{@index}}</th>
       <td><img src="{{itemContentsPic}}" class="rounded" alt="" width="50px;" height="50px;">{{itemName}}</td>
       <td ><h4>{{transInfo.Buyer}}</h4></td>
@@ -52,6 +52,7 @@
 
                     <!--Body-->
                     <div class="modal-body">
+                        <input type="hidden" name="" id="modalTransInfoKey" value="">
                         <div class="text-center">
                             <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
                         </div>
@@ -73,41 +74,11 @@
 
                     <!--Footer-->
                     <div class="modal-footer justify-content-center">
-                        <a type="button" class="btn btn-success waves-effect waves-light">입력
+                        <a type="button" class="btn btn-success waves-effect waves-light sendDelivery">입력
                         </a>
                     </div>
                 </div>
                 <!--/.Content-->
             </div>
         </div>
-<script>
-  $(document).ready(function(){
-    function transactionState(){
-
-      $('.transactionState').each(function(data){
-        var state = $(this).text();
-        if(state=='1'){
-          $(this).text('').html('<button type="button" class="btn btn-outline-secondary btn-rounded waves-effect">거래중</button>');
-        }else if(state =='2'){
-          $(this).text('').html('<button type="button" class="btn btn-outline-default btn-rounded waves-effect">배송중</button>');
-        }else if(state =='3'){
-          $(this).text('').html('<button type="button" class="btn btn-outline-primary btn-rounded waves-effect">거래완료</button>');
-        }else if(state =='4'){
-          $(this).text('').html('<button type="button" class="btn btn-outline-danger btn-rounded waves-effect">거래취소</button>');
-        }
-      });
-    }
-    function transactionMode(){
-      $('.transactionMode').each(function(data){
-       var state = $(this).text();
-        if(state=='1'){
-          $(this).text('').html('<button type="button" class="btn btn-outline-secondary btn-rounded waves-effect">직거래</button>');
-        }else if(state =='2'){
-          $(this).text('').html('<button type="button" class="btn btn-outline-default btn-rounded waves-effect" id="modal" data-toggle="modal" data-target="#centralModalSuccessDemo">택배거래</button>');
-        }
-      });
-    }
-    transactionMode();
-    transactionState();
-  });
-</script>
+<script src="../../static/js/member/mySellProduct.js"></script>
