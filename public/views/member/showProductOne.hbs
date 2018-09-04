@@ -1,53 +1,37 @@
-<!-- Breadcrumbs-->
-<link async href="http://fonts.googleapis.com/css?family=Antic" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
-<link rel="stylesheet" href="/adminTemplate/css/btn.css" type="text/css">
-<script src="/js/ckeditor/ckeditor.js" type="text/javascript"></script>
-<script src="../../static/js/member/updateProduct.js"></script>
-<ol class="breadcrumb">
-    <li class="breadcrumb-item">
-        <a href="#">ITEM</a>
+<link rel="stylesheet" href="../../static/css/myProduct.css">
+<link rel="stylesheet" href="../../static/css/a_tag.css">
+<script src="../../static/js/showMyProduct.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<ol class="breadcrumb" style="margin-top:100px;">
+    <li class="breadcrumb-item active">
+        판매 내역 정보
     </li>
-    <li class="breadcrumb-item active">상품 정보 수정</li>
-</ol>
-<script type="text/javascript">
-    window.onload=function(){
-        CKEDITOR.replace('info');
-        alert("url : "+$(location).attr('href'));
-    }
+</ol>	
 
-</script>
-<nav>
-    <h2>수정할 상품들</h2>
-    <hr>
-    <form action="/myPage/updateProduct" method="post" data-role="form" enctype="multipart/form-data">
-        <ul class="ul-style-none">
-            <input type="hidden" id="key" name="key" value="{{item.key}}">
-            <li><label for="name" class="registItem" ><h5>상품명</h5></label>
-                <input type="text" class="myButton" id="itemName" name="itemName" value="{{item.itemName}}" style="color:#ffffff">
-            </li><br>
-            <li><label for="price" class="registItem" style="margin-right:25px"><h5>상품가격</h5></label>
-                <input type="text" class="myButton" id="itemPrice" name="itemPrice" value="{{item.itemPrice}}" style="color:#ffffff">
-            </li><br>
-            
-            <li><label for="pic" class="registItem" style="margin-right:25px"><h5>상품사진</h5></label>
-                <input type="file" name="image" id="pic" value="사진 업로드">
-            </li><br>
-            <li><label for="category" class="registItem"><h5>카테고리</h5></label>
-                <select class="selectpicker" name="itemCategory" id="itemCategory">
-                    <option value="cloth">의류</option>
-                    <option value="sports">스포츠 및 레저</option>
-                    <option value="electronics">전자 제품</option>
-                    <option value="mobile">핸드폰</option>
-                    <option value="car">차량 및 오토바이</option>
-                    <option value="others">다중 잡화</option>
-                </select>
-            </li><br>
-            <li><label for="info" class="registItem"><h5>상품 설명</h5></label><br><br>
-                <textarea name="itemInfo" id="itemInfo" class="ckeditor" cols="30" rows="10" placeholder="상품 설명을 해주세요.">{{item.itemInfo}}</textarea>
-            </li><br>
-            <input type="submit" value="전송" class="btn btn-default-primary submitButton">
-        </ul>
-    </form>
-    <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
-    <div style="height: 1000px;"></div>
-</nav>
+   <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">상품</th>
+      <th scope="col">판매자</th>
+      <th scope="col">거래방식</th>
+      <th scope="col">거래요청시간</th>
+      <th scope="col">현재상태</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each items}}
+    <tr>
+      <input type="hidden" name="" class="confirmTransaction" value="{{confirmTransaction}}">
+      <input type="hidden" name="" class="transactionInfoKey" value="{{transInfo.key}}">
+      <th scope="row">{{@index}}</th>
+      <td><img src="{{itemContentsPic}}" class="rounded" alt="" width="50px;" height="50px;">{{itemName}}</td>
+      <td class="buyer chatting" style="cursor:pointer;"><h4>{{transInfo.seller}}</h4></td>
+      <td class="transactionMode">{{transInfo.transactionMode}}</td>
+      <td class="startDateTime"><h4>{{transInfo.startDateTime}}</h4></td>
+      <td class="transactionState">{{transInfo.transactionState}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+<script src="../../static/js/member/mySellProduct.js"></script>
