@@ -1,4 +1,6 @@
 var FabricQuery = require('../../hyperledger-fabric/query');
+
+var FabricInvoke = require('../../hyperledger-fabric/invoke');
 var makeRequest = require('../returnRequest');
 
 
@@ -34,9 +36,9 @@ exports.showBuyProductAllGET = function(req,res){
                     }
                 });
             })
-
+            return res.render('member/buyProduct',{items:ItemResult,layout:'../shop/home-page'});
             console.log(ItemResult);
-        }).catch((err)=>{
+        }).catch((err)=>{   
             console.error(err);
         })
     }).catch((e)=>{
@@ -58,3 +60,30 @@ exports.showBuyOneProduct = function(req,res){
     })
 
 };
+
+
+exports.buyerChangeTransacationState = function(req,res){
+    
+    var seller = req.session.name;  // 판매자 아이디
+    var transactionKey = req.body.transactionKey // 트랜잭션 ID
+    var transactionState = req.body.transactionState // 트랜재션 스테이트
+
+    
+    FabricInvoke(makeRequest('updateTransactionInfoForConfirmByBuyer',[transactionKey,'2'])).then(()=>{
+        return res.send('success');
+    }).catch(()=>{
+        return res.send('fail');
+    });
+}
+
+exports.checkApprove = function(req,res){
+    var transactionKey = req.body.transactionKey;           //트랜잭션 키
+    var transactionState = req.body.transactionState;       //상태 값(3)
+
+    FabricInvoke(makeRequest('updateTransactionInfoForState',[transactionKey,transactionState])).then(()=>{
+        return res.send('success');
+    }).catch(()=>{
+        return res.send('fail');
+    })
+
+}

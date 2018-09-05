@@ -38,7 +38,6 @@ $(document).ready(function(){
             var number = $('input[name="sendNumber"]').val();
             var company = $('select option:selected').val();
             var transactionInfoKey = $('#modalTransInfoKey').val();
-            alert(transactionInfoKey);
             if(number.length ==13 || number.length==14){
                 $.ajax({
                     url:'/myPage/updateDelivery',
@@ -46,16 +45,16 @@ $(document).ready(function(){
                     data:{number: number, company:company,transactionInfoKey:transactionInfoKey},
                     success: function(data){
                         if(data=='true'){
-                          alert('송장 번호 등록이 성공적으로 수행되었습니다.');
+                          this.alert('송장 번호 등록이 성공적으로 수행되었습니다.');
                         }else{
-                          alert('등록이 성공적으로 이루어지지않았습니다. 다시 한번 입력 해주세요');
+                          this.alert('등록이 성공적으로 이루어지지않았습니다. 다시 한번 입력 해주세요');
                         }
                         $('#modalTransInfoKey').val('');
-                        window.location.href='/myPage/showMySellProduct';
+                        this.window.location.href='/myPage/showMySellProduct';
                     },
                 });
             }else{
-                alert('송장번호는 10~11 자리여야 합니다');
+                this.alert('송장번호는 10~11 자리여야 합니다');
                 $('input[name="sendNumber"]').val('');
             }
         });
@@ -90,6 +89,78 @@ $(document).ready(function(){
       });
     }
 
+
+    // 버튼 활성화 (1. 택배 , 배송중 일때 2. 직거래, 거래중일때)
+    function buttonActive(){
+        $('th[scope="row"]').each(function(){
+          if(!(($(this).siblings('.transactionMode').text() =='2' &&$(this).siblings('.transactionState').text() =='2') ||
+          ($(this).siblings('.transactionMode').text() =='1' &&$(this).siblings('.transactionState').text() =='1'))){
+            $(this).siblings('.transactionToServer').find('button').attr('disabled');
+            $(this).siblings('.transactionToServer').find('button').css('opacity','0.2');
+          } 
+        });
+      }
+  
+      // 거래 완료 버튼 클릭
+      function transactionComplete(){
+          $('button.transactionComplete').click(function(){
+            var transactionKey = $(this).parent().siblings('.transactionInfoKey').val();
+            $.ajax({
+              url:'/myPage/buyerChangeTransacationState',
+              method:'POST',
+              async:false,
+              data:{transactionKey:transactionKey,transactionState:'3'},
+              success: function(result){
+                if(result == 'success'){
+                  alert('상품 거래 완료 신청이 되었습니다');
+                }else{
+                  alert('실패하였습니다 다시 한번 실행부탁드립니다');
+                }
+              }
+  
+            }).then(function(){
+              $.ajax({
+                url:'/myPage/checkApprove',
+                method:'POST',
+                async:false,
+                data:{transactionKey:transactionKey,transactionState:'3'},
+                success:function(result){
+                  if(result =='success'){
+                    alert('상품 거래 완료가 되었습니다');
+                  }else{
+                    alert('소비자측에서 아직 상품 확인을 누르지 않았습니다.');
+                  }
+                }
+              });
+            });
+          });
+      } 
+      
+      // 거래 취소 버튼 클릭
+      function transactionCancel(){
+          $('.transactionCancel').click(function(){
+            var itemKey = $(this).parent().siblings('').val();
+            var transactionKey = $(this).parent().siblings('').val();
+  
+            $.ajax({
+              url:'/myPage/sellerChangeTransactionState',
+              method:'POST',
+              data:{itemKey:itemKey,transactionKey:transactionKey,transactionState:'4'},
+              success: function(result){
+                if(result == 'success'){
+                  alert('상품 거래 취소 신청이 완료되었습니다');
+                }else{
+                  alert('실패하였습니다 다시 한번 실행부탁드립니다');
+                }
+              }
+  
+            });
+          });
+      }
+    
+    buttonActive();
+    transactionComplete();
+    transactionCancel();
     transactionMode();
     chattingClick();
     // confirmTransaction();

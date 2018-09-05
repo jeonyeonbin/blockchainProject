@@ -47,4 +47,13 @@ router.get('/showMyBuyProduct/:key',buyProductController.showBuyOneProduct);
 //택배 상품 송장번호 수정하기
 router.post('/updateDelivery',sellProductController.updateDelivery);
 
+//구매 취소 및 구매 완료(판매자)
+
+router.post('/sellerChangeTransactionState',sellProductController.sellerChangeTransacationState);
+// 판매완료인지 체크
+router.post('/checkApprove',sellProductController.checkApprove);
+
+//구매 취소 및 구매 완료(구매자)
+router.post('/buyerChangeTransacationState',buyProductController.buyerChangeTransacationState);
+
 module.exports = router;

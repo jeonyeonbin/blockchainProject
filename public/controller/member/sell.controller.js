@@ -99,3 +99,30 @@ exports.updateDelivery = function(req,res){
     })
 
 }
+
+exports.sellerChangeTransacationState = function(req,res){
+    
+    var seller = req.session.name;  // 판매자 아이디
+    var itemKey = req.body.itemKey; // 아이템 ID
+    var transactionKey = req.body.transactionKey // 트랜잭션 ID
+    var transactionState = req.body.transactionState // 트랜재션 스테이트
+
+    
+    FabricInvoke(makeRequest('updateTransactionInfoForConfirmBySeller',[transactionKey,'2'])).then(()=>{
+        return res.send('success');
+    }).catch(()=>{
+        return res.send('fail');
+    });
+}
+
+exports.checkApprove = function(req,res){
+    var transactionKey = req.body.transactionKey;           //트랜잭션 키
+    var transactionState = req.body.transactionState;       //상태 값(3,4)
+
+    FabricInvoke(makeRequest('updateTransactionInfoForState',[transactionKey,transactionState])).then(()=>{
+        return res.send('success');
+    }).catch(()=>{
+        return res.send('fail');
+    })
+
+}
