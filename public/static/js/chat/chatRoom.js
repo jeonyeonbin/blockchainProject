@@ -71,7 +71,7 @@ $(document).ready(function(){
       function joinRoom(socket,chatRoomNumber){
         socket.emit('joinRoom',{room:+chatRoomNumber});
       }
-      var socket = io.connect('http://localhost:7878');
+      var socket = io.connect('http://13.209.211.60:7878');
       var chatRoomNumber = $('input[type="hidden"]#chatRoomNumber').val();
       getPositionById();                             //채팅방 대화내용 불러오기
       document.body.scrollTop = document.body.scrollHeight; // 스크롤 맨아래로

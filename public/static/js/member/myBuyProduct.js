@@ -1,4 +1,3 @@
-'use strict';
 
 $(document).ready(function(){
     //트랜잭션의 현재 상태에 따라 변화 (1. 거래중 , 2. 배송중 , 3. 거래완료 , 4. 거래 취소)
@@ -139,13 +138,11 @@ $(document).ready(function(){
       // 거래 취소 버튼 클릭
       function transactionCancel(){
           $('.transactionCancel').click(function(){
-            var itemKey = $(this).parent().siblings('').val();
-            var transactionKey = $(this).parent().siblings('').val();
-  
+            var transactionKey = $(this).parent().siblings('.transactionInfoKey').val();
             $.ajax({
-              url:'/myPage/sellerChangeTransactionState',
+              url:'/myPage/checkApprove',
               method:'POST',
-              data:{itemKey:itemKey,transactionKey:transactionKey,transactionState:'4'},
+              data:{transactionKey:transactionKey,transactionState:'4'},
               success: function(result){
                 if(result == 'success'){
                   alert('상품 거래 취소 신청이 완료되었습니다');
