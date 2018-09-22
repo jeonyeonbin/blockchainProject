@@ -53,7 +53,7 @@ $(document).ready(function(){
                     },
                 });
             }else{
-                alert('송장번호는 10~11 자리여야 합니다');
+                alert('송장번호는 13~14 자리여야 합니다');
                 $('input[name="sendNumber"]').val('');
             }
         });
@@ -128,6 +128,7 @@ $(document).ready(function(){
                 }else{
                   alert('소비자측에서 아직 상품 확인을 누르지 않았습니다.');
                 }
+                window.location.href='/myPage/showMySellProduct';
               }
             });
           });

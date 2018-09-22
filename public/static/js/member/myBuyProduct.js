@@ -102,6 +102,7 @@ $(document).ready(function(){
   
       // 거래 완료 버튼 클릭
       function transactionComplete(){
+          var itemKey = $('')
           $('button.transactionComplete').click(function(){
             var transactionKey = $(this).parent().siblings('.transactionInfoKey').val();
             $.ajax({
@@ -129,6 +130,7 @@ $(document).ready(function(){
                   }else{
                     alert('소비자측에서 아직 상품 확인을 누르지 않았습니다.');
                   }
+                  window.location.href="/myPage/showMyBuyProduct";
                 }
               });
             });

@@ -4,8 +4,8 @@
     <div class="container">
 
       <!-- Brand -->
-      <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">
-        <strong class="blue-text">BC2018</strong>
+      <a class="navbar-brand waves-effect" href="/shopPage">
+        <strong class="blue-text">Safe Market</strong>
       </a>
 
       <!-- Collapse -->
@@ -25,41 +25,78 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="https://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">의류</a>
+            <a class="nav-link waves-effect" href="/shopPage/cloth" >의류</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="https://mdbootstrap.com/getting-started/" target="_blank">스포츠 물품</a>
+            <a class="nav-link waves-effect" href="/shopPage/sports" >스포츠 물품</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank">전자기기</a>
+            <a class="nav-link waves-effect" href="/shopPage/electronics" >전자기기</a>
           </li>
         </ul>
 
         <!-- Right -->
         <ul class="navbar-nav nav-flex-icons">
+         
+          {{#if authorized}}
           <li class="nav-item">
-            <a class="nav-link waves-effect">
-              <span class="badge red z-depth-1 mr-1"> 1 </span>
-              <i class="fa fa-shopping-cart"></i>
-              <span class="clearfix d-none d-sm-inline-block"> Cart </span>
-            </a>
-          </li>
+              <a class="nav-link waves-effect waves-light" id=""  data-toggle="modal" data-target="#fullHeightModalRight">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="clearfix d-none d-sm-inline-block">MyPage</span>
+              </a>
+
+              {{!-- <button type="button" cla ss="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#fullHeightModalRight">Right</button> --}}
+              <!-- Full Height Modal Right -->
+              <div class="modal fade right" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true" data-backdrop="false">
+                <div class="modal-dialog modal-full-height modal-right" role="document">
+                  <!--Content-->
+                  <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                      <h4 class="modal-title w-100" id="myModalLabel">MY PAGE</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body">
+                      <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action waves-effect">내 정보 수정</a>
+                        <a href="/myPage/item/regist" class="list-group-item list-group-item-action waves-effect">상품 등록</a>
+                        <a href="/myPage/showMySellProduct" class="list-group-item list-group-item-action waves-effect">내 판매 목록</a>
+                        <a href="/myPage/showMyBuyProduct" class="list-group-item list-group-item-action waves-effect">내 구매 목록</a>
+                        <a href="/myPage/addCoin" class="list-group-item list-group-item-action waves-effect">코인 충전</a>
+                    </div>
+                    </div>
+                    <!--Footer-->
+                    <div class="modal-footer justify-content-center">
+                      <button type="button" class="btn btn-secondary waves-effect waves-light" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                  <!--/.Content-->
+                </div>
+             </div>
+                <!-- Full Height Modal Right -->
+              </li>
           <li class="nav-item">
-            <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
-              <i class="fa fa-facebook"></i>
-            </a>
+              <a class="nav-link waves-effect" href="/chat/chatList" onClick="window.open(this.href, 'new', 'width=650, height=600'); return false;">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="clearfix d-none d-sm-inline-block">채팅</span>
+              </a>
           </li>
-          <li class="nav-item">
-            <a href="https://twitter.com/MDBootstrap" class="nav-link waves-effect" target="_blank">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/login" class="nav-link border border-light rounded waves-effect"
-              target="_blank">
-              <i class="fa fa-github mr-2" style="margin-left:5px;"></i>Login
-            </a>
-          </li>
+          {{/if}}
+            <li class="nav-item">
+              {{#if authorized}}
+                <a href="/logout" class="nav-link border border-light rounded waves-effect">
+                  <i class="fas fa-sign-in-alt"></i>Logout
+                </a>
+              {{else}}
+                <a href="/login" class="nav-link border border-light rounded waves-effect">
+                  <i class="fas fa-sign-in-alt"></i>Login
+                </a>
+
+              {{/if}}
+            </li>
         </ul>
 
       </div>
@@ -71,7 +108,7 @@
 
       <!-- Brand -->
       <a class="navbar-brand waves-effect" href="/shopPage">
-        <strong class="blue-text">Safe Store</strong>
+        <strong class="blue-text">Safe Market</strong>
       </a>
 
       <!-- Collapse -->
