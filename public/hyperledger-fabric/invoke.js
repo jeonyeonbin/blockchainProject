@@ -148,17 +148,6 @@ function invoke(request){
 		
 			if (results && results[0] && results[0].status === 'SUCCESS') {
 				console.log('Successfully sent transaction to the orderer.');
-				console.log('');
-				console.log('');
-				console.log('');
-				console.log('');
-				console.log(results[0]);
-				console.log('');
-				console.log('');
-				console.log('');
-				console.log('');
-				
-
 				resolve('success');
 			} else {
 				console.error('Failed to order the transaction. Error code: ' + response.status);
