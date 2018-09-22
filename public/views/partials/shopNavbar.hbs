@@ -1,5 +1,5 @@
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
- <!-- Navbar -->
+ <!-- Navbar Mobile-->
   <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
     <div class="container">
 
@@ -42,7 +42,7 @@
           <li class="nav-item">
               <a class="nav-link waves-effect waves-light" id=""  data-toggle="modal" data-target="#fullHeightModalRight">
                 <i class="fa fa-shopping-cart"></i>
-                <span class="clearfix d-none d-sm-inline-block">MyPage</span>
+                <span class="clearfix">MyPage</span>
               </a>
 
               {{!-- <button type="button" cla ss="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#fullHeightModalRight">Right</button> --}}
@@ -78,10 +78,11 @@
              </div>
                 <!-- Full Height Modal Right -->
               </li>
-          <li class="nav-item">
+              <br>
+          <li class="nav-item" style="margin">
               <a class="nav-link waves-effect" href="/chat/chatList" onClick="window.open(this.href, 'new', 'width=650, height=600'); return false;">
                 <i class="fa fa-shopping-cart"></i>
-                <span class="clearfix d-none d-sm-inline-block">채팅</span>
+                <span class="clearfix">채팅</span>
               </a>
           </li>
           {{/if}}
@@ -103,6 +104,7 @@
 
     </div>
   </nav>
+  <!-- Navbar WebBrowser-->
   <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
     <div class="container">
 
