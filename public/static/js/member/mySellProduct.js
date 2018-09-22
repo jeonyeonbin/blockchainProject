@@ -25,8 +25,6 @@ $(document).ready(function(){
           $(this).text('').html('<button type="button" class="btn btn-outline-secondary btn-rounded waves-effect">직거래</button>');
         }else if(state =='2'){
           $(this).text('').html('<button type="button" class="btn btn-outline-default btn-rounded waves-effect delivery" data-toggle="modal" data-target="#centralModalSuccessDemo" value="delivery">택배거래</button>');
-          
-
         }
       });
     }
@@ -93,9 +91,13 @@ $(document).ready(function(){
       $('th[scope="row"]').each(function(){
         if(!(($(this).siblings('.transactionMode').text() =='2' &&$(this).siblings('.transactionState').text() =='2') ||
         ($(this).siblings('.transactionMode').text() =='1' &&$(this).siblings('.transactionState').text() =='1'))){
-          $(this).siblings('.transactionToServer').find('button').attr('disabled');
+          $(this).siblings('.transactionToServer').find('button').attr('disabled','disabled');
           $(this).siblings('.transactionToServer').find('button').css('opacity','0.2');
+        } if($(this).siblings('.transactionMode').text() =='2' &&$(this).siblings('.transactionState').text() =='1'){
+          $(this).siblings('.transactionToServer').find('button.transactionCancel').prop('disabled',false);
+          $(this).siblings('.transactionToServer').find('button.transactionCancel').css('opacity','1');
         } 
+
       });
     }
 

@@ -94,8 +94,12 @@ $(document).ready(function(){
         $('th[scope="row"]').each(function(){
           if(!(($(this).siblings('.transactionMode').text() =='2' &&$(this).siblings('.transactionState').text() =='2') ||
           ($(this).siblings('.transactionMode').text() =='1' &&$(this).siblings('.transactionState').text() =='1'))){
-            $(this).siblings('.transactionToServer').find('button').attr('disabled');
+            $(this).siblings('.transactionToServer').find('button').attr('disabled','disabled');
             $(this).siblings('.transactionToServer').find('button').css('opacity','0.2');
+          }
+          if($(this).siblings('.transactionMode').text() =='2' &&$(this).siblings('.transactionState').text() =='1'){
+            $(this).siblings('.transactionToServer').find('button').prop('disabled',false);
+            $(this).siblings('.transactionToServer').find('button').css('opacity','1');
           } 
         });
       }
