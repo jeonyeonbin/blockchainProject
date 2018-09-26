@@ -15,6 +15,7 @@
     "body-parser": "^1.18.2",
     "bootstrap-select": "^1.13.1",
     "cors": "^2.8.4",
+    "delibee": "^1.1.8",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
