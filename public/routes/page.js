@@ -1,4 +1,3 @@
-var bodyParser =require('body-parser');
 var loginController = require('../controller/member/login.controller');
 var registController = require('../controller/member/regist.controller');
 var logoutController = require('../controller/member/logout.controller');

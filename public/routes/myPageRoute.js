@@ -24,8 +24,11 @@ router.use(function(req,res,next){
 });
 //관리자 첫페이지
 router.get('/',mainController.mainGET);
-//멤버 수정 
+//멤버 수정 페이지
 router.get('/update',memberUpdateController.memberUpdateGET);
+//멤버 수정 
+router.post('/update',memberUpdateController.memberUpdatePOST);
+
 router.get('/update/:id',memberUpdateController.IDSelectUpdateGET);
 //아이템 등록
 router.get('/item/regist',itemRegistController.itemRegistGET);
@@ -59,4 +62,6 @@ router.post('/buyerChangeTransacationState',buyProductController.buyerChangeTran
 
 //송장번호 확인
 router.get('/checkInvoice',invoiceController.checkInvoice);
+
+
 module.exports = router;

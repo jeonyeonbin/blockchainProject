@@ -19,7 +19,6 @@ $(document).ready(function(){
     }
     function invoiceCheck(){
       $('button.invoice').click(function(){
-        alert('hello');
         var company = $(this).parent().siblings('.deliveryCompany').val();
         var invoice_no = $(this).parent().siblings('.deliveryInvoice').val();
         var url =host+'/myPage/checkInvoice?company='+company+'&invoice_no='+invoice_no;
