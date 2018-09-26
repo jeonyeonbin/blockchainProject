@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
     //트랜잭션의 현재 상태에 따라 변화 (1. 거래중 , 2. 배송중 , 3. 거래완료 , 4. 거래 취소)
-    var host = 'http://localhost:5555';
+    var host = 'http://13.209.211.60:5555';
     function transactionState(){
       $('.transactionState').each(function(data){
         var state = $(this).text();
