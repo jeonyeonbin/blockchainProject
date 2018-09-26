@@ -21,7 +21,7 @@
 <nav>
     <h1>상품 등록</h1>
     <hr>
-    <form data-role="form" enctype="multipart/form-data">
+    <form data-role="form" enctype="multipart/form-data" action="/myPage/item/regist" method="POST">
         <ul class="ul-style-none">
             <li>
                 <div class="md-form input-group input-group-lg mt-0 mb-3">
@@ -84,7 +84,7 @@
             <li><label for="info" class="registItem"><h5>상품 설명</h5></label><br><br>
                 <textarea name="itemInfo" id="info" class="ckeditor" cols="30" rows="10" placeholder="상품 설명을 해주세요."></textarea>
             </li><br>
-            <input type="submit" value="전송" class="btn btn-default-primary">
+            <input type="submit" value="전송" class="btn btn-primary">
         </ul>
     </form>
     <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
