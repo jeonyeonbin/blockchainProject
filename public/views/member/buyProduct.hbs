@@ -23,6 +23,8 @@
   <tbody>
     {{#each items}}
     <tr>
+      <input type="hidden" name="" class="deliveryCompany" value="{{transInfo.deliveryCompany}}">
+      <input type="hidden" name="" class="deliveryInvoice" value="{{transInfo.deliveryInvoice}}">
       <input type="hidden" name="" class="confirmTransaction" value="{{confirmTransaction}}">
       <input type="hidden" name="" class="transactionInfoKey" value="{{transInfo.key}}">
       <th scope="row">{{@index}}</th>

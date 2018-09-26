@@ -23,3 +23,14 @@ exports.changeListInMain = function(req,res){
         return ;
     });
 }
+
+exports.protectedPurchasingMyItem = (req,res)=>{
+    var id = req.body.myId;
+    console.log('api!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+    console.log(id);
+    console.log(req.session.name);
+    if(id == req.session.name) {
+        return res.send('false');
+    }
+    else return res.send('true');
+}

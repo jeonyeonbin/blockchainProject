@@ -29,15 +29,12 @@ exports.showBuyProductAllGET = function(req,res){
             ItemResult.forEach(function(item){
                 transInfoResult.some(function(trans){
                     if(item.key == trans.itemKey){
-                        console.log('itemKey : ' +item.key);
-                        console.log('transKey : ' + trans.itemKey);
-                        item.transInfo = trans;
+                    item.transInfo = trans;
                         return true;
                     }
                 });
             })
             return res.render('member/buyProduct',{items:ItemResult,layout:'../shop/home-page'});
-            console.log(ItemResult);
         }).catch((err)=>{   
             console.error(err);
         })

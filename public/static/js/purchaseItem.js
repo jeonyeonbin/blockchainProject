@@ -24,22 +24,49 @@ $(document).ready(function(){
         });
         return returnData;
     }
-
+    // 자기 자신의 상품 구매 막기
+    function protectedPurchasingMyItem(){
+        var myId = $('#userId').text();
+        var myResult;     // 결과  (1. 내아이디 일경우 false, 내아이디이 아닐경우 true)
+        $.ajax({
+            method:'POST',
+            url:'/shopPage/api/protectedPurchasingMyItem',
+            async:false,
+            data:{myId:myId},
+            success:function(result){
+                if(result == 'false'){         // 내아이디 일경우
+                    console.log('false!!!!!!!!!!!!!!!!!!!!!!!!');
+                    myResult = false;
+                }
+                else myResult = true;
+            }
+        });
+        return myResult;
+    }
     // 구매버튼 클릭
     function purchasingButtonClick(){
+
         $('.purchasing').click(function(){
             if(checkUser()== false){
                 $('.modal').remove('#modalConfirmDelete');
                 alert('로그인 먼저해주세요');
                 window.location.href ="/login";
-                return;
+                return false;
+            }
+            if(protectedPurchasingMyItem() == false) {
+                var category = $('span#itemCategory').text();
+                var key = $('#key').val();
+                $('.modal').remove('#modalConfirmDelete');
+                alert('자신의 상품은 구매하지 못합니다.');
+                return false;
             }
         });
     }
-
+    
+    
     // 실제 구매
     function purchaseItem(){
-
+        
         $('.purchaseItem').click(()=>{
             var sendData={
                 key :$('#key').val(),                                                         //아이템 고유 키값
@@ -73,6 +100,7 @@ $(document).ready(function(){
         });
     }
 
+    
 
     purchasingButtonClick();
     purchaseItem();

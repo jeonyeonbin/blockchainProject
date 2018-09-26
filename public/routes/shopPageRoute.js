@@ -8,5 +8,7 @@ router.get('/:itemCategory/:key',shopClothController.clothSelectOneGET);
 router.get('/:itemCategory',require('../controller/shop/category.controller').categoryAllGET);
 router.post('/purchase/:key',itemPurchaseController.purchasePOST);
 router.post('/api/changeList',apiController.changeListInMain);
+// 자기 자신의 상품구매 막기
+router.post('/api/protectedPurchasingMyItem',apiController.protectedPurchasingMyItem);
 
 module.exports = router;

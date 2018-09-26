@@ -9,6 +9,7 @@ var checkController = require('../controller/member/check.controller');
 var coinController = require('../controller/member/coin.controller');
 var sellProductController = require('../controller/member/sell.controller');
 var buyProductController = require('../controller/member/buy.controller');
+var invoiceController  = require('../controller/member/invoice.controller');
 
 // var upload =multer({storage:storage});
 
@@ -56,4 +57,6 @@ router.post('/checkApprove',sellProductController.checkApprove);
 //구매 취소 및 구매 완료(구매자)
 router.post('/buyerChangeTransacationState',buyProductController.buyerChangeTransacationState);
 
+//송장번호 확인
+router.get('/checkInvoice',invoiceController.checkInvoice);
 module.exports = router;
