@@ -1,39 +1,86 @@
 <!-- Breadcrumbs-->
 <link async href="http://fonts.googleapis.com/css?family=Antic" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" href="/adminTemplate/css/btn.css" type="text/css">
+<link rel="stylesheet" href="../../static/css/myPage/regist.css">
 <script src="/js/ckeditor/ckeditor.js" type="text/javascript"></script>
-<script src="../../static/js/member/updateProduct.js"></script>
-<ol class="breadcrumb">
+<ol class="breadcrumb" style="margin-top:100px;">
     <li class="breadcrumb-item">
         <a href="#">ITEM</a>
     </li>
-    <li class="breadcrumb-item active">상품 정보 수정</li>
+    <li class="breadcrumb-item active">상품 수정</li>
 </ol>
 <script type="text/javascript">
     window.onload=function(){
         CKEDITOR.replace('info');
-        alert("url : "+$(location).attr('href'));
     }
-
+    $('.selectpicker').selectpicker({
+        style: 'btn-info',
+        size: 4
+    });
 </script>
 <nav>
-    <h2>수정할 상품들</h2>
+    <h1>상품 수정</h1>
     <hr>
-    <form action="/myPage/updateProduct" method="post" data-role="form" enctype="multipart/form-data">
+    <form data-role="form" enctype="multipart/form-data" action="/myPage/updateProduct" method="POST">
         <ul class="ul-style-none">
-            <input type="hidden" id="key" name="key" value="{{item.key}}">
-            <li><label for="name" class="registItem" ><h5>상품명</h5></label>
-                <input type="text" class="myButton" id="itemName" name="itemName" value="{{item.itemName}}" style="color:#ffffff">
+            <li>
+                <div class="md-form input-group input-group-lg mt-0 mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-lg1" >상품명</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-lg1" name="itemName" value="{{itemInfo.itemName}}">
+                </div>
+            </li><br><br>
+            <li>
+                <div class="md-form input-group input-group-lg mt-0 mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-lg1">상품가격</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-lg1" name="itemPrice" value="{{itemInfo.itemPrice}}">
+                </div>
+                
+            </li><br><br>  
+            <li>
+                <div class="md-form input-group input-group-lg mt-0 mb-3">
+                     <input type="hidden" name="sellState" value={{itemInfo.sellState}}>
+                     <input type="hidden" name="itemKey" value="{{itemInfo.key}}">
+                </div>
+                
+            </li>
+            <li>
+                 <div class="md-form input-group input-group-lg mt-0 mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-lg1">상품 사진</span>
+                    </div>
+                    <input type="file" name="image" id="pic" value="사진 업로드">
+                </div>
             </li><br>
-            <li><label for="price" class="registItem" style="margin-right:25px"><h5>상품가격</h5></label>
-                <input type="text" class="myButton" id="itemPrice" name="itemPrice" value="{{item.itemPrice}}" style="color:#ffffff">
+            <li><label for="transactionMode" class="registItem" style="margin-right:25px"><h5>거래 방식</h5></label>
+                <label>
+                    <input type="radio" class="transactionMode" name="transactionMode" value="1" > <span class="label-text transactionMode">직거래</span>
+                </label>
+                <label>
+                    <input type="radio" class="transactionMode" name="transactionMode" value="2" > <span class="label-text transactionMode">택배 배송</span>
+                </label>
+                <label>
+                    <input type="radio" class="transactionMode" name="transactionMode" value="3" > <span class="label-text transactionMode">직거래 및 택배배송</span>
+                </label>
+            </li>
+            <li>
+                <label for="transactionPosition" class="registItem" style="margin-right:25px"><h5 class="transactionPosition">선호 배송 지역</h5>
+                <input type="text" name="transactionPosition" class="transactionPosition">
             </li><br>
-            
-            <li><label for="pic" class="registItem" style="margin-right:25px"><h5>상품사진</h5></label>
-                <input type="file" name="image" id="pic" value="사진 업로드">
+            <li class="deliveryFee"><label for="deliveryFee" class="registItem" style="margin-right:25px"><h5 class="deliveryFee">배송방식</h5></label>
+                <label>
+                    <input type="radio" class="deliveryFee" name="deliveryFee" value="1" > <span class="label-text">배송비 포함</span>
+                </label>
+                <label>
+                    <input type="radio" class="deliveryFee" name="deliveryFee" value="2" > <span class="label-text">착불</span>
+                </label>
             </li><br>
+
             <li><label for="category" class="registItem"><h5>카테고리</h5></label>
-                <select class="selectpicker" name="itemCategory" id="itemCategory">
+                <select class="selectpicker form-control form-control-lg" name="itemCategory">
                     <option value="cloth">의류</option>
                     <option value="sports">스포츠 및 레저</option>
                     <option value="electronics">전자 제품</option>
@@ -43,11 +90,42 @@
                 </select>
             </li><br>
             <li><label for="info" class="registItem"><h5>상품 설명</h5></label><br><br>
-                <textarea name="itemInfo" id="itemInfo" class="ckeditor" cols="30" rows="10" placeholder="상품 설명을 해주세요.">{{item.itemInfo}}</textarea>
+                <textarea name="itemInfo" id="info" class="ckeditor" cols="30" rows="10" placeholder="상품 설명을 해주세요.">{{itemInfo.itemInfo}}</textarea>
             </li><br>
-            <input type="submit" value="전송" class="btn btn-default-primary submitButton">
+            <input type="submit" value="수정" class="btn btn-primary">
         </ul>
     </form>
     <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
     <div style="height: 1000px;"></div>
 </nav>
+
+<script>
+    $(document).ready(function(){
+        $('.transactionPosition').css('display','none');
+        $('.deliveryFee').css('display','none');
+
+        $('span.transactionMode.label-text').click(function(){
+            var transactionMode = $(this).siblings('input[type="radio"]').val();
+            if(transactionMode == '1' ){            //직거래
+                $('.transactionPosition').css('display','block');
+                $('.deliveryFee').css('display','none');
+            }else if(transactionMode =='2'){        //배송 거래
+                $('.transactionPosition').css('display','none');
+                $('.deliveryFee').css('display','block');
+                
+            }else if(transactionMode == '3'){       //직거래 및 배송거래
+                $('.transactionPosition').css('display','block');
+                $('.deliveryFee').css('display','block');
+            }            
+        });
+
+        // 판매중이 아니면 수정 불가
+        if(!($('input[name="sellState"]').val()=='1')){
+            $('input[type="submit"]').prop('disabled',true);
+            $('form').removeAttr('action');
+            $('form').removeAttr('href');
+        }
+
+
+    });
+</script>
