@@ -12,7 +12,7 @@ $(document).ready(function(){
         var address = $('#address').val();
 
         var encrypted = SHA256(password);
-
+        
         $.ajax({
             url: '/regist',
             method:'POST',

@@ -151,8 +151,8 @@ $(document).ready(function(){
             }else{
               alert('실패하였습니다 다시 한번 실행부탁드립니다');
             }
+            window.location.href='/myPage/showMySellProduct';
           }
-
         });
       });
   }

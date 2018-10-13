@@ -1,7 +1,6 @@
 
 $(document).ready(function(){
     $('.update').click((event)=>{
-        alert('hi');
         var name = $('#name').val();
         var identity = $("#identity").val();
         var birth = $('#birth').val();

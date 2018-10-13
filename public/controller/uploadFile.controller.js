@@ -27,11 +27,13 @@ module.exports = function fileUpload(req) {
         .on('httpUploadProgress', (evt) => { console.log(evt); })
         .send((err, data) => {
           // S3 File URL
-          url = data.Location;
+          if(index != 0) url += ','+data.Location;
+          else url = data.Location;
+          //url = data.Location;
           // 어디에서나 브라우저를 통해 접근할 수 있는 파일 URL을 얻었습니다.
           console.log(url);
-          resolve(url);
         });
-    });
+      });
+      resolve(url);
   }));
 };

@@ -52,7 +52,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroup-sizing-lg1">상품 사진</span>
                     </div>
-                    <input type="file" name="image" id="pic" value="사진 업로드">
+                    <input multiple="multiple" type="file" name="image" id="pic" value="사진 업로드">
                 </div>
             </li><br>
             <li><label for="transactionMode" class="registItem" style="margin-right:25px"><h5>거래 방식</h5></label>
@@ -92,7 +92,7 @@
             <li><label for="info" class="registItem"><h5>상품 설명</h5></label><br><br>
                 <textarea name="itemInfo" id="info" class="ckeditor" cols="30" rows="10" placeholder="상품 설명을 해주세요.">{{itemInfo.itemInfo}}</textarea>
             </li><br>
-            <input type="submit" value="수정" class="btn btn-primary">
+            <input type="submit" value="수정" class="btn btn-primary update">
         </ul>
     </form>
     <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
@@ -101,8 +101,7 @@
 
 <script>
     $(document).ready(function(){
-        $('.transactionPosition').css('display','none');
-        $('.deliveryFee').css('display','none');
+        dspNone();            // 막기
 
         $('span.transactionMode.label-text').click(function(){
             var transactionMode = $(this).siblings('input[type="radio"]').val();
@@ -119,13 +118,26 @@
             }            
         });
 
+        updateEventPrevent(); // 업데이트 방지
+
+    });
+
+    /* 판매중 아니면 수정 불가 */
+    function updateEventPrevent(){
         // 판매중이 아니면 수정 불가
         if(!($('input[name="sellState"]').val()=='1')){
-            $('input[type="submit"]').prop('disabled',true);
+            $('input[type="submit"]').prop('disabled',true).removeClass("update");
             $('form').removeAttr('action');
             $('form').removeAttr('href');
         }
 
+    }
 
-    });
+    /* 보여주는거 막기  */
+    function dspNone(){
+        $('.transactionPosition').css('display','none');
+        $('.deliveryFee').css('display','none');
+        
+    }
+
 </script>

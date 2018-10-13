@@ -18,23 +18,29 @@ exports.showBuyProductAllGET = function(req,res){
     FabricQuery(request).then((resolvedData)=>{
         transInfoResult = JSON.parse(resolvedData);
         
-        //ITEM Key 정보들 수집
+        //ITEM Ke(y 정보들 수집
         transInfoResult.forEach(function(ele){
-            itemKeyList.push(ele.itemKey);
+            if(itemKeyList.length == 0) itemKeyList.push(ele.itemKey);
+            else{
+                itemKeyList.forEach( key => {
+                    if( key != ele.itemKey) itemKeyList.push(ele.itemKey);
+                });
+            }
         });
+        
 
         FabricQuery(makeRequest('queryItemByList',itemKeyList)).then((result)=>{
             ItemResult = JSON.parse(result);
             
-            ItemResult.forEach(function(item){
-                transInfoResult.some(function(trans){
+            transInfoResult.forEach(function(trans){
+                ItemResult.some(function(item){
                     if(item.key == trans.itemKey){
-                    item.transInfo = trans;
+                    trans.item = item;
                         return true;
                     }
                 });
             })
-            return res.render('member/buyProduct',{items:ItemResult,layout:'../shop/home-page'});
+            return res.render('member/buyProduct',{trans:transInfoResult,layout:'../shop/home-page'});
         }).catch((err)=>{   
             console.error(err);
         })

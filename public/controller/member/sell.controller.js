@@ -3,6 +3,12 @@ var makeRequest = require('../returnRequest');
 var fileUpload = require('../uploadFile.controller');
 var FabricInvoke = require('../../hyperledger-fabric/invoke');
 
+
+
+const delibee = require('delibee')({
+    timeout: 10000, // default timeout value is '10000'
+    locale: 'ko' // default loca le is 'ko'
+})
 //판매 상품 보기
 exports.showSellProductAllGET= function(req,res){
     var myId = req.session.name;
@@ -15,19 +21,20 @@ exports.showSellProductAllGET= function(req,res){
         FabricQuery(makeRequest('queryTransactionInfoBySeller',[myId])).then((result)=>{
             transactionInfo = JSON.parse(result);                   //결과값 삽입
             //item 정보에 transInfo 넣어주기
-            items.forEach(function(item,idx){
-                    transactionInfo.some(function(ele){
+            transactionInfo.forEach(function(ele,idx){
+                    items.some(function (item){
                         if(item.key == ele.itemKey){
-                            item.transInfo = ele;
-                            item.confirmTransaction = 'true';
+                            ele.item = item;
+                            ele.confirmTransaction = 'true';
+                            
                             return true;
                         }  
                     })
-                    if(item.transInfo == undefined) item.confirmTransaction = 'false';
+                
             });
              
             console.log(items);
-            return res.render('member/myProduct',{items:items,layout:'../shop/home-page'});
+            return res.render('member/myProduct',{transactionInfo:transactionInfo,layout:'../shop/home-page'});
         }).catch((err)=>{
             return res.render('500',{error:err});
         })
@@ -96,24 +103,39 @@ exports.updateProduct = function(req,res){
      return request;
     }).then((request)=>{
         FabricInvoke(request).then((resolvedData)=>{
-            return res.redirect(303,'/shopPage');
+            return res.send('success');
         }).catch((err)=>{
-                console.log(err);
+            return res.send('fail');
         });
     }).catch((err)=>{
         console.log("file Error : "+err);
     });
 }
 
-exports.updateDelivery = function(req,res){
+exports.updateDelivery = async(req,res) =>{
+
+
 
     var transactionInfoKey = req.body.transactionInfoKey; //트랜잭션 번호
     var deliveryCompany = req.body.company;               //송장 회사
     var deliveryInvoice = req.body.number;                //송장 번호
     var transactionState ='2';                            //배송중으로 알림
-    console.log(transactionInfoKey);
-    console.log(deliveryCompany);
-    console.log(deliveryInvoice);
+    
+    const company = req.query.company;
+    const invoiceNo = req.query.invoice_no;
+
+    const invoice = await delibee.tracking(deliveryCompany,deliveryInvoice);
+    console.log(invoice);
+    
+    if(invoice.success ==false) return res.send('false');
+    invoice.invoice.history.forEach((ele)=>{
+        console.log(ele);
+    });
+    
+    const history = invoice.invoice.history;    //현재까지 위치 추적후 알려주기
+    const companyName = invoice.invoice.deliveryCompany.name;    // 택배회사 이름
+    const receiverName = invoice.invoice.receiverName;          // 받는사람 이름
+    
     
     var request = makeRequest('updateTransactionInfoForDelivery',[transactionInfoKey,deliveryCompany,deliveryInvoice,transactionState]);
 
