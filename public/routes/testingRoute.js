@@ -26,7 +26,7 @@ router.post('/regist',function(req,res){
 router.get('/count',(req,res)=>{
     var query = 'queryItemCountAll';
     FabricQuery(require('../controller/returnRequest')(query,[])).then(result =>{
-        console.log(JSON.parse(result));
+        console.log(result);
     });
 });
 
