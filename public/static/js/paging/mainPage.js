@@ -7,18 +7,14 @@ $(document).ready(function(){
 
 
     /* 링크 데이터 양만큼 달아주기 */
-    makeLiForLink(makePageLinkCount)
+    makeLiForLink(makePageLinkCount);
 
-
-    /* 첫 페이지면 파란색으로 나타나기
-        이부분을 바까야댐 왜냐면페이지가 렌더링될때마다 첫페이지만 보여줄거이니까
-    */
     
     /* page링크 눌럿을때 */
     $('.page-link').click(function(e){
         
 
-        categoryData();
+        var category = categoryData();
         /* 링크에 파란색깔 지우기 */
         $('.page-item').removeClass("active");
         
@@ -27,7 +23,7 @@ $(document).ready(function(){
 
         /* page처리 조건 */
         var sendData = {
-            itemCategory:'all',
+            itemCategory:category,
             start : parseInt($(this).attr('value'))*8 -8  ,
             end : parseInt($(this).attr('value'))*8,    
         };
@@ -70,8 +66,8 @@ function getDataAndShow(sendData){
 
 /* 카테고리 값 불러오기 */
 function categoryData(){
-    let cateogry ='';
-    $('.mainList').filter('.active').each(()=>{
-        $(this)
-    });
+    let category ='';
+    category = $('.mainList.active').children('a').attr('value');
+    
+    return category;
 }

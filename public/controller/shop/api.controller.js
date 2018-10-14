@@ -14,7 +14,7 @@ exports.changeListInMain = function(req,res){
     var end = req.body.end;
 
     if(category == 'all') request = makeRequest('queryItemRange',[start,end]);
-    ;
+    else request = makeRequest('queryItemRangeByCategory',[category,start,end]);
     // if(category == 'all') request = makeRequest('queryItemAll',[]);
     // else request= makeRequest('queryItemByCategory',[category]);
 

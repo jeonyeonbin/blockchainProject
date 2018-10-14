@@ -11,21 +11,8 @@ $(document).ready(function(){
 
         //클릭한것 active
         $(this).addClass('active');
-
-        //ajax를 통해 데이터 바꿔야댐
-       var category = $(this).children('a').attr('value');
-       
-       $.ajax({
-           url:'/shopPage/api/changeList',
-           data:{itemCategory:category},
-           method:'POST', 
-           success:function(data){
-               $('.row.wow.fadeIn').children().remove();
-               data.forEach(function(element){
-                   CategorySelect(element);
-               });
-           }
-       })
+        
+        $('.page-link').first().trigger('click');
         
     });
 });
