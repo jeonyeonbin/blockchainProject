@@ -32,7 +32,7 @@ router.get('/count',(req,res)=>{
 
 router.get('/range', (req,res)=>{
     var query = 'queryItemRange';
-    FabricQuery(require('../controller/returnRequest')(query,['1','1'])).then(result =>{
+    FabricQuery(require('../controller/returnRequest')(query,['0','8'])).then(result =>{
         console.log(JSON.parse(result));
     });
 });

@@ -15,9 +15,19 @@ exports.allGET = function(req,res){
     }).then(function(resolvedData){
         resolvedData = JSON.parse(resolvedData);
         console.log(resolvedData);
-        if(resolvedData.sellState == 'selling')res.locals.selling = true;
-        else res.locals.selling =false;
-        return res.render('shop/mainList',{items : resolvedData,layout:'../shop/home-page'});
+
+        FabricQuery(makeRequest('queryItemCountAll',[])).then( count =>{
+            
+            count = JSON.parse(count);
+            return count;
+
+        }).then(count =>{
+            
+            if(resolvedData.sellState == 'selling')res.locals.selling = true;
+            else res.locals.selling =false;
+            return res.render('shop/mainList',{count:count.queryResultCount,items : resolvedData,layout:'../shop/home-page'});
+        })
+
     }).catch(function(err){
         
         console.log(err);

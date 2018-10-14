@@ -2,12 +2,21 @@
 var FabricQuery = require('../../hyperledger-fabric/query');
 var makeRequest = require('../returnRequest');
 exports.changeListInMain = function(req,res){
+
     var category = req.body.itemCategory;
     console.log('CATEGORY CLICK : '+ category);
     var request;
+
     //fabric 통신을 위한 request
-    if(category == 'all') request = makeRequest('queryItemAll',[]);
-    else request= makeRequest('queryItemByCategory',[category]);
+    var query = 'queryItemRange';
+
+    var start = req.body.start;
+    var end = req.body.end;
+
+    if(category == 'all') request = makeRequest('queryItemRange',[start,end]);
+    ;
+    // if(category == 'all') request = makeRequest('queryItemAll',[]);
+    // else request= makeRequest('queryItemByCategory',[category]);
 
     //itemCategory 별 데이터 찾기
     FabricQuery(request).then(function(resolvedData){
