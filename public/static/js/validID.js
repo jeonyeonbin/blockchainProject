@@ -4,7 +4,10 @@ function validID(id){
         method:"POST",
         data:{"identity":id},
         success:function(Data){
-            if(Data == 'success') alert('사용가능한 아이디입니다');
+            if(Data == 'success'){
+                alert('사용가능한 아이디입니다');
+                $('input[name="identity"]').addClass('success');
+            } 
             else {
                 alert('사용불가능한 아이디입니다');
                 $('input[name="identity"]').val("");

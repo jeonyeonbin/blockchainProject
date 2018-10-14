@@ -13,8 +13,8 @@
 
         <!--Grid column-->
         <div class="col-md-6 mb-4">
-
-          <img src="{{items.itemContentsPic}}" class="img-fluid" alt="" width="600px" height="430px">
+            
+          <img src="{{items.itemPic}}" class="img-fluid" alt="" width="600px" height="430px">
 
         </div>
         <!--Grid column-->
@@ -137,6 +137,12 @@
       <div id="itemInfo" class="tabcontent">
         <h4 class="my-4 h4">상품 정보</h4>
         <p>{{items.itemInfo}}</p>
+
+        {{#each pictures}}
+            <img src="{{pic}}" alt="">
+            <br>
+            <br>
+        {{/each}}
       </div>
 
       <div id="itemReply" class="tabcontent">

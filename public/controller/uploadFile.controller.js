@@ -2,6 +2,7 @@ const aws = require('aws-sdk');
 
 module.exports = function fileUpload(req) {
   return new Promise(((resolve, reject) => {
+    let url;
     if (req.files === undefined) {
       reject(new Error('file is none'));
     }
@@ -10,7 +11,7 @@ module.exports = function fileUpload(req) {
       console.log('HERE 5');
       console.log(result);
       console.log('HERE 6');
-      
+      if(result.includes('undefined')) result.replace(/undefined,/gi,''); 
       resolve(result);
     });
   }));
@@ -20,7 +21,7 @@ module.exports = function fileUpload(req) {
 function filePromise(files,id){
   return new Promise((resolve,reject) =>{
       const s3obj = new aws.S3();
-      let url = [];
+      let url ='';
       let count = 0;
       files.forEach((fileObj, index) => {
         // 라우터에 Multer 객체를 연결하면 input name이 일치하는 파일 데이터를 자동으로 받아서 req.files를 통해 접근할 수 있게 처리해 줍니다.
@@ -42,8 +43,9 @@ function filePromise(files,id){
         console.log('HERE 2');
         s3ObjPromise(s3obj,s3Params).then((result)=>{
           count++;
-          url.push(result);
-          url.pop(undefined);
+         
+          url+=result+',';
+          
           if(files.length == count) resolve(url);    
         });
     });

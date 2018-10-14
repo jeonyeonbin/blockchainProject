@@ -48,6 +48,7 @@ module.exports=function(app){
     app.use('/testing',require('./testingRoute'));     //test용 Router
     app.use('/chat',require('./chatRoute'));           //chatting Router
     
+
     //404 에러 페이지
     app.use(function(req,res,next){
         res.status(404);

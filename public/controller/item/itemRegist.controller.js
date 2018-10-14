@@ -37,14 +37,7 @@ exports.itemReigstPOST = function(req,res,next){
         return PicURL;   
     }).then((PicURL)=>{
 
-        var PicContents = '';
-        PicURL.forEach((ele,index)=>{
-            if(index !=0){
-                PicContents+=ele+',';
-            }
-            if(index == PicURL.length-1) PicContents+=ele;
-        });
-        var request = makeRequest('registItem',[req.session.name,req.body.itemName,req.body.itemInfo,req.body.itemPrice,req.body.itemCategory,PicURL[0],PicContents,req.body.transactionMode,req.body.transactionPosition,req.body.deliveryFee]);
+     var request = makeRequest('registItem',[req.session.name,req.body.itemName,req.body.itemInfo,req.body.itemPrice,req.body.itemCategory,PicURL.split(',')[0],PicURL,req.body.transactionMode,req.body.transactionPosition,req.body.deliveryFee]);
      console.log("Pic URL :"+PicURL);
      return request;
     }).then((request)=>{

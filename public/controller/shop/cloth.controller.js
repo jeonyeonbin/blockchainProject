@@ -46,7 +46,20 @@ exports.clothSelectOneGET = function(req,res){
         if(resolvedData.sellState == '1')res.locals.button = true;
         else res.locals.button =false;
         
-        return res.render('shop/product-page',{items:resolvedData,layout:'../shop/home-page'});
+        // 필드 사진들
+        //TODO
+        resolvedData.pictures = resolvedData.itemContentsPic.split(',');
+        resolvedData.pictures.pop('');
+
+        var pictures =[];
+        resolvedData.pictures.forEach(ele=>{
+            var data = { pic : ele};
+            pictures.push(data);
+        });
+
+
+        console.log(resolvedData.pictures);
+        return res.render('shop/product-page',{pictures:pictures,items:resolvedData,layout:'../shop/home-page'});
     }).catch(function(err){
         console.log(err);
     });

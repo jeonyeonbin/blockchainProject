@@ -22,6 +22,20 @@ router.post('/regist',function(req,res){
         console.log(err);
     });
 });
+
+router.get('/count',(req,res)=>{
+    var query = 'queryItemCountAll';
+    FabricQuery(require('../controller/returnRequest')(query,[])).then(result =>{
+        console.log(JSON.parse(result));
+    });
+});
+
+router.get('/range', (req,res)=>{
+    var query = 'queryItemRange';
+    FabricQuery(require('../controller/returnRequest')(query,['1','1'])).then(result =>{
+        console.log(JSON.parse(result));
+    });
+});
 router.post('/login',function(req,res){
     var request = {
         //targets : --- letting this default to the peers assigned to the channel
@@ -87,5 +101,6 @@ router.post('/',function(req,res){
         console.log(err);
     });
 });
+
 
 module.exports = router;
