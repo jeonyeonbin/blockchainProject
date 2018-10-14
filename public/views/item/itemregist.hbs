@@ -92,6 +92,7 @@
     <div style="height: 1000px;"></div>
 </nav>
 
+<script src="../../static/js/validation.js"></script>
 <script>
     $(document).ready(function(){
         $('.transactionPosition').css('display','none');
@@ -111,10 +112,24 @@
                 $('.deliveryFee').css('display','block');
             }
 
-            $('input[type="file"]').click(()=>{
-                
-            });
         });
+
+        /* $('input[type="submit"]').click((e)=>{
+            e.preventDefault();
+            const itemVdCheck = new ItemValidationCheck();
+
+            const name = $("input[name='itemName']").val();
+            const price = $("input[name='itemPrice']").val();        
+            const transactionMode =$('input[type="radio"][name="transactionMode"]');
+            const transactionPosition = $('input[name="transactionPosition"]').val();
+            const pictures = $('input[type="file"]').val();
+
+
+            if(itemVdCheck.pdNameCheck(name)
+            &&itemVdCheck.pdPriceCheck(price)
+            &&itemVdCheck.pdPictureCheck(pictures)) $(this).submit();
+        }); */
+
 
 
 

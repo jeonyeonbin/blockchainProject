@@ -21,18 +21,18 @@
     </tr>
   </thead>
   <tbody>
-    {{#each transactionInfo}}
+    {{#each items}}
     <tr>
       <input type="hidden" name="" class="confirmTransaction" value="{{confirmTransaction}}">
-      <input type="hidden" name="" class="transactionInfoKey" value="{{key}}">
+      <input type="hidden" name="" class="transactionInfoKey" value="{{transInfo.key}}">
       <th scope="row">{{@index}}</th>
-      <td><a href="/myPage/showMySellProduct/{{itemKey}}">
-          <img src="{{item.itemContentsPic}}" class="rounded" alt="" width="50px;" height="50px;">{{item.itemName}}
+      <td><a href="/myPage/showMySellProduct/{{transInfo.itemKey}}">
+          <img src="{{itemPic}}" class="rounded" alt="" width="50px;" height="50px;">{{itemName}}
          </a></td>
-      <td class="buyer chatting" style="cursor:pointer;"><h4>{{buyer}}</h4></td>
-	    <td class="transactionMode">{{transactionMode}}</td>
-      <td class="startDateTime"><h4>{{startDateTime}}</h4></td>
-      <td class="transactionState">{{transactionState}}</td>
+      <td class="buyer chatting" style="cursor:pointer;"><h4>{{transInfo.buyer}}</h4></td>
+	    <td class="transactionMode">{{transInfo.transactionMode}}</td>
+      <td class="startDateTime"><h4>{{transInfo.startDateTime}}</h4></td>
+      <td class="transactionState">{{transInfo.transactionState}}</td>
           
       <td class="transactionToServer">
           <button type="button" class="btn btn-primary transactionComplete" >거래 완료</button>

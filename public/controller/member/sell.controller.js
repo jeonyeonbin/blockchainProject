@@ -20,21 +20,25 @@ exports.showSellProductAllGET= function(req,res){
         items = JSON.parse(resolvedData);
         FabricQuery(makeRequest('queryTransactionInfoBySeller',[myId])).then((result)=>{
             transactionInfo = JSON.parse(result);                   //결과값 삽입
+            
+            let count = 0;
             //item 정보에 transInfo 넣어주기
-            transactionInfo.forEach(function(ele,idx){
-                    items.some(function (item){
-                        if(item.key == ele.itemKey){
-                            ele.item = item;
-                            ele.confirmTransaction = 'true';
-                            
-                            return true;
+            items.forEach(function(item,idx){
+                    count = 0;
+                    transactionInfo.forEach(function (ele){
+                        if(count == 0 && item.key == ele.itemKey){
+                            item.transInfo = ele;
+                            item.confirmTransaction = 'true';
+                            count++;
                         }  
-                    })
+                    });
+                    if(item.confirmTransaction =='' || item.confirmTransaction == undefined || item.confirmTransaction == null) item.confirmTransaction='false'; 
+
                 
             });
              
             console.log(items);
-            return res.render('member/myProduct',{transactionInfo:transactionInfo,layout:'../shop/home-page'});
+            return res.render('member/myProduct',{items:items,layout:'../shop/home-page'});
         }).catch((err)=>{
             return res.render('500',{error:err});
         })
