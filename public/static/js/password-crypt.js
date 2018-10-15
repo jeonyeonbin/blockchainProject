@@ -17,7 +17,7 @@ $(document).ready(function(){
             && vdCheck.phoneCheck(phone) && vdCheck.registNumberCheck(birth,lastIdNumber)){
                 
                 var encrypted = SHA256(password);
-                
+                lastIdNumber = SHA256(lastIdNumber);
                 $.ajax({
                     url: '/regist',
                     method:'POST',
