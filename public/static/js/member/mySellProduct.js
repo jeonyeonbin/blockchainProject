@@ -157,6 +157,22 @@ $(document).ready(function(){
       });
   }
 
+
+  /* 판매 취소 */
+  $('.itemCancel').click(function(){
+    $.ajax({
+      url:'/myPage/itemCancel',
+      data:{itemKey:$(this).val()},
+      method:'POST',
+      success: function(result){
+        if(result =='success'){
+          alert('상품 판매가 취소되었습니다.');
+        }else{
+          alert('다시 시도 해주세요');
+        }
+      }
+    })
+  });
     buttonActive();
     transactionComplete();
     transactionCancel();

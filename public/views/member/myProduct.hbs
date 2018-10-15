@@ -25,12 +25,13 @@
     <tr>
       <input type="hidden" name="" class="confirmTransaction" value="{{confirmTransaction}}">
       <input type="hidden" name="" class="transactionInfoKey" value="{{transInfo.key}}">
-      <th scope="row">{{@index}}</th>
-      <td><a href="/myPage/showMySellProduct/{{transInfo.itemKey}}">
+      <input type="hidden" name="" class="itemKey" value="{{key}}">
+      <th scope="row"><button type="button" class="btn btn-danger itemCancel" value="{{key}}">판매 취소</button></th>
+      <td><a href="/myPage/showMySellProduct/{{key}}">
           <img src="{{itemPic}}" class="rounded" alt="" width="50px;" height="50px;">{{itemName}}
          </a></td>
       <td class="buyer chatting" style="cursor:pointer;"><h4>{{transInfo.buyer}}</h4></td>
-	    <td class="transactionMode">{{transInfo.transactionMode}}</td>
+	  <td class="transactionMode">{{transInfo.transactionMode}}</td>
       <td class="startDateTime"><h4>{{transInfo.startDateTime}}</h4></td>
       <td class="transactionState">{{transInfo.transactionState}}</td>
           

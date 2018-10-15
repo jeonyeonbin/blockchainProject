@@ -21,15 +21,15 @@ exports.showSellProductAllGET= function(req,res){
         FabricQuery(makeRequest('queryTransactionInfoBySeller',[myId])).then((result)=>{
             transactionInfo = JSON.parse(result);                   //결과값 삽입
             
-            let count = 0;
+            var count = 0;
             //item 정보에 transInfo 넣어주기
             items.forEach(function(item,idx){
                     count = 0;
-                    transactionInfo.forEach(function (ele){
+                    transactionInfo.some(function (ele){
                         if(count == 0 && item.key == ele.itemKey){
                             item.transInfo = ele;
                             item.confirmTransaction = 'true';
-                            count++;
+                            return true;
                         }  
                     });
                     if(item.confirmTransaction =='' || item.confirmTransaction == undefined || item.confirmTransaction == null) item.confirmTransaction='false'; 
@@ -37,7 +37,8 @@ exports.showSellProductAllGET= function(req,res){
                 
             });
              
-            console.log(items);
+            //console.log(items);
+            console.log(transactionInfo);
             return res.render('member/myProduct',{items:items,layout:'../shop/home-page'});
         }).catch((err)=>{
             return res.render('500',{error:err});
@@ -102,12 +103,26 @@ exports.updateProduct = function(req,res){
 	// 9, transactionPosition
 	// 10, deliveryFee (1 : 판매자부담, 2 : 착불)
 
-    var request = makeRequest('updateItem',[req.body.itemKey,req.body.itemName,req.body.itemInfo,req.body.itemPrice,req.body.itemCategory,PicURL,PicURL,req.body.sellState,req.body.transactionMode,req.body.transactionPosition,req.body.deliveryFee]);
+
+    console.log('itemKey  : ' + req.body.itemKey);
+    console.log('itemName  : ' + req.body.itemName);
+    console.log('itemInfo  : ' + req.body.itemInfo);
+    console.log('itemPrice  : ' + req.body.itemPrice);
+    console.log('itemCategory  : ' + req.body.itemCategory);
+    console.log(' PicURL.split(',')[0])  : ' + PicURL.split(',')[0]);
+    console.log('PicURL  : ' + PicURL);
+    console.log('sellState  : ' + req.body.sellState);
+    console.log('transactionMode  : ' + req.body.transactionMode);
+    console.log('transactionPosition  : ' + req.body.transactionPosition);
+    console.log('req.body.deliveryFee' + req.body.deliveryFee);
+
+
+    var request = makeRequest('updateItem',[req.body.itemKey,req.body.itemName,req.body.itemInfo,req.body.itemPrice,req.body.itemCategory,PicURL.split(',')[0],PicURL,req.body.sellState,req.body.transactionMode,req.body.transactionPosition,req.body.deliveryFee]);
      console.log("Pic URL :"+PicURL);
      return request;
     }).then((request)=>{
         FabricInvoke(request).then((resolvedData)=>{
-            return res.send('success');
+            return res.redirect(303,'/myPage/showMySellProduct');
         }).catch((err)=>{
             return res.send('fail');
         });
@@ -178,4 +193,17 @@ exports.checkApprove = function(req,res){
         return res.send('fail');
     })
 
+}
+
+/* 판매 취소 */
+exports.ItemCancel = (req,res)=>{
+
+    var request = makeRequest('deleteItem',[req.body.itemKey]);
+
+    
+    FabricInvoke(request).then(()=>{
+        return res.send('success');
+    }).catch(()=>{
+        return res.send('fail');
+    })
 }

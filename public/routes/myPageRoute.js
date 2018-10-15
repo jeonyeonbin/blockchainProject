@@ -10,7 +10,6 @@ var coinController = require('../controller/member/coin.controller');
 var sellProductController = require('../controller/member/sell.controller');
 var buyProductController = require('../controller/member/buy.controller');
 var invoiceController  = require('../controller/member/invoice.controller');
-
 // var upload =multer({storage:storage});
 
 //메모리 상의 버퍼 저장
@@ -63,5 +62,7 @@ router.post('/buyerChangeTransacationState',buyProductController.buyerChangeTran
 //송장번호 확인
 router.get('/checkInvoice',invoiceController.checkInvoice);
 
+//상품 판매 취소
+router.post('/itemCancel',sellProductController.ItemCancel);
 
 module.exports = router;
