@@ -170,6 +170,7 @@ $(document).ready(function(){
         }else{
           alert('다시 시도 해주세요');
         }
+        window.location.href='/myPage/showMySellProduct';
       }
     })
   });
