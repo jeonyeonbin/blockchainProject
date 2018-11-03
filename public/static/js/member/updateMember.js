@@ -14,9 +14,9 @@ $(document).ready(function(){
         var address = $('#address').val();
 
         var encrypted = SHA256(password);
-
-        if(vdCheck.addrCheck(address) && vdCheck.idCheck($("#identity")) && vdCheck.nameCheck(name) && vdCheck.passwordCheck(password,$('#inputPasswordCheck').val())
-            && vdCheck.phoneCheck(phone) && vdCheck.registNumberCheck(birth,lastIdNumber)){
+        console.log('update');
+        if(vdCheck.addrCheck(address) && vdCheck.nameCheck(name) && vdCheck.passwordCheck(password,$('#inputPasswordCheck').val())
+            && vdCheck.phoneCheck(phone)){
 
                 $.ajax({
                     url: '/myPage/update',

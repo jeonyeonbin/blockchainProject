@@ -38,7 +38,6 @@ module.exports=function(app){
         secret: '%$MYSECRET$%',
         store:require('mongoose-session')(mongoose),
     }));
-    app.use(bodyParser.json());
     //page url 처리 라우터
     var page = require('./page')(app);
     app.get('/',function(req,res){return res.redirect(303,'/shopPage')});
